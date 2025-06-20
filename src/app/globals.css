@@ -24,3 +24,46 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.graph-edge {
+  /* Apply a transition to the path and polygon elements within the edge group */
+  /* Graphviz edges are usually wrapped in a <g> element with the ID/class */
+  /* The line is often a <path> and the arrowhead a <polygon> */
+}
+
+/* Target the path and polygon inside an edge group */
+.graph-edge path,
+.graph-edge polygon {
+  transition: stroke 0.3s ease-in-out, stroke-width 0.3s ease-in-out, fill 0.3s ease-in-out;
+  stroke: #999; /* Default edge color */
+  fill: #999; /* Default arrowhead color */
+}
+
+/* Hover state for the entire edge group */
+.graph-edge:hover path,
+.graph-edge:hover polygon {
+  stroke: #007bff; /* Highlight color on hover */
+  stroke-width: 2px; /* Thicker line on hover */
+  fill: #007bff; /* Highlight arrowhead color */
+  cursor: pointer; /* Indicate clickability */
+}
+
+/* You could also animate dash-arrays for a "flowing" effect */
+/* Example: */
+/*
+.graph-edge path {
+  stroke-dasharray: 5 5;
+  stroke-dashoffset: 0;
+  animation: none;
+}
+
+.graph-edge:hover path {
+  animation: dash-flow 1s linear infinite;
+}
+
+@keyframes dash-flow {
+  to {
+    stroke-dashoffset: -100;
+  }
+}
+*/

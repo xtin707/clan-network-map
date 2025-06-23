@@ -1,79 +1,11 @@
-import { Digraph, Node, Edge, toDot } from 'ts-graphviz';
 import SVGViewer from '../components/GraphViewer';
 import graphviz from 'graphviz-wasm';
-
-function createHtmlLabel(content: string): string {
-
-  return `<
-    <table border="0" cellborder="1" cellspacing="0" cellpadding="4">
-      ${content}
-    </table>
-  >`;
-}
-
-
-function generateMyGraphDot(): string {
-  const G = new Digraph('G');
-
-  const nodeA = new Node('A', {
-    shape: 'none',
-    margin: 0,
-    label: createHtmlLabel(`
-      <tr><td colspan="2">Node A Title</td></tr>
-      <tr>
-        <td port="port_a1">Input 1</td>
-        <td port="port_a2">Input 2</td>
-      </tr>
-      <tr>
-        <td port="port_a3">Output 1</td>
-        <td port="port_a4">Output 2</td>
-      </tr>
-    `),
-  });
-
-  const nodeB = new Node('B', {
-    shape: 'none',
-    margin: 0,
-    label: createHtmlLabel(`
-      <tr><td colspan="1">Node B Title</td></tr>
-      <tr>
-        <td port="port_b_in">Input Port</td>
-      </tr>
-      <tr>
-        <td port="port_b_out">Output Port</td>
-      </tr>
-    `),
-  });
-
-  const nodeC = new Node('C', {
-    shape: 'box',
-    label: 'Node C', 
-  });
-
-  G.addNode(nodeA);
-  G.addNode(nodeB);
-  G.addNode(nodeC);
-
-  G.edge(
-    [nodeA.port('port_a3'), nodeB.port('port_b_in')],
-    { label: 'A.out1 -> B.in', class: 'graph-edge' }
-  );
-
-  G.edge(
-    [nodeA.port('port_a4'), nodeC],
-    { label: 'A.out2 -> C', class: 'graph-edge'}
-  );
-
-  G.edge(
-      [nodeB.port('port_b_out'), nodeA.port('port_a1')],
-      { label: 'B.out -> A.in1' }
-  );
-
-  return toDot(G);
-}
+import node_data from '../data/nodeData';
+import edge_data from '../data/edgeData';
+import {generateOverviewGraph} from '../graph/overviewGraph';
 
 export default async function HomePage() {
-  const myDotString = generateMyGraphDot();
+  const myDotString = generateOverviewGraph(node_data.data, edge_data.data);
 
   let svgString: string = '';
   let error: string | null = null;

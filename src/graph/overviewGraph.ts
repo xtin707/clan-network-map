@@ -37,7 +37,7 @@ export function generateOverviewGraph(node_data: any, edge_data: any): string {
       shape: 'box',
       label: createHtmlLabel(`
 <tr><td>${val.label}</td></tr>
-`)
+`),
       URL: `./${val.id}`,
     });
     nodes.push(node);

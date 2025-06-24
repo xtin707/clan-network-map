@@ -30,7 +30,7 @@ export function generateDetailedGraph(main_node: any, node_data: any, edge_data:
         <tr>
         ${portStrings}
         </tr>`),
-    URL: main_node.id,
+    URL: `./${main_node.id}`,
   });
 
   G.addNode(mainNode);
@@ -44,7 +44,6 @@ export function generateDetailedGraph(main_node: any, node_data: any, edge_data:
     }
 
     const partner_node = node_data.find(item => item.id === entry.node[partner_index]);
-    console.log(partner_node);
     const port_label = partner_node.ports.find(item => item.id === entry.port[partner_index]).label;
 
     const new_node = new Node(partner_node.id, {
@@ -54,7 +53,7 @@ export function generateDetailedGraph(main_node: any, node_data: any, edge_data:
 <tr><td port="${entry.port[partner_index]}">${port_label}</td></tr>
 <tr><td>${partner_node.label}</td></tr>
 `),
-      URL: `../${partner_node.id}`
+      URL: `./${partner_node.id}`
     });
 
     G.addNode(new_node);

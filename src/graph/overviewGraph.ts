@@ -19,7 +19,7 @@ function absFilePath(file_name: string): string { const publicDirec = path.join(
 
 function createHtmlLabel(content: string): string {
   return `<
-    <table border="0" cellborder="1" cellspacing="0" cellpadding="4">
+    <table border="0" cellborder="0" cellspacing="0" cellpadding="0">
       ${content}
     </table>
   >`;

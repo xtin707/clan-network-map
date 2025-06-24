@@ -13,7 +13,7 @@ export function generateDetailedGraph(main_node: any, node_data: any, edge_data:
 
   G.graph({
     splines:'ortho',
-  })
+  });
 
   let portStrings = ``;
 

@@ -2,8 +2,7 @@ import { Digraph, Node, toDot } from 'ts-graphviz';
 import path from 'path';
 import fs from 'fs';
 
-function absFilePath(file_name: string): string {
-  const publicDirec = path.join(process.cwd(), 'public');
+function absFilePath(file_name: string): string { const publicDirec = path.join(process.cwd(), 'public');
   const absDirec = path.join(publicDirec, file_name)
 
   try {
@@ -18,6 +17,14 @@ function absFilePath(file_name: string): string {
   return absDirec;
 }
 
+function createHtmlLabel(content: string): string {
+  return `<
+    <table border="0" cellborder="1" cellspacing="0" cellpadding="4">
+      ${content}
+    </table>
+  >`;
+}
+
 export function generateOverviewGraph(node_data: any, edge_data: any): string {
   const G = new Digraph('G');
 
@@ -28,7 +35,9 @@ export function generateOverviewGraph(node_data: any, edge_data: any): string {
   for (const val of node_data) {
     const node = new Node(val.id, {
       shape: 'box',
-      label: `${val.label}`,
+      label: createHtmlLabel(`
+<tr><td>${val.label}</td></tr>
+`)
       URL: `./${val.id}`,
     });
     nodes.push(node);

@@ -1,7 +1,27 @@
 import { Digraph, Node, toDot } from 'ts-graphviz';
+import path from 'path';
+import fs from 'fs';
+
+function absFilePath(file_name: string): string {
+  const publicDirec = path.join(process.cwd(), 'public');
+  const absDirec = path.join(publicDirec, file_name)
+
+  try {
+    const imageData = fs.readFileSync(absDirec);
+
+    console.log('Image read');
+
+  } catch(error) {
+    console.error(error);
+  }
+
+  return absDirec;
+}
 
 export function generateOverviewGraph(node_data: any, edge_data: any): string {
   const G = new Digraph('G');
+
+  console.log(absFilePath('router.svg'));
 
   const nodes: Node[] = [];
 

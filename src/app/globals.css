@@ -35,8 +35,8 @@ body {
 .graph-edge path,
 .graph-edge polygon {
   transition: stroke 0.3s ease-in-out, stroke-width 0.3s ease-in-out, fill 0.3s ease-in-out;
-  stroke: #999; /* Default edge color */
-  fill: #999; /* Default arrowhead color */
+  stroke: #4c5E69; /* Default edge color */
+  fill: #4c5E69; /* Default arrowhead color */
 }
 
 /* Hover state for the entire edge group */

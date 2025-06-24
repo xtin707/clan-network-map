@@ -19,7 +19,7 @@ function absFilePath(file_name: string): string { const publicDirec = path.join(
 
 function createHtmlLabel(content: string): string {
   return `<
-    <table border="0" cellborder="0" cellspacing="0" cellpadding="0">
+    <table border="0" cellborder="0" cellspacing="0" cellpadding="8">
       ${content}
     </table>
   >`;
@@ -28,14 +28,29 @@ function createHtmlLabel(content: string): string {
 export function generateOverviewGraph(node_data: any, edge_data: any): string {
   const G = new Digraph('G');
 
+  G.graph({
+    bgcolor: 'none'
+  });
+
   console.log(absFilePath('router.svg'));
 
   const nodes: Node[] = [];
 
   for (const val of node_data) {
+    let kaomoji = '';
+
+    if (val.type === 'Router') {
+      kaomoji = `(」°ロ°)」`
+    }
+    
     const node = new Node(val.id, {
-      shape: 'box',
+      shape: 'image',
+      style: 'rounded,filled',
+      color: '#2c4455',
+      fillcolor: '#e2e1d3',
       label: createHtmlLabel(`
+
+<tr><td>${kaomoji}</td></tr>
 <tr><td>${val.label}</td></tr>
 `),
       URL: `./${val.id}`,
@@ -52,7 +67,7 @@ export function generateOverviewGraph(node_data: any, edge_data: any): string {
     const node2 = nodes.find(node => node.id === edge.node[1]);
     G.edge(
       [node1, node2],
-      {label: '', class: ''});
+      {label: '', class: 'graph-edge', arrowhead: 'none'});
   }
 
   return toDot(G);

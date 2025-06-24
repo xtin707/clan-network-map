@@ -20,8 +20,8 @@ export default async function HomePage() {
 
   return (
     <main className="p-5 text-center bg-gray-50 min-h-screen">
-      <h1 className="text-4xl font-bold mb-4 text-gray-800">Graphviz in Next.js (Server-Side Generation)</h1>
-      <p className="text-lg mb-8 text-gray-600">This graph is generated server-side using ts-graphviz and graphviz-wasm.</p>
+      <h1 className="text-4xl font-bold mb-4 text-gray-800">UPB Network Diagram</h1>
+      <p className="text-lg mb-8 text-gray-600">Click the node to to see the detailed view of ports</p>
       <div className="max-w-4xl mx-auto">
         {/* Pass the SVG string and error to the new component */}
         <SVGViewer svgString={svgString} error={error} />

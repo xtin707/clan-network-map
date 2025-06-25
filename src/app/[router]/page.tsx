@@ -55,5 +55,7 @@ export default async function Page({
         <SVGViewer svgString={svgString} error={error} />
       </div>
     </main>
+
+    // need back/view prev and home page
   );
 }

@@ -22,7 +22,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif; */
 }
 
 .graph-edge {
@@ -35,16 +35,16 @@ body {
 .graph-edge path,
 .graph-edge polygon {
   transition: stroke 0.3s ease-in-out, stroke-width 0.3s ease-in-out, fill 0.3s ease-in-out;
-  stroke: #4c5E69; /* Default edge color */
-  fill: #4c5E69; /* Default arrowhead color */
+  stroke: #00573F; /* Default edge color */
+  fill: #00573F; /* Default arrowhead color */
 }
 
 /* Hover state for the entire edge group */
 .graph-edge:hover path,
 .graph-edge:hover polygon {
-  stroke: #007bff; /* Highlight color on hover */
-  stroke-width: 2px; /* Thicker line on hover */
-  fill: #007bff; /* Highlight arrowhead color */
+  stroke: #FFB81C; /* Highlight color on hover */
+  stroke-width: 4px; /* Thicker line on hover */
+  fill: #FFB81C; /* Highlight arrowhead color */
   cursor: pointer; /* Indicate clickability */
 }
 

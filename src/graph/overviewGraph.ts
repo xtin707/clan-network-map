@@ -19,17 +19,21 @@ function absFilePath(file_name: string): string { const publicDirec = path.join(
 
 function createHtmlLabel(content: string): string {
   return `<
-    <table border="0" cellborder="0" cellspacing="0" cellpadding="8">
+    <table border="0" cellborder="0" cellspacing="0" cellpadding="6">
       ${content}
     </table>
   >`;
 }
+
+
+
 
 export function generateOverviewGraph(node_data: any, edge_data: any): string {
   const G = new Digraph('G');
 
   G.graph({
     bgcolor: 'none'
+
   });
 
   console.log(absFilePath('router.svg'));
@@ -40,19 +44,33 @@ export function generateOverviewGraph(node_data: any, edge_data: any): string {
     let kaomoji = '';
 
     if (val.type === 'Router') {
-      kaomoji = `(」°ロ°)」`
+      kaomoji = `ᯤ`
+    }
+    else if (val.type === 'Switch'){
+      kaomoji = '⇄'
+    }
+    else if (val.type === 'Firewall'){
+      kaomoji = '🔥'
+    }
+    else if (val.type === 'ISP'){
+      kaomoji = '☁︎'
+    }
+    else if (val.type === 'Hub'){
+      kaomoji = '🖧'
+    }
+    else{
+      kaomoji = '🕋'
     }
     
     const node = new Node(val.id, {
-      shape: 'image',
-      style: 'rounded,filled',
-      color: '#2c4455',
-      fillcolor: '#e2e1d3',
+      shape: 'box',
+      style: 'rounded,filled,bold',
+      color: '#00573f',
+      fillcolor: '#fdf8e3',
       label: createHtmlLabel(`
-
-<tr><td>${kaomoji}</td></tr>
-<tr><td>${val.label}</td></tr>
+<tr><td><font point-size="20" color="#00573f">${kaomoji}</font></td><td>${val.label}</td></tr>
 `),
+
       URL: `./${val.id}`,
     });
     nodes.push(node);

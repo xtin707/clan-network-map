@@ -19,9 +19,9 @@ export default async function HomePage() {
   }
 
   return (
-    <main className="p-5 text-center bg-gray-50 min-h-screen">
-      <h1 className="text-4xl font-bold mb-4 text-gray-800">UPB Network Diagram</h1>
-      <p className="text-lg mb-8 text-gray-600">Click the node to to see the detailed view of ports</p>
+    <main className="p-5 text-center bg-[#8A1538] min-h-screen">
+      <h1 className="text-4xl font-bold mb-4 text-[#FFB81C]">UPB Network Diagram</h1>
+      <p className="text-lg mb-8 text-white">Click the node to to see the detailed view of ports</p>
       <div className="max-w-4xl mx-auto">
         {/* Pass the SVG string and error to the new component */}
         <SVGViewer svgString={svgString} error={error} />

@@ -22,4 +22,5 @@ const SVGViewer: React.FC<SVGViewerProps> = ({ svgString, error }) => {
   );
 };
 
+// blue bg sakop
 export default SVGViewer;

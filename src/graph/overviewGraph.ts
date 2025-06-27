@@ -1,6 +1,7 @@
 import { Digraph, Node, toDot } from 'ts-graphviz';
 import path from 'path';
 import fs from 'fs';
+import { Device } from '@/data/structs';
 
 function absFilePath(file_name: string): string { const publicDirec = path.join(process.cwd(), 'public');
   const absDirec = path.join(publicDirec, file_name)
@@ -43,19 +44,19 @@ export function generateOverviewGraph(node_data: any, edge_data: any): string {
   for (const val of node_data) {
     let kaomoji = '';
 
-    if (val.type === 'Router') {
+    if (val.type === Device.Router) {
       kaomoji = `ᯤ`
     }
-    else if (val.type === 'Switch'){
+    else if (val.type === Device.Switch){
       kaomoji = '⇄'
     }
-    else if (val.type === 'Firewall'){
+    else if (val.type === Device.Firewall){
       kaomoji = '🔥'
     }
-    else if (val.type === 'ISP'){
+    else if (val.type === Device.ISP){
       kaomoji = '☁︎'
     }
-    else if (val.type === 'Hub'){
+    else if (val.type === Device.Hub){
       kaomoji = '🖧'
     }
     else{

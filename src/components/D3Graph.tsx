@@ -1,7 +1,7 @@
 'use client'
 import React, { useRef, useEffect } from 'react';
 import * as d3 from 'd3';
-import { Connection, Device } from '@/data/structs';
+import { Device } from '@/data/structs';
 
 const NetworkDiagram = ({ nodeData, edgeData, width, height }) => {
   const svgRef = useRef();
@@ -27,7 +27,7 @@ const NetworkDiagram = ({ nodeData, edgeData, width, height }) => {
 
     const chartGroup = svg.append("g"); 
 
-    const defs = chartGroup.append("defs");
+    chartGroup.append("defs");
 
     const link = chartGroup.append("g")
       .attr("stroke", "#999")
@@ -81,7 +81,7 @@ const NetworkDiagram = ({ nodeData, edgeData, width, height }) => {
         .attr("stroke-opacity", 1); 
     });
 
-    nodeGroup.on("mouseout", (event, d) => {
+    nodeGroup.on("mouseout", (event) => {
       d3.select(event.currentTarget).select("use")
         .attr("stroke", "black")
         .attr("stroke-width", 1);

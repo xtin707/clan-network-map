@@ -1,4 +1,4 @@
-import {NodeData, Node, Port, Device, Connection} from './structs'
+import {NodeData, Device, Connection} from './structs'
 
 const node_data: NodeData = {
   data: 

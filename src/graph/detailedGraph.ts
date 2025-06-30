@@ -1,4 +1,5 @@
 import { Digraph, Node, toDot } from 'ts-graphviz';
+import { EdgeData, NodeData } from '@/data/structs';
 
 function createHtmlLabel(content: string): string {
   return `<
@@ -8,7 +9,7 @@ function createHtmlLabel(content: string): string {
   >`;
 }
 
-export function generateDetailedGraph(main_node: any, node_data: any, edge_data: any): string {
+export function generateDetailedGraph(main_node: Node, node_data: NodeData, edge_data: EdgeData): string {
   const G = new Digraph('G');
 
   G.graph({

@@ -4,7 +4,6 @@ import node_data from '@/data/nodeData';
 import edge_data from '@/data/edgeData';
 import {generateDetailedGraph} from '@/graph/detailedGraph';
 
-
 export default async function Page({
   params,
   }: {
@@ -41,7 +40,7 @@ export default async function Page({
   try {
     await graphviz.loadWASM();
     svgString = graphviz.layout(myDotString, 'svg', 'dot');
-  } catch (e: any) {
+  } catch (e) {
     console.error("Error generating SVG on server:", e);
     error = `Failed to generate graph SVG on server: ${e.message || 'Unknown error'}`;
   }

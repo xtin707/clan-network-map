@@ -1,4 +1,4 @@
-import {Connection, Edge, EdgeData} from './structs'
+import {Connection, EdgeData} from './structs'
 
 const edge_data: EdgeData = {
   data: [

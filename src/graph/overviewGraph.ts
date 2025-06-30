@@ -34,6 +34,7 @@ export function generateOverviewGraph(node_data: any, edge_data: any): string {
 
   G.graph({
     bgcolor: 'none'
+    //splines:'ortho'
 
   });
 

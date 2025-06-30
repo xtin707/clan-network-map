@@ -1,60 +1,204 @@
-import SVGViewer from '@/components/GraphViewer';
+'use client';
+
+import { useEffect, useState } from 'react';
+import { useRouter, useSearchParams, usePathname } from 'next/navigation';
 import graphviz from 'graphviz-wasm';
+import SVGViewer from '@/components/GraphViewer';
 import node_data from '@/data/nodeData';
 import edge_data from '@/data/edgeData';
-import {generateDetailedGraph} from '@/graph/detailedGraph';
+import { generateDetailedGraph } from '@/graph/detailedGraph';
+import { useMemo } from 'react';
 
-export default async function Page({
-  params,
-  }: {
-    params: Promise<{router: string}>
-}) {
-  const page_data = await params;
-  const main_node = node_data.data.find(node => node.id === page_data.router);
-  const node_ids = [];
-  const filtered_node = [];
-  const filtered_edge = [];
+export default function DetailedGraphPage() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const pathname = usePathname();
 
-  for (const entry of edge_data.data) {
-    if (entry.node.includes(main_node.id)) {
-      filtered_edge.push(entry);
-      node_ids.push(entry.node[0]);
-      node_ids.push(entry.node[1]);
+  const currentNodeId = pathname.split('/').pop();
+  const [svgString, setSvgString] = useState('');
+  const [error, setError] = useState<string | null>(null);
+  const [historyStack, setHistoryStack] = useState<string[]>([]);
+
+  // Initialize history from URL params or sessionStorage
+  useEffect(() => {
+    const historyParam = searchParams.get('history');
+    if (historyParam) {
+      // Get history from URL parameter
+      const parsedHistory = historyParam.split(',').filter(Boolean);
+      setHistoryStack(parsedHistory);
+      console.log('[History] Loaded from URL:', parsedHistory);
+    } else {
+      // Fallback
+      const savedHistory = sessionStorage.getItem('nodeHistory');
+      if (savedHistory) {
+        const parsedHistory = JSON.parse(savedHistory);
+        setHistoryStack(parsedHistory);
+        console.log('[History] Loaded from sessionStorage:', parsedHistory);
+      }
+    }
+  }, [searchParams]);
+
+  // Update history when current node changes
+  useEffect(() => {
+    if (!currentNodeId) return;
+
+    setHistoryStack((prev) => {
+      let newHistory;
+      if (prev.length === 0 || prev[prev.length - 1] !== currentNodeId) {
+        newHistory = [...prev, currentNodeId];
+        console.log(`[History] Pushed: ${currentNodeId}`);
+      } else {
+        newHistory = prev;
+        console.log(`[History] Already top: ${currentNodeId}`);
+      }
+      
+      // Save to sessionStorage
+      sessionStorage.setItem('nodeHistory', JSON.stringify(newHistory));
+      return newHistory;
+    });
+  }, [currentNodeId]);
+
+  // Generate and render graph
+  useEffect(() => {
+    if (!currentNodeId) return;
+
+    const main_node = node_data.data.find((node) => node.id === currentNodeId);
+    if (!main_node) {
+      setError(`Node "${currentNodeId}" not found.`);
+      return;
+    }
+
+    const node_ids = [];
+    const filtered_node = [];
+    const filtered_edge = [];
+
+    for (const entry of edge_data.data) {
+      if (entry.node.includes(main_node.id)) {
+        filtered_edge.push(entry);
+        node_ids.push(entry.node[0]);
+        node_ids.push(entry.node[1]);
+      }
+    }
+
+    let unique_ids = [...new Set(node_ids)].filter((id) => id !== main_node.id);
+    for (const id of unique_ids) {
+      const node = node_data.data.find((n) => n.id === id);
+      if (node) filtered_node.push(node);
+    }
+
+    const dot = generateDetailedGraph(main_node, filtered_node, filtered_edge);
+    graphviz.loadWASM().then(() => {
+      const svg = graphviz.layout(dot, 'svg', 'dot');
+      setSvgString(svg);
+      setError(null);
+    }).catch((err) => {
+      console.error(err);
+      setError('Failed to generate SVG graph.');
+    });
+  }, [currentNodeId]);
+
+
+  const handleBack = () => {
+    if (historyStack.length >= 2) {
+      const updated = [...historyStack];
+      updated.pop(); // remove current
+      const previous = updated[updated.length - 1];
+      
+      // Update sessionStorage
+      sessionStorage.setItem('nodeHistory', JSON.stringify(updated));
+      
+      // Navigate with history parameter
+      const historyParam = updated.join(',');
+      router.push(`/${previous}?history=${historyParam}`);
+    } else {
+      // Clear history and go home
+      sessionStorage.removeItem('nodeHistory');
+      router.push('/');
     }
   };
 
-  let unique_ids = [...new Set(node_ids)];
+  const handleHome = () => {
+    // Clear history
+    sessionStorage.removeItem('nodeHistory');
+    router.push('/');
+  };
 
-  unique_ids = unique_ids.filter(item => item !== main_node.id);
+  // Navigate to a new node on click
+  const navigateToNode = (nodeId) => {
+    const newHistory = [...historyStack, nodeId];
+    const historyParam = newHistory.join(',');
+    router.push(`/${nodeId}?history=${historyParam}`);
+  };
 
-  for (const entry of unique_ids) {
-    const node = node_data.data.find(node => node.id === entry);
-    filtered_node.push(node);
-  }
+  // Get label of previous node
+  const previousNodeLabel = useMemo(() => {
+    if (historyStack.length >= 2) { // -2 for previous, -1 for current hehe
+      const previousId = historyStack[historyStack.length - 2]; 
+      const previousNode = node_data.data.find((n) => n.id === previousId);
+      return previousNode?.label ?? previousId;
+    }
+    return null;
+  }, [historyStack]);
 
-  const myDotString = generateDetailedGraph(main_node, filtered_node, filtered_edge);
-
-  let svgString: string = '';
-  let error: string | null = null;
-
-  try {
-    await graphviz.loadWASM();
-    svgString = graphviz.layout(myDotString, 'svg', 'dot');
-  } catch (e) {
-    console.error("Error generating SVG on server:", e);
-    error = `Failed to generate graph SVG on server: ${e.message || 'Unknown error'}`;
-  }
+  // Logging for checking
+  useEffect(() => {
+    console.log('--- DEBUG ---');
+    console.log('pathname:', pathname);
+    console.log('currentNodeId:', currentNodeId);
+    console.log('historyStack:', historyStack);
+    console.log('historyStack.length:', historyStack.length);
+    console.log('Previous label:', previousNodeLabel);
+  }, [pathname, historyStack]);
 
   return (
     <main className="p-5 text-center bg-gray-50 min-h-screen">
-      <h1 className="text-4xl font-bold mb-4 text-gray-800">Graphviz in Next.js (Server-Side Generation)</h1>
-      <p className="text-lg mb-8 text-gray-600">This graph is generated server-side using ts-graphviz and graphviz-wasm.</p>
-      <div className="max-w-4xl mx-auto">
-        {/* Pass the SVG string and error to the new component */}
-        <SVGViewer svgString={svgString} error={error} />
-      </div>
-    </main>
+      <h1 className="text-3xl font-bold mb-4 text-gray-800">
+        Detailed Node View: {currentNodeId}
+      </h1>
 
-    // need back/view prev and home page
+      <div className="flex justify-center gap-4 mb-6">
+        <button
+          onClick={handleHome}
+          className="bg-blue-100 hover:bg-blue-200 text-blue-800 px-4 py-2 rounded text-sm"
+        >
+          Back to Overview
+        </button>
+        {previousNodeLabel && (
+          <button
+            onClick={handleBack}
+            className="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded text-sm"
+          >
+            ← Back to {previousNodeLabel}
+          </button>
+        )}
+      </div>
+
+      <div className="max-w-4xl mx-auto">
+        <SVGViewer 
+          svgString={svgString} 
+          error={error} 
+          onNodeClick={navigateToNode} // Navigation function
+        />
+      </div>
+
+    {/* Array Stack tracker for checking */}
+    <div className="fixed bottom-2 right-2 text-xs bg-white p-2 rounded shadow max-w-xs text-left">
+      <div className="font-bold">History Stack (Length: {historyStack.length}):</div>
+      <div className="pl-2">
+        {historyStack.map((id, i) => {
+          const node = node_data.data.find((n) => n.id === id);
+          const label = node?.label || id;
+          return (
+            <div
+              key={i}
+              className={i === historyStack.length - 1 ? 'font-bold text-blue-600' : ''}
+            >
+              {i + 1}. {label} <span className="text-gray-400">({id})</span>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+    </main>
   );
 }

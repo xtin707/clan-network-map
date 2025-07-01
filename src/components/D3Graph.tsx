@@ -54,6 +54,7 @@ const NetworkDiagram = ({ nodeData, edgeData, width, height }) => {
         if (d.type === Device.ISP) return "cloud.svg";
         if (d.type === Device.MainRouter) return "/router.svg";
         if (d.type === Device.Hub) return "/hub.svg";
+      if (d.type === Device.Firewall) return "firewall.svg";
         if (d.type === Device.Switch) return "/workgroup-switch.svg";
         return "router.svg";
       })

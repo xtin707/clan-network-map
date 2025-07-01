@@ -22,8 +22,7 @@ export default async function HomePage() {
           </div>
         </div>
       </header>
-
-        <NetworkDiagram nodeData={node_data} edgeData={edge_data} width={1400} height={550}/>
+        <NetworkDiagram nodeData={node_data} edgeData={edge_data} width={1700} height={550}/>
     </main>
   );
 }

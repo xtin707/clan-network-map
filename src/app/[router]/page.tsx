@@ -28,7 +28,7 @@ export default function DetailedGraphPage() {
       setHistoryStack(parsedHistory);
       console.log('[History] Loaded from URL:', parsedHistory);
     } else {
-      // Fallback
+      // Fallback using session storage
       const savedHistory = sessionStorage.getItem('nodeHistory');
       if (savedHistory) {
         const parsedHistory = JSON.parse(savedHistory);
@@ -100,15 +100,15 @@ export default function DetailedGraphPage() {
 
   const handleBack = () => {
     if (historyStack.length >= 2) {
-      const updated = [...historyStack];
-      updated.pop(); // remove current
-      const previous = updated[updated.length - 1];
+      const updatedStack = [...historyStack];
+      updatedStack.pop(); // remove current node
+      const previous = updatedStack[updatedStack.length - 1];
       
       // Update sessionStorage
-      sessionStorage.setItem('nodeHistory', JSON.stringify(updated));
+      sessionStorage.setItem('nodeHistory', JSON.stringify(updatedStack));
       
       // Navigate with history parameter
-      const historyParam = updated.join(',');
+      const historyParam = updatedStack.join(',');
       router.push(`/${previous}?history=${historyParam}`);
     } else {
       // Clear history and go home
@@ -127,12 +127,12 @@ export default function DetailedGraphPage() {
   const navigateToNode = (nodeId) => {
     const newHistory = [...historyStack, nodeId];
     const historyParam = newHistory.join(',');
-    router.push(`/${nodeId}?history=${historyParam}`);
+    router.push(`/${nodeId}?history=${historyParam}`); // Build URL using node and history
   };
 
   // Get label of previous node
   const previousNodeLabel = useMemo(() => {
-    if (historyStack.length >= 2) { // -2 for previous, -1 for current hehe
+    if (historyStack.length >= 2) { // -2 for previous, -1 for current
       const previousId = historyStack[historyStack.length - 2]; 
       const previousNode = node_data.data.find((n) => n.id === previousId);
       return previousNode?.label ?? previousId;

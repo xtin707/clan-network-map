@@ -1,4 +1,5 @@
 import { Digraph, Node, toDot } from 'ts-graphviz';
+import { EdgeData, NodeData } from '@/data/structs';
 
 function createHtmlLabel(content: string): string {
   return `<
@@ -8,12 +9,13 @@ function createHtmlLabel(content: string): string {
   >`;
 }
 
-export function generateDetailedGraph(main_node: any, node_data: any, edge_data: any): string {
+export function generateDetailedGraph(main_node: Node, node_data: NodeData, edge_data: EdgeData): string {
   const G = new Digraph('G');
 
   G.graph({
     splines:'ortho',
-  })
+    bgcolor: 'none'
+  });
 
   let portStrings = ``;
 
@@ -22,8 +24,11 @@ export function generateDetailedGraph(main_node: any, node_data: any, edge_data:
 <td port="${port.id}">${port.label}</td>`
   };
 
+  // where to edit detailed main table/node
   const mainNode = new Node(main_node.id, {
     shape: 'none',
+    style: 'filled',
+    fillcolor:'#FFFFFF',
     margin: 0,
     label: createHtmlLabel(`
         <tr><td colspan="${main_node.ports.length}">${main_node.label}</td></tr>
@@ -46,8 +51,11 @@ export function generateDetailedGraph(main_node: any, node_data: any, edge_data:
     const partner_node = node_data.find(item => item.id === entry.node[partner_index]);
     const port_label = partner_node.ports.find(item => item.id === entry.port[partner_index]).label;
 
-    const new_node = new Node(partner_node.id, {
+      // where to edit detailed subtable/node
+      const new_node = new Node(partner_node.id, {
       shape: 'none',
+      style: 'filled',
+      fillcolor:'#FFFFFF',
       margin: 0,
       label: createHtmlLabel(`
 <tr><td port="${entry.port[partner_index]}">${port_label}</td></tr>

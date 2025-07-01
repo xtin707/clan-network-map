@@ -56,6 +56,7 @@ const NetworkDiagram = ({ nodeData, edgeData, width, height }) => {
         if (d.type === Device.Hub) return "/hub.svg";
       if (d.type === Device.Firewall) return "firewall.svg";
         if (d.type === Device.Switch) return "/workgroup-switch.svg";
+        if (d.type === Device.Firewall) return "/firewall.svg";
         return "router.svg";
       })
       .attr("x", -25)
@@ -101,10 +102,27 @@ const NetworkDiagram = ({ nodeData, edgeData, width, height }) => {
       });
 
     svg.call(zoomBehavior);
+
+    // Initially set the view to full view of the graph 
+    const bbox = chartGroup.node().getBBox();
+    
+    const svgWidth = parseInt(svg.attr("width"));
+    const svgHeight = parseInt(svg.attr("height"));
+    const scale = Math.min(svgWidth / bbox.width, svgHeight / bbox.height);
+
+    const translateX = (svgWidth - bbox.width * scale) / 2 - bbox.x * scale;
+    const translateY = (svgHeight - bbox.height * scale) / 2 - bbox.y * scale;
+
+    svg.call(
+      zoomBehavior.transform,
+      d3.zoomIdentity.translate(translateX, translateY).scale(scale)
+    );
   }, [nodeData, edgeData, width, height]);
 
   return (
+    <div className="w-full h-full overflow-auto border border-gray-200 p-4 rounded-lg shadow-md flex-col items-center justify-center bg-[#FFFFFF] flex justify-center items-center">
     <svg ref={svgRef}></svg>
+    </div>
   );
 };
 

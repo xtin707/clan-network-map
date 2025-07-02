@@ -16,11 +16,12 @@ const NetworkDiagram = ({ nodeData, edgeData, width, height }) => {
     const nodes = nodeData.data.map(d => ({ id: d.id, label: d.label, type: d.type}));
     const links = edgeData.data.map(d => ({ source:d.node[0], target: d.node[1], type: d.type}));
 
+    // You can adjust the placement and size of nodes and edges here
     const simulation = d3.forceSimulation(nodes)
-      .force("link", d3.forceLink(links).id(d => d.id).distance(50).strength(0.8))
-      .force("charge", d3.forceManyBody().strength(-400))
+      .force("link", d3.forceLink(links).id(d => d.id).distance(100).strength(1.2))
+      .force("charge", d3.forceManyBody().strength(-600))
       .force("center", d3.forceCenter(width / 2, height / 2))
-    .force("collide", d3.forceCollide(70));
+    .force("collide", d3.forceCollide(100));
 
     simulation.stop();
     for (let i = 0; i < 120; ++i) simulation.tick();
@@ -53,9 +54,9 @@ const NetworkDiagram = ({ nodeData, edgeData, width, height }) => {
       .attr("xlink:href", d => {
         if (d.type === Device.ISP) return "cloud.svg";
         if (d.type === Device.MainRouter) return "/router.svg";
+        if (d.type === Device.WirelessRouter) return "/wireless-router.svg";
         if (d.type === Device.Hub) return "/hub.svg";
-      if (d.type === Device.Firewall) return "firewall.svg";
-        if (d.type === Device.Switch) return "/workgroup-switch.svg";
+        if (d.type === Device.Switch) return "/workgroup-switch-blue.svg";
         if (d.type === Device.Firewall) return "/firewall.svg";
         return "router.svg";
       })
@@ -78,7 +79,7 @@ const NetworkDiagram = ({ nodeData, edgeData, width, height }) => {
         .attr("stroke-width", 2.5);
 
       link.filter(l => l.source.id === d.id || l.target.id === d.id)
-        .attr("stroke", "red")
+        .attr("stroke", "#717171")
         .attr("stroke-width", 3)
         .attr("stroke-opacity", 1); 
     });
@@ -95,6 +96,8 @@ const NetworkDiagram = ({ nodeData, edgeData, width, height }) => {
       nodeGroup.attr("opacity", 1);
       link.attr("opacity", 1);
     });
+
+
     const zoomBehavior = d3.zoom()
       .scaleExtent([0.1, 8]) 
       .on("zoom", (event) => {
@@ -108,7 +111,11 @@ const NetworkDiagram = ({ nodeData, edgeData, width, height }) => {
     
     const svgWidth = parseInt(svg.attr("width"));
     const svgHeight = parseInt(svg.attr("height"));
-    const scale = Math.min(svgWidth / bbox.width, svgHeight / bbox.height);
+    const padding = 40;
+    const scale = Math.min(
+      (svgWidth - 2 * padding) / bbox.width,
+      (svgHeight - 2 * padding) / bbox.height
+    );
 
     const translateX = (svgWidth - bbox.width * scale) / 2 - bbox.x * scale;
     const translateY = (svgHeight - bbox.height * scale) / 2 - bbox.y * scale;
@@ -120,9 +127,7 @@ const NetworkDiagram = ({ nodeData, edgeData, width, height }) => {
   }, [nodeData, edgeData, width, height]);
 
   return (
-    <div className="w-full h-full overflow-auto border border-gray-200 p-4 rounded-lg shadow-md flex-col items-center justify-center bg-[#FFFFFF] flex justify-center items-center">
     <svg ref={svgRef}></svg>
-    </div>
   );
 };
 

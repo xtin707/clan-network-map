@@ -127,7 +127,9 @@ const NetworkDiagram = ({ nodeData, edgeData, width, height }) => {
   }, [nodeData, edgeData, width, height]);
 
   return (
+    <div className="w-full h-full overflow-hidden border border-gray-200 p-4 rounded-lg shadow-md flex-col items-center justify-center bg-[#FFFFFF] flex justify-center items-center">
     <svg ref={svgRef}></svg>
+      </div>
   );
 };
 

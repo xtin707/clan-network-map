@@ -4,7 +4,7 @@ const edge_data: EdgeData = {
   data: [
   {// Converge
     "node": ["ict", "r1"],
-    "port": ["p2", "p1"],
+    "port": ["w1", "w1"],
     "type": Connection.None
   }, 
   {// Govnet
@@ -237,7 +237,7 @@ const edge_data: EdgeData = {
   {
       "node": ["sw3", "sw9"],
       "port": ["",""],
-      "type": Connection.none
+      "type": Connection.None
   },
   {
     "node": ["sw9", "idr"],

@@ -9,7 +9,7 @@ function createHtmlLabel(content: string): string {
   >`;
 }
 
-export function generateDetailedGraph(main_node: Node, node_data: NodeData, edge_data: EdgeData): string {
+export function generateDetailedGraph(main_node: any, node_data: NodeData, edge_data: EdgeData): string {
   const G = new Digraph('G');
 
   G.graph({
@@ -49,7 +49,7 @@ export function generateDetailedGraph(main_node: Node, node_data: NodeData, edge
     }
 
     const partner_node = node_data.find(item => item.id === entry.node[partner_index]);
-    const port_label = partner_node.ports.find(item => item.id === entry.port[partner_index]).label;
+    const port_label = partner_node?.ports.find(item => item.id === entry.port[partner_index])?.label ?? "Port not found";
 
       // where to edit detailed subtable/node
       const new_node = new Node(partner_node.id, {

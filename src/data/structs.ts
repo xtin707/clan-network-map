@@ -8,6 +8,7 @@ export enum Connection {
 export enum Device {
   Firewall,
   MainRouter,
+  WirelessRouter,
   Router,
   Switch,
   Hub,

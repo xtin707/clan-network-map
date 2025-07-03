@@ -17,6 +17,7 @@ const SVGViewer: React.FC<SVGViewerProps> = ({ svgString, error, onNodeClick }) 
       // Add click listeners to graph nodes
       const svgElement = containerRef.current.querySelector('svg');
       if (svgElement) {
+
         const nodes = svgElement.querySelectorAll('g.node');
         
         nodes.forEach(node => {
@@ -60,7 +61,7 @@ const SVGViewer: React.FC<SVGViewerProps> = ({ svgString, error, onNodeClick }) 
   }, [svgString, onNodeClick]);
 
   return (
-    <div className="w-full h-auto overflow-auto border border-gray-200 p-4 rounded-lg shadow-md flex flex-col items-center justify-center min-h-52 bg-[#FFFFFF]">
+    <div className="w-full h-auto overflow-auto flex flex-col items-center justify-center min-h-52 bg-[#FFFFFF]">
       {error ? (
         <p className="text-red-500 font-bold">{error}</p>
       ) : (

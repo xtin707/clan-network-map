@@ -29,8 +29,8 @@ export default function HomePage() {
   }, []);
 
   return (
-    <main className="bg-white min-h-screen">
-      <header className="bg-black text-white flex items-center justify-between px-10 py-6">
+    <main className="bg-[#1E1E1E] min-h-screen">
+      <header className="bg-[#1E1E1E] text-white flex items-center justify-between px-10 py-6">
         <div className="flex items-center space-x-4">
           <img src="/up-logo.png" alt="UPB Logo" className="h-10 w-auto"/>
           <h1 className={juliusSansOne.className + " text-[#DFDEDE] text-xl font-semibold tracking-widest"}>UPB Network Diagram</h1>

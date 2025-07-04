@@ -1,13 +1,18 @@
 'use client';
-
 import { useEffect, useState } from 'react';
 import { useRouter, useSearchParams, usePathname } from 'next/navigation';
 import graphviz from 'graphviz-wasm';
 import SVGViewer from '@/components/GraphViewer';
+import { Button } from "@/components/ui/button"
 import node_data from '@/data/nodeData';
 import edge_data from '@/data/edgeData';
 import { generateDetailedGraph } from '@/graph/detailedGraph';
+import { Julius_Sans_One } from 'next/font/google';
+import { MoveLeft } from 'lucide-react';
 import { useMemo } from 'react';
+
+
+const juliusSansOne = Julius_Sans_One({ subsets: ['latin'], weight: '400' });
 
 export default function DetailedGraphPage() {
   const router = useRouter();
@@ -151,35 +156,46 @@ export default function DetailedGraphPage() {
   }, [pathname, historyStack]);
 
   return (
-    <main className="p-5 text-center bg-gray-50 min-h-screen">
-      <h1 className="text-3xl font-bold mb-4 text-gray-800">
-        Detailed Node View: {currentNodeId}
-      </h1>
-
-      <div className="flex justify-center gap-4 mb-6">
-        <button
-          onClick={handleHome}
-          className="bg-blue-100 hover:bg-blue-200 text-blue-800 px-4 py-2 rounded text-sm"
-        >
-          Back to Overview
-        </button>
-        {previousNodeLabel && (
-          <button
-            onClick={handleBack}
-            className="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded text-sm"
+    <main className="flex flex-col min-h-screen w-screen bg-[#1E1E1E]">
+      <header className="bg-[#1E1E1E] text-white flex items-center justify-between px-10 py-6">
+        <div className="flex items-center space-x-4">
+          <img src="/up-logo.png" alt="UPB Logo" className="h-10 w-auto"/>
+          <h1 className={juliusSansOne.className + " text-[#DFDEDE] text-xl font-semibold tracking-widest"}>UPB Network Diagram</h1>
+        </div>
+        <div className="relative group">
+          <Button variant="link"
+            onClick={handleHome}
+            className={juliusSansOne.className + " hover:bg-stone-400/30 text-[#DFDEDE] px-4 py-2 rounded text-sm"}
           >
-            ← Back to {previousNodeLabel}
-          </button>
-        )}
-      </div>
+            <MoveLeft />Go Back to Overview
+          </Button>
+          {/* extended detailed view should not be here */}
+          {previousNodeLabel && (
+            <Button
+              onClick={handleBack}
+              className="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded text-sm"
+            >
+              ← Back to {previousNodeLabel}
+            </Button>
+          )}
+        </div>
+      </header>
+      
+      <div className="flex-grow bg-white w-full flex flex-col items-center justify-start px-6 py-10">
+        <h2 className="text-3xl font-bold mb-4 text-gray-800">
+          Detailed Node View: {currentNodeId}
+        </h2>
 
-      <div className="max-w-4xl mx-auto">
+      <div className="w-full h-full flex-grow flex items-center justify-center">
         <SVGViewer 
           svgString={svgString} 
           error={error} 
           onNodeClick={navigateToNode} // Navigation function
         />
       </div>
+    </div>
+
+      {/* Footer with history navigation */}
 
     {/* Array Stack tracker for checking */}
     <div className="fixed bottom-2 right-2 text-xs bg-white p-2 rounded shadow max-w-xs text-left">

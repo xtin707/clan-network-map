@@ -21,7 +21,7 @@ const NetworkDiagram = ({ nodeData, edgeData, width, height }) => {
       .force("link", d3.forceLink(links).id(d => d.id).distance(100).strength(1.2))
       .force("charge", d3.forceManyBody().strength(-600))
       .force("center", d3.forceCenter(width / 2, height / 2))
-    .force("collide", d3.forceCollide(100));
+    .force("collide", d3.forceCollide(100).radius(10));
 
     simulation.stop();
     for (let i = 0; i < 120; ++i) simulation.tick();

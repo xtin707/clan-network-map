@@ -11,6 +11,8 @@ export enum Device {
   WirelessRouter,
   Router,
   Switch,
+  AccessSwitch,
+  DistributionSwitch,
   Hub,
   ISP,
   None,

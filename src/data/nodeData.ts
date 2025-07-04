@@ -429,7 +429,7 @@ const node_data: NodeData = {
   {
   "id": "cac-t",
       "label": "CAC",
-      "type": Device.Router,
+      "type": Device.AccessSwitch,
       "ports": [
       {
         "id": "",
@@ -446,7 +446,7 @@ const node_data: NodeData = {
   {
   "id": "cac-jl",
       "label": "JournLab",
-      "type": Device.Router,
+      "type": Device.AccessSwitch,
       "ports": [
       {
         "id": "",
@@ -482,7 +482,7 @@ const node_data: NodeData = {
   {
   "id": "css2",
       "label": "CSS2",
-      "type": Device.Router,
+      "type": Device.AccessSwitch,
       "ports": [
       {
         "id": "",
@@ -499,7 +499,7 @@ const node_data: NodeData = {
   {
   "id": "css3",
       "label": "CSS3",
-      "type": Device.Router,
+      "type": Device.AccessSwitch,
       "ports": [
       {
         "id": "",
@@ -530,7 +530,7 @@ const node_data: NodeData = {
   {
   "id": "hkp",
       "label": "HKP",
-      "type": Device.Router,
+      "type": Device.AccessSwitch,
       "ports": [
       {
         "id": "",
@@ -547,7 +547,7 @@ const node_data: NodeData = {
   {
   "id": "hkp-ap",
       "label": "HKP_AP",
-      "type": Device.Router,
+      "type": Device.AccessSwitch,
       "ports": [
       {
         "id": "",
@@ -559,7 +559,7 @@ const node_data: NodeData = {
   {
   "id": "himn",
       "label": "Himnasyo",
-      "type": Device.Router,
+      "type": Device.AccessSwitch,
       "ports": [
       {
         "id": "",
@@ -585,7 +585,7 @@ const node_data: NodeData = {
   {
     "id": "l-tech",
     "label": "LIB-TECH",
-    "type": Device.Router,
+    "type": Device.AccessSwitch,
     "ports": [
       {
         "id": "",
@@ -597,7 +597,7 @@ const node_data: NodeData = {
   {
     "id": "rotc",
     "label": "ROTC",
-    "type": Device.Router,
+    "type": Device.AccessSwitch,
     "ports": [
       {
         "id": "",
@@ -609,7 +609,7 @@ const node_data: NodeData = {
   {
     "id": "hpe",
     "label": "HPE-1920S-247",
-    "type": Device.Router,
+    "type": Device.AccessSwitch,
     "ports": [
       {
         "id": "",
@@ -621,7 +621,7 @@ const node_data: NodeData = {
   {
     "id": "breha",
     "label": "Breha",
-    "type": Device.Router,
+    "type": Device.AccessSwitch,
     "ports": [
       {
         "id": "",
@@ -633,7 +633,7 @@ const node_data: NodeData = {
   {
     "id": "wup",
     "label": "WalkUP",
-    "type": Device.Router,
+    "type": Device.AccessSwitch,
     "ports": [
       {
         "id": "",
@@ -645,7 +645,7 @@ const node_data: NodeData = {
   {
     "id": "balay",
     "label": "Balay-Intl",
-    "type": Device.Router,
+    "type": Device.AccessSwitch,
     "ports": [
       {
         "id": "",
@@ -683,7 +683,7 @@ const node_data: NodeData = {
   {
     "id": "alum",
     "label": "Alumni",
-    "type": Device.Router,
+    "type": Device.AccessSwitch,
     "ports": [
       {
         "id": "",
@@ -707,7 +707,7 @@ const node_data: NodeData = {
   {
     "id": "im1",
     "label": "Aruba-1930S-8G-IM",
-    "type": Device.Router,
+    "type": Device.AccessSwitch,
     "ports": [
       {
         "id": "",
@@ -719,7 +719,7 @@ const node_data: NodeData = {
   {
     "id": "clinic",
     "label": "Clinic",
-    "type": Device.Router,
+    "type": Device.AccessSwitch,
     "ports": [
       {
         "id": "",
@@ -731,7 +731,7 @@ const node_data: NodeData = {
   {
     "id": "cmo",
     "label": "CMO",
-    "type": Device.Router,
+    "type": Device.AccessSwitch,
     "ports": [
       {
         "id": "",
@@ -745,7 +745,7 @@ const node_data: NodeData = {
   {
     "id": "nc3-b",
     "label": "Bulwagan",
-    "type": Device.Router,
+    "type": Device.AccessSwitch,
     "ports": [
       {
         "id": "",
@@ -757,7 +757,7 @@ const node_data: NodeData = {
   {
     "id": "nc3-hpe",
     "label": "HPE-1920S-250",
-    "type": Device.Router,
+    "type": Device.AccessSwitch,
     "ports": [
       {
         "id": "",
@@ -769,7 +769,7 @@ const node_data: NodeData = {
   {
     "id": "nc3-mk",
     "label": "MK-HPE-1920S",
-    "type": Device.Router,
+    "type": Device.AccessSwitch,
     "ports": [
       {
         "id": "",
@@ -781,7 +781,7 @@ const node_data: NodeData = {
   {
     "id": "nc3-a1",
     "label": "Aruba-01",
-    "type": Device.Router,
+    "type": Device.AccessSwitch,
     "ports": [
       {
         "id": "",
@@ -793,7 +793,7 @@ const node_data: NodeData = {
   {
     "id": "nc3-a2",
     "label": "Aruba-02",
-    "type": Device.Router,
+    "type": Device.AccessSwitch,
     "ports": [
       {
         "id": "",

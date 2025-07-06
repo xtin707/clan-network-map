@@ -44,24 +44,32 @@ export default function DetailedGraphPage() {
   }, [searchParams]);
 
   // Update history when current node changes
-  useEffect(() => {
-    if (!currentNodeId) return;
+// Update history when current node changes
+useEffect(() => {
+  if (!currentNodeId) return;
 
-    setHistoryStack((prev) => {
-      let newHistory;
-      if (prev.length === 0 || prev[prev.length - 1] !== currentNodeId) {
-        newHistory = [...prev, currentNodeId];
-        console.log(`[History] Pushed: ${currentNodeId}`);
-      } else {
-        newHistory = prev;
-        console.log(`[History] Already top: ${currentNodeId}`);
-      }
-      
-      // Save to sessionStorage
+  setHistoryStack((prev) => {
+    // If stack is empty, add the current node
+    if (prev.length === 0) {
+      const newHistory = [currentNodeId];
+      console.log(`[History] Initial push: ${currentNodeId}`);
       sessionStorage.setItem('nodeHistory', JSON.stringify(newHistory));
       return newHistory;
-    });
-  }, [currentNodeId]);
+    }
+
+    // If current node is the same as the last item in stack, don't add it
+    if (prev[prev.length - 1] === currentNodeId) {
+      console.log(`[History] Already top: ${currentNodeId}`);
+      return prev; // Return unchanged stack
+    }
+
+    // Add the new node to the stack
+    const newHistory = [...prev, currentNodeId];
+    console.log(`[History] Pushed: ${currentNodeId}`);
+    sessionStorage.setItem('nodeHistory', JSON.stringify(newHistory));
+    return newHistory;
+  });
+}, [currentNodeId]);
 
   // Generate and render graph
   useEffect(() => {
@@ -128,12 +136,15 @@ export default function DetailedGraphPage() {
     router.push('/');
   };
 
-  // Navigate to a new node on click
-  const navigateToNode = (nodeId) => {
-    const newHistory = [...historyStack, nodeId];
-    const historyParam = newHistory.join(',');
-    router.push(`/${nodeId}?history=${historyParam}`); // Build URL using node and history
-  };
+// Navigate to a new node on click
+const navigateToNode = (nodeId) => {
+  if (nodeId === currentNodeId) {
+    return;
+  }
+  const newHistory = [...historyStack, nodeId];
+  const historyParam = newHistory.join(',');
+  router.push(`/${nodeId}?history=${historyParam}`);
+};
 
   // Get label of previous node
   const previousNodeLabel = useMemo(() => {

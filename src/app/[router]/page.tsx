@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useMemo } from 'react';
 import { useRouter, useSearchParams, usePathname } from 'next/navigation';
 import graphviz from 'graphviz-wasm';
 import SVGViewer from '@/components/GraphViewer';
@@ -9,8 +9,6 @@ import edge_data from '@/data/edgeData';
 import { generateDetailedGraph } from '@/graph/detailedGraph';
 import { Julius_Sans_One } from 'next/font/google';
 import { MoveLeft } from 'lucide-react';
-import { useMemo } from 'react';
-
 
 const juliusSansOne = Julius_Sans_One({ subsets: ['latin'], weight: '400' });
 
@@ -18,13 +16,13 @@ export default function DetailedGraphPage() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const pathname = usePathname();
-
   const currentNodeId = pathname.split('/').pop();
   const [svgString, setSvgString] = useState('');
   const [error, setError] = useState<string | null>(null);
   const [historyStack, setHistoryStack] = useState<string[]>([]);
+  const [historyIndex, setHistoryIndex] = useState<number | null>(null);
 
-  // Initialize history from URL params or sessionStorage
+  // Initialize history
   useEffect(() => {
     const historyParam = searchParams.get('history');
     if (historyParam) {
@@ -32,33 +30,54 @@ export default function DetailedGraphPage() {
       const parsedHistory = historyParam.split(',').filter(Boolean);
       setHistoryStack(parsedHistory);
       console.log('[History] Loaded from URL:', parsedHistory);
-    } else {
-      // Fallback using session storage
-      const savedHistory = sessionStorage.getItem('nodeHistory');
-      if (savedHistory) {
-        const parsedHistory = JSON.parse(savedHistory);
-        setHistoryStack(parsedHistory);
-        console.log('[History] Loaded from sessionStorage:', parsedHistory);
-      }
     }
   }, [searchParams]);
+
+  // Update history index when current node or history changes
+  useEffect(() => {
+  if (currentNodeId && historyStack.length > 0) {
+    const index = historyStack.lastIndexOf(currentNodeId);
+    if (index !== -1) {
+      setHistoryIndex(index);
+    }
+  }
+  }, [currentNodeId, historyStack]);
+
+  // Keyboard navigation
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (!historyStack.length || historyIndex === null) return;
+      if (e.key === 'ArrowLeft' && historyIndex > 0) {
+        // Navigate backward
+        const previousId = historyStack[historyIndex - 1];
+        const newHistory = historyStack.slice(0, historyIndex);
+        router.push(`/${previousId}?history=${newHistory.join(',')}`);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [historyStack, historyIndex, router]);
 
   // Update history when current node changes
   useEffect(() => {
     if (!currentNodeId) return;
 
     setHistoryStack((prev) => {
-      let newHistory;
-      if (prev.length === 0 || prev[prev.length - 1] !== currentNodeId) {
-        newHistory = [...prev, currentNodeId];
-        console.log(`[History] Pushed: ${currentNodeId}`);
-      } else {
-        newHistory = prev;
-        console.log(`[History] Already top: ${currentNodeId}`);
+      // If stack is empty, add the current node
+      if (prev.length === 0) {
+        const newHistory = [currentNodeId];
+        console.log(`[History] Initial push: ${currentNodeId}`);
+        return newHistory;
       }
-      
-      // Save to sessionStorage
-      sessionStorage.setItem('nodeHistory', JSON.stringify(newHistory));
+
+      // If current node is the same do not add to stack
+      if (prev[prev.length - 1] === currentNodeId) {
+        return prev;
+      }
+
+      // Add the new node to the stack
+      const newHistory = [...prev, currentNodeId];
+      console.log(`[History] Pushed: ${currentNodeId}`);
       return newHistory;
     });
   }, [currentNodeId]);
@@ -102,37 +121,31 @@ export default function DetailedGraphPage() {
     });
   }, [currentNodeId]);
 
-
   const handleBack = () => {
     if (historyStack.length >= 2) {
       const updatedStack = [...historyStack];
-      updatedStack.pop(); // remove current node
+      updatedStack.pop(); 
       const previous = updatedStack[updatedStack.length - 1];
-      
-      // Update sessionStorage
-      sessionStorage.setItem('nodeHistory', JSON.stringify(updatedStack));
-      
       // Navigate with history parameter
       const historyParam = updatedStack.join(',');
       router.push(`/${previous}?history=${historyParam}`);
     } else {
-      // Clear history and go home
-      sessionStorage.removeItem('nodeHistory');
-      router.push('/');
+      handleHome()
     }
   };
 
   const handleHome = () => {
-    // Clear history
-    sessionStorage.removeItem('nodeHistory');
     router.push('/');
   };
 
   // Navigate to a new node on click
   const navigateToNode = (nodeId) => {
+    if (nodeId === currentNodeId) {
+      return;
+    }
     const newHistory = [...historyStack, nodeId];
     const historyParam = newHistory.join(',');
-    router.push(`/${nodeId}?history=${historyParam}`); // Build URL using node and history
+    router.push(`/${nodeId}?history=${historyParam}`);
   };
 
   // Get label of previous node
@@ -144,16 +157,6 @@ export default function DetailedGraphPage() {
     }
     return null;
   }, [historyStack]);
-
-  // Logging for checking
-  useEffect(() => {
-    console.log('--- DEBUG ---');
-    console.log('pathname:', pathname);
-    console.log('currentNodeId:', currentNodeId);
-    console.log('historyStack:', historyStack);
-    console.log('historyStack.length:', historyStack.length);
-    console.log('Previous label:', previousNodeLabel);
-  }, [pathname, historyStack]);
 
   return (
     <main className="flex flex-col min-h-screen w-screen bg-[#1E1E1E]">
@@ -183,19 +186,20 @@ export default function DetailedGraphPage() {
       
       <div className="flex-grow bg-white w-full flex flex-col items-center justify-start px-6 py-10">
         <h2 className="text-3xl font-bold mb-4 text-gray-800">
-          Detailed Node View: {currentNodeId}
+          Detailed Node View: {node_data.data.find(n => n.id === currentNodeId)?.label || currentNodeId}
         </h2>
+        <span className="text-gray-400">({currentNodeId})</span>
 
       <div className="w-full h-full flex-grow flex items-center justify-center">
         <SVGViewer 
           svgString={svgString} 
           error={error} 
-          onNodeClick={navigateToNode} // Navigation function
+          onNodeClick={navigateToNode}
         />
       </div>
     </div>
 
-      {/* Footer with history navigation */}
+    {/* Footer with history navigation */}
 
     {/* Array Stack tracker for checking */}
     <div className="fixed bottom-2 right-2 text-xs bg-white p-2 rounded shadow max-w-xs text-left">

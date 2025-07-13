@@ -1,6 +1,9 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
+import { TransformWrapper, TransformComponent } from 'react-zoom-pan-pinch';
+import { ZoomIn, ZoomOut, RotateCcw} from "lucide-react";
+import { transformConfig } from './transformConfig';
 
 interface SVGViewerProps {
   svgString: string;
@@ -79,15 +82,55 @@ interface SVGViewerProps {
 }, [svgString, onNodeClick]);
 
   return (
-    <div className="w-full h-auto overflow-auto flex flex-col items-center justify-center min-h-52 bg-[#FFFFFF]">
+    <div className="w-full h-full flex flex-col items-center justify-center min-h-52 bg-[#FFFFFF]">
       {error ? (
         <p className="text-red-500 font-bold">{error}</p>
       ) : (
-        <div
-          ref={containerRef}
-          dangerouslySetInnerHTML={{ __html: svgString }}
-          className="flex justify-center items-center w-full"
-        />
+        <div className="w-full h-full relative border border-gray-300 rounded-lg overflow-hidden">
+          <TransformWrapper {...transformConfig}>
+            {({ zoomIn, zoomOut, resetTransform }) => (
+              <>
+                <div className="absolute bottom-4 right-4 z-10 flex gap-2">
+                  <button 
+                    onClick={() => zoomOut()} 
+                    className="px-2 py-1 bg-black hover:bg-gray-600 text-white rounded"
+                  >
+                     <ZoomOut/>
+                  </button>
+                  <button 
+                    onClick={() => resetTransform()} 
+                    className="px-2 py-1 bg-black hover:bg-gray-600 text-white rounded"
+                  >
+                    <RotateCcw/>
+                  </button>
+                  <button 
+                    onClick={() => zoomIn()} 
+                    className="px-2 py-1 bg-black hover:bg-gray-600 text-white rounded"
+                  >
+                    <ZoomIn/>
+                  </button>
+                </div>
+
+                <TransformComponent 
+                  wrapperStyle={{ width: '100%', height: '100%' }}
+                  contentStyle={{ 
+                    width: '100%', 
+                    height: '100%',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                  }}
+                >
+                  <div
+                    ref={containerRef}
+                    dangerouslySetInnerHTML={{ __html: svgString }}
+                    className="flex justify-center items-center"
+                  />
+                </TransformComponent>
+              </>
+            )}
+          </TransformWrapper>
+        </div>
       )}
     </div>
   );

@@ -58,7 +58,9 @@ const NetworkDiagram = ({ nodeData, edgeData, width, height }) => {
         if (d.type === Device.Hub) return "/hub.svg";
         if (d.type === Device.Switch) return "/workgroup-switch-blue.svg";
         if (d.type === Device.Firewall) return "/firewall.svg";
-      if (d.type === Device.AccessSwitch) return "workgroup-switch.svg";
+      if (d.type === Device.CoreSwitch) return "/programmable-switch.svg";
+      if (d.type === Device.DistributionSwitch) return "/workgroup-switch-blue.svg";
+      if (d.type === Device.AccessSwitch) return "/workgroup-switch.svg";
       })
       .attr("x", -25)
       .attr("y", -25)

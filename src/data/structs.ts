@@ -2,6 +2,7 @@ export enum Connection {
   Ethernet,
   FiberOptic,
   Wireless,
+  Dual,
   None,
 }
 
@@ -11,6 +12,7 @@ export enum Device {
   WirelessRouter,
   Router,
   Switch,
+  CoreSwitch,
   AccessSwitch,
   DistributionSwitch,
   Hub,
@@ -21,6 +23,7 @@ export enum Device {
 export interface Node {
   id: string,
   label: string,
+  ip: string,
   type: Device,
   ports: Port[],
 }

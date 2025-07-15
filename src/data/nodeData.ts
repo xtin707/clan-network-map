@@ -197,245 +197,536 @@ const node_data: NodeData = {
     ]
   },
 
-  // Switches
-  {
+  // NOC
+{
     "id": "sw1",
     "label": "NOC 1",
-      "ip": "",
+      "ip": "10.200.0.1",
     "type": Device.DistributionSwitch,
     "ports": [
       {
-        "id": "",
+        "id": "p1",
       "label": "Port 1",
       "type": Connection.Ethernet,
       },
       {
-      "id": "",
+      "id": "p2",
       "label": "Port 2",
       "type": Connection.Ethernet,
       },
       {
-      "id": "",
+      "id": "p3",
       "label": "Port 3",
       "type": Connection.Ethernet,
       },{
-      "id": "",
+      "id": "p4",
         "label": "Port 4",
         "type": Connection.Ethernet,
       },
       {
-      "id": "",
+      "id": "p5",
       "label": "Port 5",
         "type": Connection.Ethernet,
       },
       {
-      "id": "",
+      "id": "p6",
       "label": "Port 6",
         "type": Connection.Ethernet,
       },
+      {
+      "id": "p7",
+      "label": "CS Dean's iMAC LAN",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p8",
+      "label": "Port 8",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p9",
+      "label": "Port 9",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p10",
+      "label": "Port 10",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p11",
+      "label": "Test Trunk Port",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "12",
+      "label": "Test Trunk Port",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p13",
+      "label": "Port 13",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p14",
+      "label": "Port 14",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p15",
+      "label": "Port 15",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p16",
+      "label": "Port 16",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p17",
+      "label": "Port 17",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p18",
+      "label": "Port 18",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p19",
+      "label": "Port 19",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p20",
+      "label": "Port 20",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p21",
+      "label": "Port 21",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p22",
+      "label": "Port 22",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p23",
+      "label": "Port 23",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p24",
+      "label": "Port 24",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p25",
+      "label": "Trunk TRK1 to NOC4",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p26",
+      "label": "Trunk TRK1 to NOC4",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p27",
+      "label": "Port 27",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p28",
+      "label": "Port 28",
+        "type": Connection.Ethernet,
+      },
     ]
-  },
-  {
+},
+
+{
     "id": "sw2",
     "label": "NOC 2",
-      "ip": "",
-    "type": Device.CoreSwitch,
+      "ip": "10.200.0.2",
+    "type": Device.DistributionSwitch,
     "ports": [
       {
-        "id": "",
-      "label": "Port 1",
+        "id": "p1",
+      "label": "Trunk link TRK1 to NOC4",
       "type": Connection.Ethernet,
       },
       {
-      "id": "",
-      "label": "Port 2",
+      "id": "p2",
+      "label": "Trunk link TRK1 to NOC4",
       "type": Connection.Ethernet,
       },
       {
-      "id": "",
-      "label": "Port 3",
+      "id": "p3",
+      "label": "ValidIP Port for VMs",
       "type": Connection.Ethernet,
       },{
-      "id": "",
-        "label": "Port 4",
+      "id": "p4",
+        "label": "VLAN1000 Port for VMs",
         "type": Connection.Ethernet,
       },
       {
-      "id": "",
-      "label": "Port 5",
+      "id": "p5",
+      "label": "Trunk port link to NOC4",
         "type": Connection.Ethernet,
       },
       {
-      "id": "",
-      "label": "Port 6",
+      "id": "p6",
+      "label": "HRDO Biometrics MDF3-1F-17D",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p7",
+      "label": "Ruckus Eduroam AP",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p8",
+      "label": "Port 8",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p9",
+      "label": "Port 9",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p10",
+      "label": "Uplink to pfSense1 WAN",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p11",
+      "label": "Test Trunk Port",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "12",
+      "label": "Test Trunk Port",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p13",
+      "label": "Uplink to DIC 30D NAS Switch",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p14",
+      "label": "Uplinkt to OPA 24D 8-port GbE switch",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p15",
+      "label": "Uplink Port to MDF03-DES-1026G",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p16",
+      "label": "Port 16",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p17",
+      "label": "Trunk Port",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p18",
+      "label": "UPB VM Server 04 - FEC Desktop",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p19",
+      "label": "Trunk Port9",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p20",
+      "label": "Trunk Port",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p21",
+      "label": "Trunk Port",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p22",
+      "label": "Trunk Port",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p23",
+      "label": "DNS-DHCP-Server-Trunk",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p24",
+      "label": "Port 24",
         "type": Connection.Ethernet,
       },
     ]
-  },
-  {
+},
+{
     "id": "sw3",
     "label": "NOC 3",
-      "ip": "",
-    "type": Device.CoreSwitch,
+      "ip": "10.200.0.3",
+    "type": Device.DistributionSwitch,
     "ports": [
       {
-        "id": "",
-      "label": "Port 1",
+        "id": "p1",
+      "label": "DIC Cacti Server Trunk",
       "type": Connection.Ethernet,
       },
       {
-      "id": "",
-      "label": "Port 2",
+      "id": "p2",
+      "label": "JKSA Management Port",
       "type": Connection.Ethernet,
       },
       {
-      "id": "",
+      "id": "p3",
       "label": "Port 3",
       "type": Connection.Ethernet,
       },{
-      "id": "",
-        "label": "Port 4",
+      "id": "p4",
+        "label": "MDF3-1F-30V",
         "type": Connection.Ethernet,
       },
       {
-      "id": "",
-      "label": "Port 5",
+      "id": "p5",
+      "label": "Uplink Trunk to IDR-MDF-2F",
         "type": Connection.Ethernet,
       },
       {
-      "id": "",
+      "id": "p6",
       "label": "Port 6",
         "type": Connection.Ethernet,
       },
+      {
+      "id": "p7",
+      "label": "Port 7",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p8",
+      "label": "Port 8",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p9",
+      "label": "MDF02-1F-27D",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p10",
+      "label": "Port 10",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p11",
+      "label": "JKSA-Victus-03",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "12",
+      "label": "Aruba-1920S-250-Uplink",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p13",
+      "label": "PA-820 Management Port",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p14",
+      "label": "PA-820 Management Port",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p15",
+      "label": "MDF03-2F-39D",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p16",
+      "label": "Uplink VLAN192 to Linksys SRW224P",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p17",
+      "label": "Aruba-7205-PRI-Uplink-1",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p18",
+      "label": "Aruba-7205-SEC-Uplink-2",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p19",
+      "label": "Trunk link TRK1 to NOC4",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p20",
+      "label": "Trunk link TRK1 to NOC4",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p21",
+      "label": "IDR-Ramp FO Trunk",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p22",
+      "label": "Aruba-7205-PRI-T1A",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p23",
+      "label": "BJL FO Trunk",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p24",
+      "label": "Aruba-7205-SEC-T2A4",
+        "type": Connection.Ethernet,
+      },
     ]
-  },
-  {
+},
+{
     "id": "sw4",
     "label": "NOC 4",
-      "ip": "",
-    "type": Device.CoreSwitch,
+      "ip": "10.200.0.4",
+    "type": Device.DistributionSwitch,
     "ports": [
       {
-        "id": "port1",
-      "label": "Port 1",
+        "id": "p1",
+      "label": "Uplink to PA820-PRI",
       "type": Connection.Ethernet,
       },
       {
-      "id": "port2",
-      "label": "Port 2",
+      "id": "p2",
+      "label": "Uplink to PA820-PRI",
       "type": Connection.Ethernet,
       },
       {
-      "id": "port3",
-      "label": "Port 3",
+      "id": "p3",
+      "label": "Uplink to PA820-SEC",
       "type": Connection.Ethernet,
       },{
-      "id": "port4",
-        "label": "Port 4",
+      "id": "p4",
+        "label": "Uplink to PA820-SEC",
         "type": Connection.Ethernet,
       },
       {
-      "id": "port5",
+      "id": "p5",
       "label": "Port 5",
         "type": Connection.Ethernet,
       },
       {
-      "id": "port6",
-      "label": "Port 6",
+      "id": "p6",
+      "label": "Uplink to VLE2 Server",
         "type": Connection.Ethernet,
       },
       {
-      "id": "port7",
-      "label": "Port 6",
+      "id": "p7",
+      "label": "SNO Trunk Port to DGS-1100-26MPP",
         "type": Connection.Ethernet,
       },
       {
-      "id": "port8",
-      "label": "Port 6",
+      "id": "p8",
+      "label": "Management",
         "type": Connection.Ethernet,
       },
       {
-      "id": "port9",
-      "label": "Port 6",
+      "id": "p9",
+      "label": "Uplink to MDF2 Cisco SG100-16",
         "type": Connection.Ethernet,
       },
       {
-      "id": "port10",
-      "label": "Port 6",
+      "id": "p10",
+      "label": "Port 10",
         "type": Connection.Ethernet,
       },
       {
-      "id": "port11",
-      "label": "Port 6",
+      "id": "p11",
+      "label": "Trunk Port to KA-301",
         "type": Connection.Ethernet,
       },
       {
-      "id": "port12",
-      "label": "Port 6",
+      "id": "12",
+      "label": "Trunk port to MDF2-SF-300-24P",
         "type": Connection.Ethernet,
       },
       {
-      "id": "port13",
-      "label": "Port 6",
+      "id": "p13",
+      "label": "Trunk link TRK3 to NOC2",
         "type": Connection.Ethernet,
       },
       {
-      "id": "port14",
-      "label": "Port 6",
+      "id": "p14",
+      "label": "Trunk port to SNO-SF-300-Domz-Desk",
         "type": Connection.Ethernet,
       },
       {
-      "id": "port15",
-      "label": "Port 6",
+      "id": "p15",
+      "label": "Trunk link TRK3 to NOC2",
         "type": Connection.Ethernet,
       },
       {
-      "id": "port16",
-      "label": "Port 6",
+      "id": "p16",
+      "label": "Uplink to MDF2 SRW224P",
         "type": Connection.Ethernet,
       },
       {
-      "id": "port17",
-      "label": "Port 6",
+      "id": "p17",
+      "label": "Trunk link TRK2 to NOC1",
         "type": Connection.Ethernet,
       },
       {
-      "id": "port18",
-      "label": "Port 6",
+      "id": "p18",
+      "label": "Trunk link TRK1 to NOC3",
         "type": Connection.Ethernet,
       },
       {
-      "id": "port19",
-      "label": "Port 6",
+      "id": "p19",
+      "label": "Trunk link TRK2 to NOC1",
         "type": Connection.Ethernet,
       },
       {
-      "id": "port20",
-      "label": "Port 6",
+      "id": "p20",
+      "label": "Trunk link TRK1 to NOC3",
         "type": Connection.Ethernet,
       },
       {
-      "id": "port21",
-      "label": "Port 6",
+      "id": "p21",
+      "label": "LIB FO Trunk Port",
         "type": Connection.Ethernet,
       },
       {
-      "id": "port22",
-      "label": "Port 6",
+      "id": "p22",
+      "label": "CAC FO Trunk Port",
         "type": Connection.Ethernet,
       },
       {
-      "id": "port23",
-      "label": "Port 6",
+      "id": "p23",
+      "label": "KA-Math FO Trunk Port",
         "type": Connection.Ethernet,
       },
       {
-      "id": "port24",
-      "label": "Port 6",
+      "id": "p24",
+      "label": "CSS FO Trunk Port",
         "type": Connection.Ethernet,
       },
     ]
-  },
+},
   {
     "id": "sw5",
     "label": "NOC 5",
@@ -755,6 +1046,144 @@ const node_data: NodeData = {
     ]
   },
 
+{
+    "id": "cs26",
+    "label": "NOC CS",
+      "ip": "192.168.1.248",
+    "type": Device.DistributionSwitch,
+    "ports": [
+      {
+      "id": "p1",
+      "label": "Port 1",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p2",
+      "label": "Port 2",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p3",
+      "label": "Port 3",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p4",
+      "label": "Port 4",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p5",
+      "label": "Port 5",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p6",
+      "label": "Port 6",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p7",
+      "label": "Port 7",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p8",
+      "label": "Port 8",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p9",
+      "label": "Port 9",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p10",
+      "label": "Port 10",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p11",
+      "label": "Port 11",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p12",
+      "label": "Port 12",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p13",
+      "label": "Port 13",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p14",
+      "label": "Port 14",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p15",
+      "label": "Port 15",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p16",
+      "label": "Port 16",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p17",
+      "label": "Port 17",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p18",
+      "label": "Port 18",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p19",
+      "label": "Port 19",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p20",
+      "label": "Port 20",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p21",
+      "label": "Broken Port",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "22",
+      "label": "Port 22",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p23",
+      "label": "Port 23",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "p24",
+      "label": "Port 24",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "g1",
+      "label": "Port 25",
+        "type": Connection.Ethernet,
+      },
+      {
+      "id": "g2",
+      "label": "Port 26",
+        "type": Connection.Ethernet,
+      },
+    ]
+},
   // CAC
 {
     "id": "cac",
@@ -922,6 +1351,7 @@ const node_data: NodeData = {
           },
       ],
   },
+
   {
       "id": "cac-jl",
       "label": "JournLab",
@@ -1918,22 +2348,10 @@ const node_data: NodeData = {
       }
     ]
   },
+
   {
     "id": "hpe",
     "label": "HPE-1920S-247",
-      "ip": "",
-    "type": Device.AccessSwitch,
-    "ports": [
-      {
-        "id": "",
-      "label": "Port 1",
-      "type": Connection.Ethernet,
-      }
-    ]
-  },
-  {
-    "id": "breha",
-    "label": "Breha",
       "ip": "",
     "type": Device.AccessSwitch,
     "ports": [
@@ -1950,7 +2368,7 @@ const node_data: NodeData = {
     "id": "wup",
     "label": "WalkUP",
       "ip": "10.200.100.242",
-    "type": Device.AccessSwitch,
+    "type": Device.DistributionSwitch,
     "ports": [
       {
       "id": "p1",
@@ -2082,20 +2500,6 @@ const node_data: NodeData = {
       "label": "Port 26",
       "type": Connection.Ethernet,
       },
-    ]
-  },
-
-  {
-    "id": "balay",
-    "label": "Balay-Intl",
-      "ip": "",
-    "type": Device.AccessSwitch,
-    "ports": [
-      {
-        "id": "",
-      "label": "Port 1",
-      "type": Connection.Ethernet,
-      }
     ]
   },
 
@@ -2393,6 +2797,7 @@ const node_data: NodeData = {
       }
     ]
   },
+
 {
 "id": "sf300",
 "label": "NOC-SF300",
@@ -2501,7 +2906,7 @@ const node_data: NodeData = {
         },
         {
             "id": "p21",
-            "label": "Uplink to JournLab",
+            "label": "Port 21",
             "type": Connection.Ethernet,
         },
         {
@@ -2541,8 +2946,6 @@ const node_data: NodeData = {
         }
     ]
   },
-
-
   
   //BalayIntl-24-port
   {
@@ -2734,12 +3137,12 @@ const node_data: NodeData = {
       {
         "id": "p9",
         "label": "FO Uplink to WalkUP", 
-        "type": Connection.Ethernet,
+        "type": Connection.FiberOptic,
       },
       {
         "id": "p10",
         "label": "FO Uplink to LIB-NOC",
-          "type": Connection.Ethernet,
+          "type": Connection.FiberOptic,
         },
       ],
     },
@@ -2778,11 +3181,12 @@ const node_data: NodeData = {
         }
       ],
     },
+
     {
-      "id": "ARUBA-2920-MAINLIB-NOC",
+      "id": "lib-noc",
       "label": "ARUBA-2920-MAINLIB-NOC",
       "ip": "10.10.200.106",
-      "type": Device.Router,
+      "type": Device.DistributionSwitch,
       "ports": [
         { 
           "id": "aruba-port", 
@@ -2791,6 +3195,7 @@ const node_data: NodeData = {
         }
       ]
     },
+
     {
       "id": "J9802A-2",
       "label": "J9802A Port 8 (106.2)",
@@ -2862,6 +3267,7 @@ const node_data: NodeData = {
         }
       ]
     },
+
     {
       "id": "J9802A-LIB-2F-TechRoom",
       "label": "J9802A-LIB-2F-TechRoom",
@@ -2874,7 +3280,53 @@ const node_data: NodeData = {
           "type": Connection.Ethernet 
         }
       ]
-    }
+    },
+
+    //CS-Research AX55
+    {
+      "id": "cs-res-ax55",
+      "label": "CS-Research AX55",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+
+    //BIO-FR-AX72-MDFO2-2F-02D
+    {
+      "id": "bio-fr",
+      "label": "BIO-FR-AX72-MDFO2-2F-02D",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+
+    //Glasswares ArubaIO
+    {
+      "id": "glasswares",
+      "label": "Glasswares ArubaIO",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+
 ]   
 };
 

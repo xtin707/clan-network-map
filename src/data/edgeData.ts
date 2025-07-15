@@ -22,6 +22,38 @@ const edge_data: EdgeData = {
     "port": ["",""],
     "type": Connection.None
   },
+
+  //Breha
+  {
+    "node": ["breha-8-port", "wup"],
+    "port": ["p9", ""],
+    "type": Connection.FiberOptic,
+  },
+
+    //LIB-NOC
+  {
+    "node": ["lib-noc", "breha-8-port"],
+    "port": ["", ""],
+    "type": Connection.FiberOptic,
+  },
+
+  //NOC-SF300
+  {
+    "node": ["sf300", "cs-res-ax55"],
+    "port": ["p8", "p1"],
+    "type": Connection.Ethernet,
+  },
+  {
+    "node": ["sf300", "bio-fr"],
+    "port": ["g1", "p1"],
+    "type": Connection.Ethernet,
+  },
+  {
+    "node": ["sf300", "glasswares"],
+    "port": ["g4", "p1"],
+    "type": Connection.Ethernet,
+  },
+
   {// NOC 5
     "node": ["sw5", "fw-pri"],
     "port": ["",""],
@@ -102,7 +134,7 @@ const edge_data: EdgeData = {
     "port": ["",""],
     "type": Connection.None
   },
-  {// NOC 4 connections-2
+  {
     "node": ["sw4", "lib"],
     "port": ["",""],
     "type": Connection.None
@@ -112,6 +144,12 @@ const edge_data: EdgeData = {
     "port": ["",""],
     "type": Connection.None
   },
+  {
+    "node": ["sw4", "sf300"],
+    "port": ["","g2"],
+    "type": Connection.None
+  },
+
   {
     "node": ["lib", "l-tech"],
     "port": ["",""],
@@ -127,21 +165,13 @@ const edge_data: EdgeData = {
     "port": ["",""],
     "type": Connection.None
   },
+
   {
-    "node": ["lib", "breha"],
+    "node": ["lib", "balayintl-24-port"],
     "port": ["",""],
     "type": Connection.None
   },
-  {
-    "node": ["breha", "wup"],
-    "port": ["",""],
-    "type": Connection.None
-  },
-  {
-    "node": ["lib", "balay"],
-    "port": ["",""],
-    "type": Connection.None
-  },
+
   {// NOC 2
     "node": ["sw2", "fw1"],
     "port": ["",""],
@@ -152,6 +182,7 @@ const edge_data: EdgeData = {
     "port": ["",""],
     "type": Connection.None
   },
+
   {// CAC connections
     "node": ["cac-t", "cac"],
     "port": ["",""],
@@ -159,9 +190,10 @@ const edge_data: EdgeData = {
   },
   {
     "node": ["cac-jl", "cac"],
-    "port": ["",""],
+    "port": ["p1","p21"],
     "type": Connection.None
   },
+
   {// CSS connections
     "node": ["css2", "css"],
     "port": ["",""],
@@ -275,7 +307,7 @@ const edge_data: EdgeData = {
     "type": Connection.None
   },
   {
-    node: ["lib-trunk-8-port", "ARUBA-2920-MAINLIB-NOC"],
+    node: ["lib-trunk-8-port", "lib-noc"],
     port: ["port-2", "aruba-port"],
     type: Connection.None
   },

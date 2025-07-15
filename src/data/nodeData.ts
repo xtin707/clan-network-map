@@ -3327,7 +3327,6 @@ const node_data: NodeData = {
       ]
     },
 
-]   
-};
+]};
 
 export default node_data;

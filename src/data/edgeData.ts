@@ -274,6 +274,36 @@ const edge_data: EdgeData = {
     "port": ["",""],
     "type": Connection.None
   },
+  {
+    node: ["lib-trunk-8-port", "ARUBA-2920-MAINLIB-NOC"],
+    port: ["port-2", "aruba-port"],
+    type: Connection.None
+  },
+  {
+    node: ["lib-trunk-8-port", "J9802A-2"],
+    port: ["p3", "j9802a-2-port"],
+    type: Connection.None
+  },
+  {
+    node: ["lib-trunk-8-port", "LIB2-HP2610-24"],
+    port: ["p4", "hp2610-port"],
+    type: Connection.None
+  },
+  {
+    node: ["lib-trunk-8-port", "J9802A-5"],
+    port: ["p5", "j9802a-5-port"],
+    type: Connection.None
+  },
+  {
+    node: ["lib-trunk-8-port", "J9802A-3"],
+    port: ["p7", "j9802a-3-port"],
+    type: Connection.None
+  },
+  {
+    node: ["lib-circulation", "J9802A-LIB-2F-TechRoom"],
+    port: ["p8", "p5"],
+    type: Connection.Ethernet
+  }
   ]
 }
 

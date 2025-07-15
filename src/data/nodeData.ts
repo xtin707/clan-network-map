@@ -2375,7 +2375,340 @@ const node_data: NodeData = {
         }
     ]
   },
+
+
   
+  //BalayIntl-24-port
+  {
+    "id": "balayintl-24-port",
+    "label": "Balay International",
+    "ip": "10.200.100.60",
+    "type": Device.AccessSwitch,
+    "ports": [
+      {
+        "id": "p1",
+        "label": "Port 1",
+        "type": Connection.Ethernet,
+      },
+      {
+        "id": "p2",
+        "label": "Port 2",
+        "type": Connection.None,
+      },
+      {
+        "id": "p3",
+        "label": "Port 3",
+        "type": Connection.None,
+      },
+      {
+        "id": "p4",
+        "label": "Port 4",
+        "type": Connection.Ethernet,
+      },
+      {
+        "id": "p5",
+        "label": "Port 5",
+        "type": Connection.Ethernet,
+      },
+      {
+        "id": "p6",
+        "label": "Port 6",
+        "type": Connection.None,
+      },
+      {
+        "id": "p7",
+        "label": "Port 7",
+        "type": Connection.None,
+      },
+      {
+        "id": "p8",
+        "label": "Port 8",
+        "type": Connection.Ethernet,
+      },
+      {
+        "id": "p9",
+        "label": "Port 9",
+        "type": Connection.Ethernet,
+      },
+      {
+        "id": "p10",
+        "label": "Port 10",
+        "type": Connection.None,
+      },
+      {
+        "id": "p11",
+        "label": "Port 11",
+        "type": Connection.Ethernet,
+      },
+      {
+        "id": "p12",
+        "label": "Port 12 (FC)",
+        "type": Connection.Ethernet,
+      },
+      {
+        "id": "p13",
+        "label": "Port 13 (100M, FC)",
+        "type": Connection.Ethernet,
+      },
+      {
+        "id": "p14",
+        "label": "Port 14",
+        "type": Connection.None,
+      },
+      {
+        "id": "p15",
+        "label": "Port 15",
+        "type": Connection.None,
+      },
+      {
+        "id": "p16",
+        "label": "Port 16",
+        "type": Connection.None,
+      },
+      {
+        "id": "p17",
+        "label": "Port 17",
+        "type": Connection.None,
+      },
+      {
+        "id": "p18",
+        "label": "Port 18",
+        "type": Connection.None,
+      },
+      {
+        "id": "p19",
+        "label": "Port 19",
+        "type": Connection.None,
+      },
+      {
+        "id": "p20",
+        "label": "Port 20",
+        "type": Connection.None,
+      },
+      {
+        "id": "p21",
+        "label": "Port 21",
+        "type": Connection.None,
+      },
+      {
+        "id": "p22",
+        "label": "Port 22",
+        "type": Connection.None,
+      },
+      {
+        "id": "p23",
+        "label": "Port 23",
+        "type": Connection.None,
+      },
+      {
+        "id": "p24",
+        "label": "Port 24",
+        "type": Connection.None,
+      },
+      {
+        "id": "p25",
+        "label": "Port 25",
+        "type": Connection.None,
+      },
+      {
+        "id": "p26",
+        "label": "Port 26 (1000M/Full Duplex)",
+        "type": Connection.Ethernet,
+      },
+    ],
+  },
+
+  //Breha
+  {
+    "id": "breha-8-port",
+    "label": "Breha",
+    "ip": "10.200.100.244",
+    "type": Device.Switch,
+    "ports": [
+      {
+        "id": "p1",
+        "label": "Port 1",
+        "type": Connection.Ethernet,
+      },
+      {
+        "id": "p2",
+        "label": "Port 2",
+        "type": Connection.Ethernet,
+      },
+      {
+        "id": "p3",
+        "label": "Port 3",
+        "type": Connection.Ethernet,
+      },
+      {
+        "id": "p4",
+        "label": "Port 4",
+        "type": Connection.Ethernet,
+      },
+      {
+        "id": "p5",
+        "label": "Port 5",
+        "type": Connection.Ethernet,
+      },
+      {
+        "id": "p6",
+        "label": "Port 6",
+        "type": Connection.Ethernet,
+      },
+      {
+        "id": "p7",
+        "label": "Port 7",
+        "type": Connection.Ethernet,
+      },
+      {
+        "id": "p8",
+        "label": "Port 8",
+        "type": Connection.Ethernet,
+      },
+      {
+        "id": "p9",
+        "label": "FO Uplink to WalkUP", 
+        "type": Connection.Ethernet,
+      },
+      {
+        "id": "p10",
+        "label": "FO Uplink to LIB-NOC",
+          "type": Connection.Ethernet,
+        },
+      ],
+    },
+
+    //Lib Trunk 8
+    {
+      "id": "lib-trunk-8-port",
+      "label": "Library Trunk",
+      "ip": "10.200.106.1",
+      "type": Device.CoreSwitch,
+      "ports": [
+        {
+          "id": "p2",
+          "label": "ARUBA-2920-MAINLIB-NOC",
+          "type": Connection.Ethernet,
+        },
+        {
+          "id": "p3",
+          "label": "Port 3",
+          "type": Connection.Ethernet,
+        },
+        {
+          "id": "p4",
+          "label": "Port 4",
+          "type": Connection.Ethernet,
+        },
+        {
+          "id": "p5",
+          "label": "Port 5",
+          "type": Connection.None,
+        },
+        {
+          "id": "p7",
+          "label": "Port 7",
+          "type": Connection.Ethernet,
+        }
+      ],
+    },
+    {
+      "id": "ARUBA-2920-MAINLIB-NOC",
+      "label": "ARUBA-2920-MAINLIB-NOC",
+      "ip": "10.10.200.106",
+      "type": Device.Router,
+      "ports": [
+        { 
+          "id": "aruba-port", 
+          "label": "Port 19", 
+          "type": Connection.Ethernet 
+        }
+      ]
+    },
+    {
+      "id": "J9802A-2",
+      "label": "J9802A Port 8 (106.2)",
+      "ip": "10.200.106.2",
+      "type": Device.AccessSwitch,
+      "ports": [
+        { 
+          "id": "j9802a-2-port", 
+          "label": "Port 8", 
+          "type": Connection.Ethernet 
+        }
+      ]
+    },
+    {
+      "id": "LIB2-HP2610-24",
+      "label": "LIB2-HP2610-24",
+      "ip": "10.200.106.6",
+      "type": Device.Switch,
+      "ports": [
+        { 
+          "id": "lib2hp2610-port", 
+          "label": "Port 26", 
+          "type": Connection.Ethernet 
+        }
+      ]
+    },
+    {
+      "id": "J9802A-5",
+      "label": "J9802A Port 8 (106.5)",
+      "ip": "10.200.106.5",
+      "type": Device.AccessSwitch,
+      "ports": [
+        { 
+          "id": "j9802a-5-port", 
+          "label": "Port 8", 
+          "type": Connection.Ethernet 
+        }
+      ]
+    },
+    {
+      "id": "J9802A-3",
+      "label": "J9802A Port 8 (106.3)",
+      "ip": "10.200.106.3",
+      "type": Device.AccessSwitch,
+      "ports": [
+        { 
+          "id": "j9802a-3-port", 
+          "label": "Port 8", 
+          "type": Connection.Ethernet 
+        }
+      ]
+    },
+
+    //Lib Circulation
+    {
+      "id": "lib-circulation",
+      "label": "LIB-Circulation",
+      "ip": "10.200.106.5",
+      "type": Device.AccessSwitch,
+      "ports": [
+        { "id": "p5", 
+          "label": "Port 5", 
+          "type": Connection.Ethernet 
+        },
+        { 
+          "id": "p8", 
+          "label": "Port 8", 
+          "type": Connection.Ethernet 
+        }
+      ]
+    },
+    {
+      "id": "J9802A-LIB-2F-TechRoom",
+      "label": "J9802A-LIB-2F-TechRoom",
+      "ip": "10.200.106.1",
+      "type": Device.CoreSwitch,
+      "ports": [
+        { 
+          "id": "p5", 
+          "label": "Port 5", 
+          "type": Connection.Ethernet 
+        }
+      ]
+    }
 ]   
 };
 

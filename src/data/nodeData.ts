@@ -24,14 +24,14 @@ const node_data: NodeData = {
     "type": Device.ISP,
     "ports": [
       {
-        "id": "p2",
+        "id": "p1",
         "label": "Port 1",
-        "type": Connection.Ethernet,
+        "type": Connection.FiberOptic
       },
       {
-        "id": "",
+        "id": "p2",
         "label": "Port 2",
-        "type": Connection.Ethernet,
+        "type": Connection.FiberOptic,
       },
     ]
   },
@@ -106,31 +106,31 @@ const node_data: NodeData = {
       "type": Device.Firewall,
       "ports": [
         {
-          "id": "",
+          "id": "p1",
           "label": "Port 1",
           "type": Connection.Ethernet,
         },
         {
-          "id": "",
+          "id": "p2",
           "label": "Port 2",
           "type": Connection.Ethernet,
         },
         {
-          "id": "",
+          "id": "p3",
           "label": "Port 3",
           "type": Connection.Ethernet,
         },{
-          "id": "",
+          "id": "p4",
           "label": "Port 4",
           "type": Connection.Ethernet,
         },
         {
-          "id": "",
+          "id": "p5",
           "label": "Port 5",
           "type": Connection.Ethernet,
         },
         {
-          "id": "",
+          "id": "p6",
           "label": "Port 6",
           "type": Connection.Ethernet,
         },
@@ -143,31 +143,31 @@ const node_data: NodeData = {
       "type": Device.Firewall,
       "ports": [
         {
-          "id": "",
+          "id": "p1",
           "label": "Port 1",
           "type": Connection.Ethernet,
         },
         {
-          "id": "",
+          "id": "p2",
           "label": "Port 2",
           "type": Connection.Ethernet,
         },
         {
-          "id": "",
+          "id": "p3",
           "label": "Port 3",
           "type": Connection.Ethernet,
         },{
-          "id": "",
+          "id": "p4",
           "label": "Port 4",
           "type": Connection.Ethernet,
         },
         {
-          "id": "",
+          "id": "p5",
           "label": "Port 5",
           "type": Connection.Ethernet,
         },
         {
-          "id": "",
+          "id": "p6",
           "label": "Port 6",
           "type": Connection.Ethernet,
         },
@@ -182,17 +182,17 @@ const node_data: NodeData = {
     "type": Device.MainRouter,
     "ports": [
       {
-        "id": "",
+        "id": "p1",
         "label": "Port 1",
-        "type": Connection.Ethernet,
+        "type": Connection.FiberOptic,
       },{
         "id": "p2",
         "label": "Port 2",
-        "type": Connection.Ethernet,
+        "type": Connection.FiberOptic,
       },{
         "id": "p3",
         "label": "Port 3",
-        "type": Connection.Ethernet,
+        "type": Connection.FiberOptic,
       }
     ]
   },
@@ -604,7 +604,7 @@ const node_data: NodeData = {
     "id": "sw4",
     "label": "NOC 4",
       "ip": "10.200.0.4",
-    "type": Device.DistributionSwitch,
+    "type": Device.CoreSwitch,
     "ports": [
       {
         "id": "p1",
@@ -620,7 +620,8 @@ const node_data: NodeData = {
       "id": "p3",
       "label": "Uplink to PA820-SEC",
       "type": Connection.Ethernet,
-      },{
+      },
+      {
       "id": "p4",
         "label": "Uplink to PA820-SEC",
         "type": Connection.Ethernet,
@@ -708,22 +709,22 @@ const node_data: NodeData = {
       {
       "id": "p21",
       "label": "LIB FO Trunk Port",
-        "type": Connection.Ethernet,
+        "type": Connection.FiberOptic,
       },
       {
       "id": "p22",
       "label": "CAC FO Trunk Port",
-        "type": Connection.Ethernet,
+        "type": Connection.FiberOptic,
       },
       {
       "id": "p23",
       "label": "KA-Math FO Trunk Port",
-        "type": Connection.Ethernet,
+        "type": Connection.FiberOptic,
       },
       {
       "id": "p24",
       "label": "CSS FO Trunk Port",
-        "type": Connection.Ethernet,
+        "type": Connection.FiberOptic,
       },
     ]
 },
@@ -734,49 +735,51 @@ const node_data: NodeData = {
     "type": Device.CoreSwitch,
     "ports": [
       {
-        "id": "",
+        "id": "p1",
       "label": "Port 1",
       "type": Connection.Ethernet,
       },
       {
-      "id": "",
+      "id": "p2",
       "label": "Port 2",
       "type": Connection.Ethernet,
       },
       {
-      "id": "",
+      "id": "p3",
       "label": "Port 3",
       "type": Connection.Ethernet,
       },{
-      "id": "",
+      "id": "p4",
         "label": "Port 4",
         "type": Connection.Ethernet,
       },
       {
-      "id": "",
+      "id": "p5",
       "label": "Port 5",
         "type": Connection.Ethernet,
       },
       {
-      "id": "",
+      "id": "p6",
       "label": "Port 6",
         "type": Connection.Ethernet,
       },
     ]
   },  
+
   {
     "id": "sw6",
     "label": "NOC 6",
-      "ip": "",
+      "ip": "10.200.0.6",
     "type": Device.DistributionSwitch,
     "ports": [
       {
-        "id": "",
+        "id": "p1",
       "label": "Port 1",
       "type": Connection.Ethernet,
       }
     ]
   },
+
  {
     "id": "sw9",
     "label": "NOC 9",
@@ -3573,6 +3576,231 @@ const node_data: NodeData = {
         },
       ]
     },
+
+    //VLE 2
+    {
+      "id": "vle2",
+      "label": "VLE 2 Server",
+      "ip": "202.92.156.241",
+      "type": Device.Server,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+
+    //Management
+    {
+      "id": "management",
+      "label": "Management",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+
+    //MDF2 Cisco SG100-16
+    {
+      "id": "mdf2-sg100-16",
+      "label": "MDF2 Cisco SG100-16",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+
+    //KA-301
+    {
+      "id": "ka301",
+      "label": "KA-301",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+
+    //MDF2-SF-300-24P
+    {
+      "id": "mdf2-sf-300-24p",
+      "label": "MDF2-SF-300-24P",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+
+    //SNO-SF-300-Domz-Desk
+    {
+      "id": "domz-desk",
+      "label": "SNO-SF-300-Domz-Desk",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+
+    //MDF2 SRW224P
+    {
+      "id": "mdf2-srw224p",
+      "label": "MDF2 SRW224P",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+
+    //HRDO Biometrics
+    {
+      "id": "hrdo-bio",
+      "label": "HRDO Biometrics MDF3-1f-17D",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+    //DIC 30D NAS Switch
+    {
+      "id": "dic30d",
+      "label": "DIC 30D NAS Switch",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+
+    //OPA
+    {
+      "id": "opa-8p",
+      "label": "OPA 24D 8-port GbE Switch",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+    //MDF03-DES-1026G
+    {
+      "id": "mdf03-des",
+      "label": "MDF03-DES-1026G",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+    //04 - FEC Desktop
+    {
+      "id": "04-fec-desk",
+      "label": "UPB VM Server 04 - FEC Desktop",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+    //DIC Cactii
+    {
+      "id": "dic-cactii",
+      "label": "DIC Cactii Server Trunk",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+    // JKSA Management Port
+    {
+      "id": "jksa-man",
+      "label": "JKSA Management Port",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+    //MDF3-1F-30V
+    {
+      "id": "mdf3-1f-30v",
+      "label": "MDF3-1F-30V",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+
+
+
+
+
+
 
 ]};
 

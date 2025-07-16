@@ -202,21 +202,23 @@ export default function DetailedGraphPage() {
     {/* Footer with history navigation */}
 
     {/* Array Stack tracker for checking */}
-    <div className="fixed bottom-2 right-2 text-xs bg-white p-2 rounded shadow max-w-xs text-left">
-      <div className="font-bold">History Stack (Length: {historyStack.length}):</div>
-      <div className="pl-2">
-        {historyStack.map((id, i) => {
-          const node = node_data.data.find((n) => n.id === id);
-          const label = node?.label || id;
-          return (
-            <div
-              key={i}
-              className={i === historyStack.length - 1 ? 'font-bold text-blue-600' : ''}
-            >
-              {i + 1}. {label} <span className="text-gray-400">({id})</span>
-            </div>
-          );
-        })}
+    <div className="fixed bottom-2 left-2 text-xs bg-white p-2 rounded shadow max-w-xs text-left h-45 flex flex-col overflow-hidden">
+      <div className="font-bold p-2 bg-white border-b sticky top-0 z-10">History (Length: {historyStack.length}):</div>
+      <div className="pl-2 pr-2 pb-2 overflow-y-auto flex-1 flex flex-col-reverse">
+        <div className="flex flex-col">
+          {historyStack.map((id, i) => {
+            const node = node_data.data.find((n) => n.id === id);
+            const label = node?.label || id;
+              return (
+                <div
+                  key={i}
+                  className={i === historyStack.length - 1 ? 'font-bold text-blue-600' : ''}
+                >
+                  {i + 1}. {label} <span className="text-gray-400">({id})</span>
+                </div>
+              );
+            })}
+        </div>
       </div>
     </div>
     </main>

@@ -1,20 +1,20 @@
 //https://bettertyped.github.io/react-zoom-pan-pinch/?path=/docs/docs-props--page
 
 export const transformConfig = {
-  initialScale: 1.0,
-  minScale: 0.1,
-  maxScale: 5,
+  initialScale: 1,
+  minScale: 0.01,
+  maxScale: 50,
   centerOnInit: true,
 
   wheel: {
-    step: 0.1,
-    smoothStep: 0.01,
+    step: 0.05,
+    smoothStep: 0.005,
     wheelDisabled: false,
     touchPadDisabled: false
   },
 
   pinch: {
-    step: 0.1,
+    step: 0.05,
     disabled: false
   },
 
@@ -22,44 +22,44 @@ export const transformConfig = {
     disabled: false,
     velocityDisabled: false,
     lockAxisX: false,
-    lockAxisY: true,
+    lockAxisY: false,
     allowLeftClickPan: true,
     allowRightClickPan: true,
     allowMiddleClickPan: true,
-    wheelPanning: false
+    wheelPanning: true
   },
 
   doubleClick: {
     disabled: false,
-    step: 0.7,
+    step: 0.3,
     mode: 'zoomIn' as const
   },
 
   zoomAnimation: {
     disabled: false,
-    size: 0.4,
-    animationTime: 300,
+    size: 0.2,
+    animationTime: 200,
     animationType: 'easeInOutQuart' as const
   },
 
   alignmentAnimation: {
     disabled: false,
-    sizeX: 100,
-    sizeY: 100,
-    animationTime: 300,
+    sizeX: 200,
+    sizeY: 200,
+    animationTime: 200,
     velocityAlignmentTime: 400,
     animationType: 'easeOutQuart' as const
   },
 
   velocityAnimation: {
     disabled: false,
-    sensitivity: 1,
-    animationTime: 400,
+    sensitivity: 0.8,
+    animationTime: 300,
     animationType: 'easeOutQuart' as const
   },
   
   limitToBounds: false,
   centerZoomedOut: true,
-  disablePadding: false,
+  disablePadding: true,
   smooth: true
 };

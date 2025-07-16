@@ -124,7 +124,7 @@ interface SVGViewerProps {
                   <div
                     ref={containerRef}
                     dangerouslySetInnerHTML={{ __html: svgString }}
-                    className="flex justify-center items-center"
+                    className="h-80 flex justify-center items-center"
                   />
                 </TransformComponent>
               </>

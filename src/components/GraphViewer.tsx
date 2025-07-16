@@ -86,7 +86,6 @@ interface SVGViewerProps {
       {error ? (
         <p className="text-red-500 font-bold">{error}</p>
       ) : (
-        <div className="w-full h-full relative border border-gray-300 rounded-lg overflow-hidden">
           <TransformWrapper {...transformConfig}>
             {({ zoomIn, zoomOut, resetTransform }) => (
               <>
@@ -130,7 +129,6 @@ interface SVGViewerProps {
               </>
             )}
           </TransformWrapper>
-        </div>
       )}
     </div>
   );

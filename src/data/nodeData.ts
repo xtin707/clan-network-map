@@ -24,38 +24,38 @@ const node_data: NodeData = {
     "type": Device.ISP,
     "ports": [
       {
-        "id": "p2",
+        "id": "p1",
         "label": "Port 1",
-        "type": Connection.Ethernet,
+        "type": Connection.FiberOptic
       },
       {
-        "id": "",
+        "id": "p2",
         "label": "Port 2",
-        "type": Connection.Ethernet,
+        "type": Connection.FiberOptic,
       },
     ]
   },
   {
-    "id": "isp1",
+    "id": "adsl1",
     "label": "ADSL 1",
       "ip": "",
     "type": Device.ISP,
     "ports": [
       {
-        "id": "",
+        "id": "p1",
         "label": "Port 1",
         "type": Connection.Ethernet,
       }
     ]
   },
   {
-    "id": "isp2",
+    "id": "adsl2",
     "label": "ADSL 2",
       "ip": "",
     "type": Device.ISP,
     "ports": [
       {
-        "id": "",
+        "id": "p1",
         "label": "Port 1",
         "type": Connection.Ethernet,
       }
@@ -106,31 +106,31 @@ const node_data: NodeData = {
       "type": Device.Firewall,
       "ports": [
         {
-          "id": "",
+          "id": "p1",
           "label": "Port 1",
           "type": Connection.Ethernet,
         },
         {
-          "id": "",
+          "id": "p2",
           "label": "Port 2",
           "type": Connection.Ethernet,
         },
         {
-          "id": "",
+          "id": "p3",
           "label": "Port 3",
           "type": Connection.Ethernet,
         },{
-          "id": "",
+          "id": "p4",
           "label": "Port 4",
           "type": Connection.Ethernet,
         },
         {
-          "id": "",
+          "id": "p5",
           "label": "Port 5",
           "type": Connection.Ethernet,
         },
         {
-          "id": "",
+          "id": "p6",
           "label": "Port 6",
           "type": Connection.Ethernet,
         },
@@ -143,31 +143,31 @@ const node_data: NodeData = {
       "type": Device.Firewall,
       "ports": [
         {
-          "id": "",
+          "id": "p1",
           "label": "Port 1",
           "type": Connection.Ethernet,
         },
         {
-          "id": "",
+          "id": "p2",
           "label": "Port 2",
           "type": Connection.Ethernet,
         },
         {
-          "id": "",
+          "id": "p3",
           "label": "Port 3",
           "type": Connection.Ethernet,
         },{
-          "id": "",
+          "id": "p4",
           "label": "Port 4",
           "type": Connection.Ethernet,
         },
         {
-          "id": "",
+          "id": "p5",
           "label": "Port 5",
           "type": Connection.Ethernet,
         },
         {
-          "id": "",
+          "id": "p6",
           "label": "Port 6",
           "type": Connection.Ethernet,
         },
@@ -182,17 +182,17 @@ const node_data: NodeData = {
     "type": Device.MainRouter,
     "ports": [
       {
-        "id": "",
+        "id": "p1",
         "label": "Port 1",
-        "type": Connection.Ethernet,
+        "type": Connection.FiberOptic,
       },{
         "id": "p2",
         "label": "Port 2",
-        "type": Connection.Ethernet,
+        "type": Connection.FiberOptic,
       },{
         "id": "p3",
         "label": "Port 3",
-        "type": Connection.Ethernet,
+        "type": Connection.FiberOptic,
       }
     ]
   },
@@ -582,7 +582,7 @@ const node_data: NodeData = {
       {
       "id": "p21",
       "label": "IDR-Ramp FO Trunk",
-        "type": Connection.Ethernet,
+        "type": Connection.FiberOptic,
       },
       {
       "id": "p22",
@@ -592,7 +592,7 @@ const node_data: NodeData = {
       {
       "id": "p23",
       "label": "BJL FO Trunk",
-        "type": Connection.Ethernet,
+        "type": Connection.FiberOptic,
       },
       {
       "id": "p24",
@@ -605,7 +605,7 @@ const node_data: NodeData = {
     "id": "sw4",
     "label": "NOC 4",
       "ip": "10.200.0.4",
-    "type": Device.DistributionSwitch,
+    "type": Device.CoreSwitch,
     "ports": [
       {
         "id": "p1",
@@ -621,7 +621,8 @@ const node_data: NodeData = {
       "id": "p3",
       "label": "Uplink to PA820-SEC",
       "type": Connection.Ethernet,
-      },{
+      },
+      {
       "id": "p4",
         "label": "Uplink to PA820-SEC",
         "type": Connection.Ethernet,
@@ -688,7 +689,7 @@ const node_data: NodeData = {
       },
       {
       "id": "p17",
-      "label": "Trunk link TRK2 to NOC1", //p25
+      "label": "Trunk link TRK2 to NOC1",
         "type": Connection.Ethernet,
       },
       {
@@ -698,33 +699,33 @@ const node_data: NodeData = {
       },
       {
       "id": "p19",
-      "label": "Trunk link TRK2 to NOC1", 
+      "label": "Trunk link TRK2 to NOC1",
         "type": Connection.Ethernet,
       },
       {
       "id": "p20",
-      "label": "Trunk link TRK1 to NOC3", 
+      "label": "Trunk link TRK1 to NOC3",
         "type": Connection.Ethernet,
       },
       {
       "id": "p21",
       "label": "LIB FO Trunk Port",
-        "type": Connection.Ethernet,
+        "type": Connection.FiberOptic,
       },
       {
       "id": "p22",
       "label": "CAC FO Trunk Port",
-        "type": Connection.Ethernet,
+        "type": Connection.FiberOptic,
       },
       {
       "id": "p23",
       "label": "KA-Math FO Trunk Port",
-        "type": Connection.Ethernet,
+        "type": Connection.FiberOptic,
       },
       {
       "id": "p24",
       "label": "CSS FO Trunk Port",
-        "type": Connection.Ethernet,
+        "type": Connection.FiberOptic,
       },
     ]
 },
@@ -735,49 +736,51 @@ const node_data: NodeData = {
     "type": Device.CoreSwitch,
     "ports": [
       {
-      "id": "",
+        "id": "p1",
       "label": "Port 1",
       "type": Connection.Ethernet,
       },
       {
-      "id": "",
+      "id": "p2",
       "label": "Port 2",
       "type": Connection.Ethernet,
       },
       {
-      "id": "",
+      "id": "p3",
       "label": "Port 3",
       "type": Connection.Ethernet,
       },{
-      "id": "",
+      "id": "p4",
         "label": "Port 4",
         "type": Connection.Ethernet,
       },
       {
-      "id": "",
+      "id": "p5",
       "label": "Port 5",
         "type": Connection.Ethernet,
       },
       {
-      "id": "",
+      "id": "p6",
       "label": "Port 6",
         "type": Connection.Ethernet,
       },
     ]
   },  
+
   {
     "id": "sw6",
     "label": "NOC 6",
-      "ip": "",
+      "ip": "10.200.0.6",
     "type": Device.DistributionSwitch,
     "ports": [
       {
-        "id": "",
+        "id": "p1",
       "label": "Port 1",
       "type": Connection.Ethernet,
       }
     ]
   },
+
  {
     "id": "sw9",
     "label": "NOC 9",
@@ -1416,7 +1419,7 @@ const node_data: NodeData = {
       },
       {
         "id": "p8",
-        "label": "CSS-HP-ProCurve-2610-24",
+        "label": "Port 8",
         "type": Connection.Ethernet,
       },
       {
@@ -1556,7 +1559,7 @@ const node_data: NodeData = {
       },
       {
         "id": "g7",
-        "label": "Port 77",
+        "label": "Port 7",
         "type": Connection.Ethernet,
       },
       {
@@ -1998,10 +2001,10 @@ const node_data: NodeData = {
   "id": "hkp-ap",
       "label": "HKP_AP",
       "ip": "",
-      "type": Device.AccessSwitch,
+      "type": Device.WirelessRouter,
       "ports": [
       {
-        "id": "",
+        "id": "p1",
         "label": "Port 1",
         "type": Connection.Ethernet,
       }
@@ -2161,7 +2164,7 @@ const node_data: NodeData = {
     "id": "lib",
     "label": "Library",
     "ip": "10.200.0.106",
-    "type": Device.Switch,
+    "type": Device.CoreSwitch,
     "ports": [
       {
       "id": "p1",
@@ -2283,6 +2286,11 @@ const node_data: NodeData = {
       "label": "Test SFP",
       "type": Connection.Ethernet,
       },
+      {
+      "id": "wlan",
+      "label": "Wireless",
+      "type": Connection.Wireless,
+      },
     ]
   },
 
@@ -2336,6 +2344,253 @@ const node_data: NodeData = {
     ]
   },
 
+    {
+        "id": "l-tech24",
+        "label": "LIB-TECH24",
+        "ip": "10.200.106.6",
+        "type": Device.DistributionSwitch,
+        "ports": [
+            {
+            "id": "p1",
+            "label": "LIB VLAN 106 Port",
+            "type": Connection.Ethernet,
+            },
+            {
+            "id": "p2",
+            "label": "LIB VLAN 106 Port",
+            "type": Connection.Ethernet,
+            },
+            {
+            "id": "p3",
+            "label": "LIB VLAN 106 Port",
+            "type": Connection.Ethernet,
+            },
+            {
+            "id": "p4",
+            "label": "LIB VLAN 106 Port",
+            "type": Connection.Ethernet,
+            },
+            {
+            "id": "p5",
+            "label": "LIB VLAN 106 Port",
+            "type": Connection.Ethernet,
+            },
+            {
+            "id": "p6",
+            "label": "LIB VLAN 106 Port",
+            "type": Connection.Ethernet,
+            },
+            {
+            "id": "p7",
+            "label": "LIB VLAN 106 Port",
+            "type": Connection.Ethernet,
+            },
+            {
+            "id": "p8",
+            "label": "LIB VLAN 106 Port",
+            "type": Connection.Ethernet,
+            },
+            {
+            "id": "p9",
+            "label": "LIB VLAN 106 Port",
+            "type": Connection.Ethernet,
+            },
+            {
+            "id": "p10",
+            "label": "LIB VLAN 106 Port",
+            "type": Connection.Ethernet,
+            },
+            {
+            "id": "p11",
+            "label": "LIB VLAN 106 Port",
+            "type": Connection.Ethernet,
+            },
+            {
+            "id": "p12",
+            "label": "LIB VLAN 106 Port",
+            "type": Connection.Ethernet,
+            },
+            {
+            "id": "p13",
+            "label": "LIB VLAN 106 Port",
+            "type": Connection.Ethernet,
+            },
+            {
+            "id": "p14",
+            "label": "LIB VLAN 106 Port",
+            "type": Connection.Ethernet,
+            },
+            {
+            "id": "p15",
+            "label": "LIB VLAN 106 Port",
+            "type": Connection.Ethernet,
+            },
+            {
+            "id": "p16",
+            "label": "LIB VLAN 106 Port",
+            "type": Connection.Ethernet,
+            },
+            {
+            "id": "p17",
+            "label": "LIB VLAN 106 Port",
+            "type": Connection.Ethernet,
+            },
+            {
+            "id": "p18",
+            "label": "LIB VLAN 106 Port",
+            "type": Connection.Ethernet,
+            },
+            {
+            "id": "p19",
+            "label": "Voice VLAN 60 Ports",
+            "type": Connection.Ethernet,
+            },
+            {
+            "id": "p20",
+            "label": "Voice VLAN 60 Ports",
+            "type": Connection.Ethernet,
+            },
+            {
+            "id": "p21",
+            "label": "Voice VLAN 60 Ports",
+            "type": Connection.Ethernet,
+            },
+            {
+            "id": "p22",
+            "label": "Voice VLAN 60 Ports",
+            "type": Connection.Ethernet,
+            },
+            {
+            "id": "p23",
+            "label": "PublicIP Port",
+            "type": Connection.Ethernet,
+            },
+            {
+            "id": "p24",
+            "label": "Management Port",
+            "type": Connection.Ethernet,
+            },
+            {
+            "id": "p25",
+            "label": "LIB VLAN 106 Port",
+            "type": Connection.Ethernet,
+            },
+            {
+            "id": "p26",
+            "label": "Uplink Trunk to HPE-1810-8G",
+            "type": Connection.Ethernet,
+            },
+            {
+            "id": "p27",
+            "label": "Port 27",
+            "type": Connection.Ethernet,
+            },
+            {
+            "id": "p28",
+            "label": "Port 28",
+            "type": Connection.Ethernet,
+            },
+        ]
+    },
+
+    {
+        "id": "l-filipiniana",
+        "label": "LIB-FILIPINIANA",
+        "ip": "10.200.106.2",
+        "type": Device.DistributionSwitch,
+        "ports": [
+            {
+            "id": "p1",
+            "label": "Port 1",
+            "type": Connection.Ethernet,
+            },
+            {
+            "id": "p2",
+            "label": "Port 2",
+            "type": Connection.Ethernet,
+            },
+            {
+            "id": "p3",
+            "label": "J9802A-LIB-2F-TechRoom Bridge",
+            "type": Connection.Ethernet,
+            },
+            {
+            "id": "p4",
+            "label": "Port 4",
+            "type": Connection.Ethernet,
+            },
+            {
+            "id": "p5",
+            "label": "Port 5",
+            "type": Connection.Ethernet,
+            },
+            {
+            "id": "p6",
+            "label": "UPB-LibraryArchive-AP46 Bridge",
+            "type": Connection.Ethernet,
+            },
+            {
+            "id": "p7",
+            "label": "Port 7",
+            "type": Connection.Ethernet,
+            },
+            {
+            "id": "p8",
+            "label": "J9802A Bridge	Bridge",
+            "type": Connection.Ethernet,
+            },
+        ]
+    },
+
+    {
+        "id": "l-archives",
+        "label": "LIB-ARCHIVES",
+        "ip": "10.200.106.4",
+        "type": Device.DistributionSwitch,
+        "ports": [
+            {
+            "id": "p1",
+            "label": "Port 1",
+            "type": Connection.Ethernet,
+            },
+            {
+            "id": "p2",
+            "label": "DESKTOP-5406D6L 9C-6B-00-00-69-59",
+            "type": Connection.Ethernet,
+            },
+            {
+            "id": "p3",
+            "label": "Port 3",
+            "type": Connection.Ethernet,
+            },
+            {
+            "id": "p4",
+            "label": "Port 4",
+            "type": Connection.Ethernet,
+            },
+            {
+            "id": "p5",
+            "label": "Port 5",
+            "type": Connection.Ethernet,
+            },
+            {
+            "id": "p6",
+            "label": "Port 6",
+            "type": Connection.Ethernet,
+            },
+            {
+            "id": "p7",
+            "label": "J9802A Bridge	Bridge",
+            "type": Connection.Ethernet,
+            },
+            {
+            "id": "p8",
+            "label": "Port 8",
+            "type": Connection.Ethernet,
+            },
+        ]
+    },
+
   {
     "id": "rotc",
     "label": "ROTC",
@@ -2343,7 +2598,7 @@ const node_data: NodeData = {
     "type": Device.AccessSwitch,
     "ports": [
       {
-        "id": "",
+        "id": "p1",
       "label": "Port 1",
       "type": Connection.Ethernet,
       }
@@ -2357,7 +2612,7 @@ const node_data: NodeData = {
     "type": Device.AccessSwitch,
     "ports": [
       {
-        "id": "",
+        "id": "p1",
       "label": "Port 1",
       "type": Connection.Ethernet,
       }
@@ -2504,49 +2759,6 @@ const node_data: NodeData = {
     ]
   },
 
-<<<<<<< HEAD
-  // IM
-  {
-    "id": "idr",
-    "label": "IDR",
-      "ip": "",
-    "type": Device.Switch,
-    "ports": [
-      {
-        "id": "",
-      "label": "Port 1",
-      "type": Connection.Ethernet,
-      }
-    ]
-  },
-  {
-    "id": "src",
-    "label": "SRC",
-      "ip": "",
-    "type": Device.Switch,
-    "ports": [
-      {
-        "id": "",
-      "label": "Port 1",
-      "type": Connection.Ethernet,
-      }
-    ]
-  },
-  {
-    "id": "alum",
-    "label": "Alumni",
-      "ip": "",
-    "type": Device.AccessSwitch,
-    "ports": [
-      {
-        "id": "",
-      "label": "Port 1",
-      "type": Connection.Ethernet,
-      }
-    ]
-  },
-=======
->>>>>>> 2827e789726fc2219847eede38ebe9983e0383fd
  {
     "id": "im",
     "label": "IM Ramp",
@@ -2702,7 +2914,7 @@ const node_data: NodeData = {
     "type": Device.AccessSwitch,
     "ports": [
       {
-        "id": "",
+        "id": "1",
       "label": "Port 1",
       "type": Connection.Ethernet,
       }
@@ -2740,70 +2952,6 @@ const node_data: NodeData = {
     ]
   },
 
-<<<<<<< HEAD
-  // others
-  {
-    "id": "nc3-b",
-    "label": "Bulwagan",
-      "ip": "",
-    "type": Device.AccessSwitch,
-    "ports": [
-      {
-        "id": "",
-      "label": "Port 1",
-      "type": Connection.Ethernet,
-      }
-    ]
-  },
-  {
-    "id": "nc3-hpe",
-    "label": "HPE-1920S-250",
-      "ip": "",
-    "type": Device.AccessSwitch,
-    "ports": [
-      {
-        "id": "",
-      "label": "Port 1",
-      "type": Connection.Ethernet,
-      }
-    ]
-  },
-  {
-    "id": "nc3-mk",
-    "label": "MK-HPE-1920S",
-      "ip": "",
-    "type": Device.AccessSwitch,
-    "ports": [
-      {
-        "id": "",
-      "label": "Port 1",
-      "type": Connection.Ethernet,
-      }
-    ]
-  },
-  {
-    "id": "nc3-a1",
-    "label": "Aruba-01",
-      "ip": "",
-    "type": Device.AccessSwitch,
-    "ports": [
-      {
-        "id": "",
-      "label": "Port 1",
-      "type": Connection.Ethernet,
-      }
-    ]
-  },
-  {
-    "id": "nc3-a2",
-    "label": "Aruba-02",
-      "ip": "",
-    "type": Device.AccessSwitch,
-    "ports": [
-      {
-        "id": "",
-      "label": "Port 1",
-=======
   {
     "id": "gco",
     "label": "GCO",
@@ -2813,7 +2961,6 @@ const node_data: NodeData = {
       {
         "id": "p3",
       "label": "clinic",
->>>>>>> 2827e789726fc2219847eede38ebe9983e0383fd
       "type": Connection.Ethernet,
       }
     ]
@@ -2978,7 +3125,7 @@ const node_data: NodeData = {
       {
         "id": "p1",
         "label": "Port 1",
-        "type": Connection.Ethernet,
+        "type": Connection.FiberOptic,
       },
       {
         "id": "p2",
@@ -3165,6 +3312,11 @@ const node_data: NodeData = {
         "label": "FO Uplink to LIB-NOC",
           "type": Connection.FiberOptic,
         },
+      {
+        "id": "wlan",
+        "label": "Wireless",
+          "type": Connection.FiberOptic,
+        },
       ],
     },
 
@@ -3182,92 +3334,25 @@ const node_data: NodeData = {
         },
         {
           "id": "p3",
-          "label": "Port 3",
+          "label": "Lib Filipiniana",
           "type": Connection.Ethernet,
         },
         {
           "id": "p4",
-          "label": "Port 4",
+          "label": "Lib Tech 24 P",
           "type": Connection.Ethernet,
         },
         {
           "id": "p5",
-          "label": "Port 5",
+          "label": "Lib Circulation",
           "type": Connection.None,
         },
         {
           "id": "p7",
-          "label": "Port 7",
+          "label": "Lib Tech 8 Port",
           "type": Connection.Ethernet,
         }
       ],
-    },
-
-    {
-      "id": "lib-noc",
-      "label": "ARUBA-2920-MAINLIB-NOC",
-      "ip": "10.10.200.106",
-      "type": Device.DistributionSwitch,
-      "ports": [
-        { 
-          "id": "aruba-port", 
-          "label": "Port 19", 
-          "type": Connection.Ethernet 
-        }
-      ]
-    },
-
-    {
-      "id": "J9802A-2",
-      "label": "J9802A Port 8 (106.2)",
-      "ip": "10.200.106.2",
-      "type": Device.AccessSwitch,
-      "ports": [
-        { 
-          "id": "j9802a-2-port", 
-          "label": "Port 8", 
-          "type": Connection.Ethernet 
-        }
-      ]
-    },
-    {
-      "id": "LIB2-HP2610-24",
-      "label": "LIB2-HP2610-24",
-      "ip": "10.200.106.6",
-      "type": Device.Switch,
-      "ports": [
-        { 
-          "id": "lib2hp2610-port", 
-          "label": "Port 26", 
-          "type": Connection.Ethernet 
-        }
-      ]
-    },
-    {
-      "id": "J9802A-5",
-      "label": "J9802A Port 8 (106.5)",
-      "ip": "10.200.106.5",
-      "type": Device.AccessSwitch,
-      "ports": [
-        { 
-          "id": "j9802a-5-port", 
-          "label": "Port 8", 
-          "type": Connection.Ethernet 
-        }
-      ]
-    },
-    {
-      "id": "J9802A-3",
-      "label": "J9802A Port 8 (106.3)",
-      "ip": "10.200.106.3",
-      "type": Device.AccessSwitch,
-      "ports": [
-        { 
-          "id": "j9802a-3-port", 
-          "label": "Port 8", 
-          "type": Connection.Ethernet 
-        }
-      ]
     },
 
     //Lib Circulation
@@ -3284,20 +3369,6 @@ const node_data: NodeData = {
         { 
           "id": "p8", 
           "label": "Port 8", 
-          "type": Connection.Ethernet 
-        }
-      ]
-    },
-
-    {
-      "id": "J9802A-LIB-2F-TechRoom",
-      "label": "J9802A-LIB-2F-TechRoom",
-      "ip": "10.200.106.1",
-      "type": Device.CoreSwitch,
-      "ports": [
-        { 
-          "id": "p5", 
-          "label": "Port 5", 
           "type": Connection.Ethernet 
         }
       ]
@@ -3348,8 +3419,6 @@ const node_data: NodeData = {
       ]
     },
 
-<<<<<<< HEAD
-=======
     //VLE 2
     {
       "id": "vle2",
@@ -4092,7 +4161,6 @@ const node_data: NodeData = {
     ]
   },
 
->>>>>>> 2827e789726fc2219847eede38ebe9983e0383fd
 ]};
 
 export default node_data;

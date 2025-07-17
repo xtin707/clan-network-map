@@ -2510,7 +2510,7 @@ const node_data: NodeData = {
             },
             {
             "id": "p3",
-            "label": "J9802A-LIB-2F-TechRoom Bridge Bridge",
+            "label": "J9802A-LIB-2F-TechRoom Bridge",
             "type": Connection.Ethernet,
             },
             {
@@ -3349,73 +3349,6 @@ const node_data: NodeData = {
       ],
     },
 
-    {
-      "id": "lib-noc",
-      "label": "ARUBA-2920-MAINLIB-NOC",
-      "ip": "10.10.200.106",
-      "type": Device.DistributionSwitch,
-      "ports": [
-        { 
-          "id": "aruba-port", 
-          "label": "Port 19", 
-          "type": Connection.Ethernet 
-        }
-      ]
-    },
-
-    {
-      "id": "J9802A-2",
-      "label": "J9802A Port 8 (106.2)",
-      "ip": "10.200.106.2",
-      "type": Device.AccessSwitch,
-      "ports": [
-        { 
-          "id": "j9802a-2-port", 
-          "label": "Port 8", 
-          "type": Connection.Ethernet 
-        }
-      ]
-    },
-    {
-      "id": "LIB2-HP2610-24",
-      "label": "LIB2-HP2610-24",
-      "ip": "10.200.106.6",
-      "type": Device.Switch,
-      "ports": [
-        { 
-          "id": "lib2hp2610-port", 
-          "label": "Port 26", 
-          "type": Connection.Ethernet 
-        }
-      ]
-    },
-    {
-      "id": "J9802A-5",
-      "label": "J9802A Port 8 (106.5)",
-      "ip": "10.200.106.5",
-      "type": Device.AccessSwitch,
-      "ports": [
-        { 
-          "id": "j9802a-5-port", 
-          "label": "Port 8", 
-          "type": Connection.Ethernet 
-        }
-      ]
-    },
-    {
-      "id": "J9802A-3",
-      "label": "J9802A Port 8 (106.3)",
-      "ip": "10.200.106.3",
-      "type": Device.AccessSwitch,
-      "ports": [
-        { 
-          "id": "j9802a-3-port", 
-          "label": "Port 8", 
-          "type": Connection.Ethernet 
-        }
-      ]
-    },
-
     //Lib Circulation
     {
       "id": "lib-circulation",
@@ -3430,20 +3363,6 @@ const node_data: NodeData = {
         { 
           "id": "p8", 
           "label": "Port 8", 
-          "type": Connection.Ethernet 
-        }
-      ]
-    },
-
-    {
-      "id": "J9802A-LIB-2F-TechRoom",
-      "label": "J9802A-LIB-2F-TechRoom",
-      "ip": "10.200.106.1",
-      "type": Device.CoreSwitch,
-      "ports": [
-        { 
-          "id": "p5", 
-          "label": "Port 5", 
           "type": Connection.Ethernet 
         }
       ]

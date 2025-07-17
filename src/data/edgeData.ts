@@ -164,7 +164,7 @@ const edge_data: EdgeData = {
   }, 
   {
     "node": ["sw4", "css"],
-    "port": ["p24", "p1"],
+    "port": ["p24", "p27"],
     "type": Connection.FiberOptic
   }, 
 
@@ -304,8 +304,8 @@ const edge_data: EdgeData = {
     "type": Connection.Ethernet
   }, 
   {
-    "node": ["sw1", "adsl1"],
-    "port": ["p11", "p1"],
+    "node": ["sw1", "adsl2"],
+    "port": ["p12", "p1"],
     "type": Connection.Ethernet
   }, 
   {
@@ -448,10 +448,143 @@ const edge_data: EdgeData = {
   }, 
     //CSS
   {
-    "node": ["css", "cac-t"],
+    "node": ["css", "css2"],
+    "port": ["p25", "p8"],
+    "type": Connection.Ethernet
+  }, 
+ {
+    "node": ["css", "css3"],
+    "port": ["p26", "p1"],
+    "type": Connection.Ethernet
+  }, 
+  //Cisco-SF300--101-2
+ {
+    "node": ["sw4", "sf300"],
+    "port": ["p5", "g2"],
+    "type": Connection.Ethernet
+  }, 
+ {
+    "node": ["sf300", "cs-res-ax55"],
     "port": ["p8", "p1"],
     "type": Connection.Ethernet
   }, 
+ {
+    "node": ["sf300", "bio-fr"],
+    "port": ["g1", "p1"],
+    "type": Connection.Ethernet
+  }, 
+ {
+    "node": ["sf300", "glasswares"],
+    "port": ["g4", "p1"],
+    "type": Connection.Ethernet
+  }, 
+    //KA
+ {
+    "node": ["ka", "hkp"],
+    "port": ["p26", "p25"],
+    "type": Connection.FiberOptic
+  }, 
+    //hkp
+ {
+    "node": ["hkp", "hkp-ap"],
+    "port": ["p19", "p1"],
+    "type": Connection.Ethernet
+  }, 
+ {
+    "node": ["hkp", "himn"],
+    "port": ["p24", "g24"],
+    "type": Connection.Ethernet
+  }, 
+    //Himnasyo
+ {
+    "node": ["himn", "eap-320-1f"],
+    "port": ["g6", "p1"],
+    "type": Connection.Ethernet
+  }, 
+ {
+    "node": ["himn", "eap-320-2f"],
+    "port": ["g7", "p1"],
+    "type": Connection.Ethernet
+  }, 
+ {
+    "node": ["himn", "eap-320-3f"],
+    "port": ["g8", "p1"],
+    "type": Connection.Ethernet
+  }, 
+ {
+    "node": ["himn", "tpl-ax72-wan"],
+    "port": ["g9", "p1"],
+    "type": Connection.Ethernet
+  }, 
+    //IDR
+ {
+    "node": ["idr", "im"],
+    "port": ["p2", "p26"],
+    "type": Connection.Ethernet
+  }, 
+    //IM
+ {
+    "node": ["im", "im1"],
+    "port": ["p25", "p1"],
+    "type": Connection.Ethernet
+  }, 
+ {
+    "node": ["im", "sac"],
+    "port": ["p27", "p1"],
+    "type": Connection.Ethernet
+  }, 
+    //lib
+ {
+    "node": ["lib", "rotc"],
+    "port": ["p10", "p1"],
+    "type": Connection.Ethernet
+  }, 
+ {
+    "node": ["lib", "bi"],
+    "port": ["p18", "p1"],
+    "type": Connection.Ethernet
+  }, 
+ {
+    "node": ["lib", "hpe"],
+    "port": ["p20", "p1"],
+    "type": Connection.Ethernet
+  }, 
+ {
+    "node": ["lib", "balayintl-24-port"],
+    "port": ["p22", "p1"],
+    "type": Connection.FiberOptic
+  }, 
+ {
+    "node": ["lib", "breha-8-port"],
+    "port": ["p23", "p10"],
+    "type": Connection.Ethernet
+  }, 
+ {
+    "node": ["lib", "breha-8-port"],
+    "port": ["wlan", "wireless"],
+    "type": Connection.Ethernet
+  }, 
+ {
+    "node": ["lib", "lib-trunk-8-port"],
+    "port": ["p19", "p2"],
+    "type": Connection.Ethernet
+  }, 
+    //Breha
+ {
+    "node": ["breha-8-port", "wup"],
+    "port": ["p9", "p1"],
+    "type": Connection.Ethernet
+  }, 
+    //Lib Trunk 8 port
+ {
+    "node": ["lib-trunk-8-port", "wup"],
+    "port": ["p3", "p1"],
+    "type": Connection.Ethernet
+  }, 
+
+
+
+  
 
   ]
 }

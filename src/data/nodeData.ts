@@ -1418,7 +1418,7 @@ const node_data: NodeData = {
       },
       {
         "id": "p8",
-        "label": "CSS-HP-ProCurve-2610-24",
+        "label": "Port 8",
         "type": Connection.Ethernet,
       },
       {
@@ -2000,10 +2000,10 @@ const node_data: NodeData = {
   "id": "hkp-ap",
       "label": "HKP_AP",
       "ip": "",
-      "type": Device.AccessSwitch,
+      "type": Device.WirelessRouter,
       "ports": [
       {
-        "id": "",
+        "id": "p1",
         "label": "Port 1",
         "type": Connection.Ethernet,
       }
@@ -2163,7 +2163,7 @@ const node_data: NodeData = {
     "id": "lib",
     "label": "Library",
     "ip": "10.200.0.106",
-    "type": Device.Switch,
+    "type": Device.CoreSwitch,
     "ports": [
       {
       "id": "p1",
@@ -2284,6 +2284,11 @@ const node_data: NodeData = {
       "id": "p24",
       "label": "Test SFP",
       "type": Connection.Ethernet,
+      },
+      {
+      "id": "wlan",
+      "label": "Wireless",
+      "type": Connection.Wireless,
       },
     ]
   },
@@ -2592,7 +2597,7 @@ const node_data: NodeData = {
     "type": Device.AccessSwitch,
     "ports": [
       {
-        "id": "",
+        "id": "p1",
       "label": "Port 1",
       "type": Connection.Ethernet,
       }
@@ -2606,7 +2611,7 @@ const node_data: NodeData = {
     "type": Device.AccessSwitch,
     "ports": [
       {
-        "id": "",
+        "id": "p1",
       "label": "Port 1",
       "type": Connection.Ethernet,
       }
@@ -2922,7 +2927,7 @@ const node_data: NodeData = {
     "type": Device.AccessSwitch,
     "ports": [
       {
-        "id": "",
+        "id": "1",
       "label": "Port 1",
       "type": Connection.Ethernet,
       }
@@ -3114,7 +3119,7 @@ const node_data: NodeData = {
       {
         "id": "p1",
         "label": "Port 1",
-        "type": Connection.Ethernet,
+        "type": Connection.FiberOptic,
       },
       {
         "id": "p2",
@@ -3301,6 +3306,11 @@ const node_data: NodeData = {
         "label": "FO Uplink to LIB-NOC",
           "type": Connection.FiberOptic,
         },
+      {
+        "id": "wlan",
+        "label": "Wireless",
+          "type": Connection.FiberOptic,
+        },
       ],
     },
 
@@ -3318,22 +3328,22 @@ const node_data: NodeData = {
         },
         {
           "id": "p3",
-          "label": "Port 3",
+          "label": "Lib Filipiniana",
           "type": Connection.Ethernet,
         },
         {
           "id": "p4",
-          "label": "Port 4",
+          "label": "Lib Tech 24 P",
           "type": Connection.Ethernet,
         },
         {
           "id": "p5",
-          "label": "Port 5",
+          "label": "Lib Circulation",
           "type": Connection.None,
         },
         {
           "id": "p7",
-          "label": "Port 7",
+          "label": "Lib Tech 8 Port",
           "type": Connection.Ethernet,
         }
       ],
@@ -4118,6 +4128,19 @@ const node_data: NodeData = {
     },
     //SAC
     {
+      "id": "sac",
+      "label": "SAC",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.FiberOptic,
+        },
+      ]
+    },
+    {
       "id": "sac-2f-hpe",
       "label": "SAC 2/F HPE",
       "ip": "",
@@ -4141,6 +4164,11 @@ const node_data: NodeData = {
         "id": "p1",
       "label": "Port 1",
       "type": Connection.FiberOptic,
+      },
+      {
+        "id": "p2",
+      "label": "Port 2",
+      "type": Connection.Ethernet,
       }
     ]
   },
@@ -4178,6 +4206,74 @@ const node_data: NodeData = {
     "label": "CAC-Aruba-1930-8G",
       "ip": "",
     "type": Device.Switch,
+    "ports": [
+      {
+        "id": "p1",
+      "label": "Port 1",
+      "type": Connection.Ethernet,
+      }
+    ]
+  },
+  //EAP-320
+  {
+    "id": "eap-320-1f",
+    "label": "EAP-320-1F",
+      "ip": "",
+    "type": Device.WirelessRouter,
+    "ports": [
+      {
+        "id": "p1",
+      "label": "Port 1",
+      "type": Connection.Ethernet,
+      }
+    ]
+  },
+  {
+    "id": "eap-320-2f",
+    "label": "EAP-320-2F",
+      "ip": "",
+    "type": Device.WirelessRouter,
+    "ports": [
+      {
+        "id": "p1",
+      "label": "Port 1",
+      "type": Connection.Ethernet,
+      }
+    ]
+  },
+  {
+    "id": "eap-320-3f",
+    "label": "EAP-320-3F",
+      "ip": "",
+    "type": Device.WirelessRouter,
+    "ports": [
+      {
+        "id": "p1",
+      "label": "Port 1",
+      "type": Connection.Ethernet,
+      }
+    ]
+  },
+  //TPL-AX72-WAN
+  {
+    "id": "tpl-ax72-wan",
+    "label": "TPL-AX72-WAN",
+      "ip": "",
+    "type": Device.WirelessRouter,
+    "ports": [
+      {
+        "id": "p1",
+      "label": "Port 1",
+      "type": Connection.Ethernet,
+      }
+    ]
+  },
+  //BI
+  {
+    "id": "bi",
+    "label": "BI",
+      "ip": "",
+    "type": Device.AccessSwitch,
     "ports": [
       {
         "id": "p1",

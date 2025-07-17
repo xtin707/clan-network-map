@@ -687,7 +687,7 @@ const node_data: NodeData = {
       },
       {
       "id": "p17",
-      "label": "Trunk link TRK2 to NOC1",
+      "label": "Trunk link TRK2 to NOC1", //p25
         "type": Connection.Ethernet,
       },
       {
@@ -697,12 +697,12 @@ const node_data: NodeData = {
       },
       {
       "id": "p19",
-      "label": "Trunk link TRK2 to NOC1",
+      "label": "Trunk link TRK2 to NOC1", 
         "type": Connection.Ethernet,
       },
       {
       "id": "p20",
-      "label": "Trunk link TRK1 to NOC3",
+      "label": "Trunk link TRK1 to NOC3", 
         "type": Connection.Ethernet,
       },
       {
@@ -734,7 +734,7 @@ const node_data: NodeData = {
     "type": Device.CoreSwitch,
     "ports": [
       {
-        "id": "",
+      "id": "",
       "label": "Port 1",
       "type": Connection.Ethernet,
       },

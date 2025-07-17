@@ -119,12 +119,12 @@ const edge_data: EdgeData = {
   }, 
   {
     "node": ["sw4", "domz-desk"],
-    "port": ["p14", "p2"],
+    "port": ["p14", "g4"],
     "type": Connection.Ethernet
   }, 
   {
-    "node": ["sw4", "mdf2-srw224p"],
-    "port": ["p16", "p1"],
+    "node": ["sw4", "noc-cs"],
+    "port": ["p16", "g2"],
     "type": Connection.Ethernet
   }, 
   {
@@ -201,7 +201,7 @@ const edge_data: EdgeData = {
   }, 
   {
     "node": ["sw2", "fw2"],
-    "port": ["p23", "p2"],
+    "port": ["p24", "p2"],
     "type": Connection.Ethernet
   }, 
 
@@ -225,11 +225,6 @@ const edge_data: EdgeData = {
   {
     "node": ["sw3", "mdf3-1f-30v"],
     "port": ["p4", "p1"],
-    "type": Connection.Ethernet
-  }, 
-  {
-    "node": ["sw3", "idr-mdf-2f"],
-    "port": ["p5", "p1"],
     "type": Connection.Ethernet
   }, 
   {
@@ -278,8 +273,8 @@ const edge_data: EdgeData = {
     "type": Connection.Ethernet
   }, 
   {
-    "node": ["sw3", "idr-ramp"],
-    "port": ["p21", "p1"],
+    "node": ["sw3", "im"],
+    "port": ["p21", "p28"],
     "type": Connection.FiberOptic
   }, 
   {
@@ -300,12 +295,12 @@ const edge_data: EdgeData = {
     //NOC 1
   {
     "node": ["sw1", "adsl1"],
-    "port": ["p11", "p1"],
+    "port": ["p1", "p1"],
     "type": Connection.Ethernet
   }, 
   {
     "node": ["sw1", "adsl2"],
-    "port": ["p12", "p1"],
+    "port": ["p2", "p1"],
     "type": Connection.Ethernet
   }, 
   {
@@ -401,7 +396,7 @@ const edge_data: EdgeData = {
   }, 
   {
     "node": ["sw9", "sw3"],
-    "port": ["p47", "p3"],
+    "port": ["p47", "p5"],
     "type": Connection.Ethernet
   }, 
   {
@@ -410,13 +405,13 @@ const edge_data: EdgeData = {
     "type": Connection.Ethernet
   }, 
   {
-    "node": ["sw9", "sac-2f-hpe"],
-    "port": ["p49", "p1"],
+    "node": ["sw9", "sac"],
+    "port": ["p49", "p26"],
     "type": Connection.FiberOptic
   }, 
   {
     "node": ["sw9", "idr"],
-    "port": ["p50", "p1"],
+    "port": ["p50", "p49"],
     "type": Connection.FiberOptic
   }, 
   {
@@ -454,13 +449,13 @@ const edge_data: EdgeData = {
   }, 
  {
     "node": ["css", "css3"],
-    "port": ["p26", "p1"],
+    "port": ["p26", "g24"],
     "type": Connection.Ethernet
   }, 
   //Cisco-SF300--101-2
  {
     "node": ["sw4", "sf300"],
-    "port": ["p5", "g2"],
+    "port": ["p5", "g4"],
     "type": Connection.Ethernet
   }, 
  {
@@ -497,6 +492,11 @@ const edge_data: EdgeData = {
   }, 
     //Himnasyo
  {
+    "node": ["himn", "aruba-ap"],
+    "port": ["g1", "p1"],
+    "type": Connection.Ethernet
+  }, 
+ {
     "node": ["himn", "eap-320-1f"],
     "port": ["g6", "p1"],
     "type": Connection.Ethernet
@@ -530,7 +530,7 @@ const edge_data: EdgeData = {
   }, 
  {
     "node": ["im", "sac"],
-    "port": ["p27", "p1"],
+    "port": ["p27", "p26"],
     "type": Connection.Ethernet
   }, 
     //lib
@@ -600,6 +600,22 @@ const edge_data: EdgeData = {
  {
     "node": ["l-filipiniana", "l-archives"],
     "port": ["p7", "p8"],
+    "type": Connection.Ethernet
+  }, 
+    //Clinic
+ {
+    "node": ["clinic", "cmo"],
+    "port": ["p2", "p1"],
+    "type": Connection.Ethernet
+  }, 
+ {
+    "node": ["clinic", "gco"],
+    "port": ["p3", "p1"],
+    "type": Connection.Ethernet
+  }, 
+ {
+    "node": ["clinic", "im"],
+    "port": ["p8", "p13"],
     "type": Connection.Ethernet
   }, 
 

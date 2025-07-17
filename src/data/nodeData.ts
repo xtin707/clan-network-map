@@ -468,7 +468,7 @@ const node_data: NodeData = {
       },
       {
       "id": "p24",
-      "label": "Port 24",
+      "label": "PF 2",
         "type": Connection.Ethernet,
       },
     ]
@@ -493,14 +493,15 @@ const node_data: NodeData = {
       "id": "p3",
       "label": "Port 3",
       "type": Connection.Ethernet,
-      },{
+      },
+      {
       "id": "p4",
         "label": "MDF3-1F-30V",
         "type": Connection.Ethernet,
       },
       {
       "id": "p5",
-      "label": "Uplink Trunk to IDR-MDF-2F",
+      "label": "Uplink Trunk to NOC 9",
         "type": Connection.Ethernet,
       },
       {
@@ -1047,7 +1048,7 @@ const node_data: NodeData = {
   },
 
 {
-    "id": "cs26",
+    "id": "noc-cs",
     "label": "NOC CS",
       "ip": "192.168.1.248",
     "type": Device.DistributionSwitch,
@@ -1158,7 +1159,7 @@ const node_data: NodeData = {
         "type": Connection.Ethernet,
       },
       {
-      "id": "22",
+      "id": "p22",
       "label": "Port 22",
         "type": Connection.Ethernet,
       },
@@ -1179,7 +1180,7 @@ const node_data: NodeData = {
       },
       {
       "id": "g2",
-      "label": "Port 26",
+      "label": "Uplink to NOC 4",
         "type": Connection.Ethernet,
       },
     ]
@@ -1189,7 +1190,7 @@ const node_data: NodeData = {
     "id": "cac",
     "label": "CAC",
     "ip": "10.200.0.108",
-    "type": Device.Switch,
+    "type": Device.DistributionSwitch,
     "ports": [
         {
             "id": "p1",
@@ -1336,7 +1337,7 @@ const node_data: NodeData = {
   {
       "id": "cac-t",
       "label": "Teatro",
-      "ip": "",
+      "ip": "10.200.100.243",
       "type": Device.AccessSwitch,
       "ports": [
           {
@@ -1355,7 +1356,7 @@ const node_data: NodeData = {
   {
       "id": "cac-jl",
       "label": "JournLab",
-      "ip": "",
+      "ip": "10.200.108.2",
       "type": Device.AccessSwitch,
       "ports": [
           {
@@ -1376,7 +1377,7 @@ const node_data: NodeData = {
     "id": "css",
     "label": "CSS",
     "ip": "10.200.0.107",
-    "type": Device.Switch,
+    "type": Device.DistributionSwitch,
     "ports": [
       {
         "id": "p1",
@@ -1521,7 +1522,7 @@ const node_data: NodeData = {
     "id": "css3",
     "label": "CSS3",
     "ip": "10.200.107.2",
-    "type": Device.Switch,
+    "type": Device.DistributionSwitch,
     "ports": [
       {
         "id": "g1", //g# for gigabit ethernet
@@ -1671,7 +1672,7 @@ const node_data: NodeData = {
     "id": "css2",
     "label": "CSS2",
     "ip": "10.200.107.1",
-    "type": Device.Switch,
+    "type": Device.AccessSwitch,
     "ports": [
       {
         "id": "p1",
@@ -1721,7 +1722,7 @@ const node_data: NodeData = {
   "id": "ka",
   "label": "KA",
   "ip": "",
-  "type": Device.Switch,
+  "type": Device.DistributionSwitch,
   "ports": [
     {
       "id": "p1",
@@ -2014,7 +2015,7 @@ const node_data: NodeData = {
   "ports": [
   {
     "id": "g1",
-    "label": "VLAN1",
+    "label": "Aruba_AP",
     "type": Connection.Ethernet,
   },
   {
@@ -2503,6 +2504,7 @@ const node_data: NodeData = {
     ]
   },
 
+<<<<<<< HEAD
   // IM
   {
     "id": "idr",
@@ -2543,9 +2545,11 @@ const node_data: NodeData = {
       }
     ]
   },
+=======
+>>>>>>> 2827e789726fc2219847eede38ebe9983e0383fd
  {
     "id": "im",
-    "label": "IM",
+    "label": "IM Ramp",
     "ip": "10.200.0.104",
     "type": Device.DistributionSwitch,
     "ports": [
@@ -2611,7 +2615,7 @@ const node_data: NodeData = {
       },
       {
       "id": "p13",
-      "label": "Port 13",
+      "label": "Clinic",
       "type": Connection.Ethernet,
       },
       {
@@ -2707,12 +2711,17 @@ const node_data: NodeData = {
   {
     "id": "clinic",
     "label": "Clinic",
-      "ip": "",
+      "ip": "10.200.104.3",
     "type": Device.AccessSwitch,
     "ports": [
       {
-        "id": "",
-      "label": "Port 1",
+        "id": "p2",
+      "label": "CMO",
+      "type": Connection.Ethernet,
+      },
+      {
+        "id": "p8",
+      "label": "IM Ramp",
       "type": Connection.Ethernet,
       }
     ]
@@ -2721,16 +2730,17 @@ const node_data: NodeData = {
     "id": "cmo",
     "label": "CMO",
       "ip": "",
-    "type": Device.AccessSwitch,
+    "type": Device.WirelessRouter,
     "ports": [
       {
-        "id": "",
+        "id": "p1",
       "label": "Port 1",
       "type": Connection.Ethernet,
       }
     ]
   },
 
+<<<<<<< HEAD
   // others
   {
     "id": "nc3-b",
@@ -2793,6 +2803,17 @@ const node_data: NodeData = {
       {
         "id": "",
       "label": "Port 1",
+=======
+  {
+    "id": "gco",
+    "label": "GCO",
+      "ip": "",
+    "type": Device.WirelessRouter,
+    "ports": [
+      {
+        "id": "p3",
+      "label": "clinic",
+>>>>>>> 2827e789726fc2219847eede38ebe9983e0383fd
       "type": Connection.Ethernet,
       }
     ]
@@ -3092,7 +3113,7 @@ const node_data: NodeData = {
     "id": "breha-8-port",
     "label": "Breha",
     "ip": "10.200.100.244",
-    "type": Device.Switch,
+    "type": Device.DistributionSwitch,
     "ports": [
       {
         "id": "p1",
@@ -3327,6 +3348,751 @@ const node_data: NodeData = {
       ]
     },
 
+<<<<<<< HEAD
+=======
+    //VLE 2
+    {
+      "id": "vle2",
+      "label": "VLE 2 Server",
+      "ip": "202.92.156.241",
+      "type": Device.Server,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+
+    //Management
+    {
+      "id": "management",
+      "label": "Management",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+
+    //MDF2 Cisco SG100-16
+    {
+      "id": "mdf2-sg100-16",
+      "label": "MDF2 Cisco SG100-16",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+
+    //KA-301
+    {
+      "id": "ka301",
+      "label": "KA-301",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+
+    //MDF2-SF-300-24P
+    {
+      "id": "mdf2-sf-300-24p",
+      "label": "MDF2-SF-300-24P",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "g4",
+          "label": "Uplink to NOC 4",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+
+    //SNO-SF-300-Domz-Desk
+    {
+      "id": "domz-desk",
+      "label": "SNO-SF-300-Domz-Desk",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "g4",
+          "label": "Uplink to NOC 4",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+
+    //HRDO Biometrics
+    {
+      "id": "hrdo-bio",
+      "label": "HRDO Biometrics MDF3-1f-17D",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+    //DIC 30D NAS Switch
+    {
+      "id": "dic30d",
+      "label": "DIC 30D NAS Switch",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+
+    //OPA
+    {
+      "id": "opa-8p",
+      "label": "OPA 24D 8-port GbE Switch",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+    //MDF03-DES-1026G
+    {
+      "id": "mdf03-des",
+      "label": "MDF03-DES-1026G",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+    //04 - FEC Desktop
+    {
+      "id": "04-fec-desk",
+      "label": "UPB VM Server 04 - FEC Desktop",
+      "ip": "",
+      "type": Device.Server,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+    //DIC Cactii
+    {
+      "id": "dic-cactii",
+      "label": "DIC Cactii Server Trunk",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+    // JKSA Management Port
+    {
+      "id": "jksa-man",
+      "label": "JKSA Management Port",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+    //MDF3-1F-30V
+    {
+      "id": "mdf3-1f-30v",
+      "label": "MDF3-1F-30V",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+    //IDR
+    {
+      "id": "idr",
+      "label": "IDR New Rack",
+      "ip": "10.200.0.135",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p49",
+          "label": "Uplink to NOC 9",
+          "type": Connection.FiberOptic,
+        },
+      ]
+    },
+  //MDF02-1F-27D
+    {
+      "id": "mdf02-1f-27d",
+      "label": "MDF02-1F-27D",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+    //JKSA-Victus-03
+    {
+      "id": "jksa-victus-03",
+      "label": "JKSA-Victus-03",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+    //Aruba-1920S-250
+    {
+      "id": "aruba-1920s-250",
+      "label": "Aruba-1920S-250",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+    //PA-820 Management Port
+    {
+      "id": "pa-820-man-port",
+      "label": "PA-820 Management Port",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+        {
+          "id": "p2",
+          "label": "Port 2",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+    //MDF03-2F-39D
+    {
+      "id": "mdf03-2f-39D",
+      "label": "MDF03-2F-39D",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+    //Linksys SRW224P
+    {
+      "id": "linksys-srw224p",
+      "label": "Linksys SRW224P",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+
+    //Aruba
+    {
+      "id": "aruba-pri-1",
+      "label": "Aruba-7205-Pri-Uplink-1",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+    {
+      "id": "aruba-sec-2",
+      "label": "Aruba-7205-Sec-Uplink-2",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+    {
+      "id": "aruba-pri-t1a",
+      "label": "Aruba-7205-Pri-T1A",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+    {
+      "id": "aruba-sec-t2a4",
+      "label": "Aruba-7205-sec-T2A4",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+    //BJL
+    {
+      "id": "bjl",
+      "label": "BJL",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.FiberOptic,
+        },
+      ]
+    },
+    //CS Dean's iMac LAN
+    {
+      "id": "cs-dean-lan",
+      "label": "CS Dean's iMac LAN",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+    //IB104
+    {
+      "id": "ib104",
+      "label": "IB 104",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+    //CS-Research
+    {
+      "id": "cs-res-avr",
+      "label": "CS-Research AVR",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+    {
+      "id": "cs-res-lab",
+      "label": "CS-Research Lab",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+    //OVCA
+    {
+      "id": "ovca",
+      "label": "OVCA AX72",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+    //HRDO
+    {
+      "id": "hrdo-ax72",
+      "label": "HRDO AX72",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+    {
+      "id": "hrdo-e2500",
+      "label": "HRDO E2500",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+    //UPB-Boardroom
+    {
+      "id": "upb-board",
+      "label": "UPB-Boardroom MDF03-2F-029D",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+    //OVCAA
+    {
+      "id": "ovcaa",
+      "label": "OVCAA AX72 MDF03-2F-14D",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+    //VM-SRV-03
+    {
+      "id": "vm-srv-03",
+      "label": "VM-SRV-03-ProxMox NIC#2",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+    //CS-BIO-SVR
+    {
+      "id": "cs-bio-svr",
+      "label": "CS-BIO-SVR NIC#1",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+    //UPB-VM-SRV
+    {
+      "id": "upb-vm-srv-00",
+      "label": "UPB-VM-SRV-00",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+        {
+          "id": "p2",
+          "label": "Port 2",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+    {
+      "id": "upb-vm-srv-02",
+      "label": "UPB-VM-SRV-02",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+        {
+          "id": "p2",
+          "label": "Port 2",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+    {
+      "id": "upb-vm-srv-03",
+      "label": "UPB-VM-SRV-03",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+    {
+      "id": "upb-vm-srv-04",
+      "label": "UPB-VM-SRV-04",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+    //MFPalaruan
+    {
+      "id": "mfpalaruan",
+      "label": "MFPalaruan PC NIC",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.Ethernet,
+        },
+      ]
+    },
+    //SAC
+    {
+      "id": "sac",
+      "label": "SAC Alumni",
+      "ip": "",
+      "type": Device.AccessSwitch,
+      "ports": [
+        {
+          "id": "p1",
+          "label": "Port 1",
+          "type": Connection.FiberOptic,
+        },
+      ]
+    },
+  //SRC
+  {
+    "id": "src",
+    "label": "SRC New Rack",
+      "ip": "",
+    "type": Device.DistributionSwitch,
+    "ports": [
+      {
+        "id": "p1",
+      "label": "Port 1",
+      "type": Connection.FiberOptic,
+      }
+    ]
+  },
+  //Guardhouse
+  {
+    "id": "guardhouse",
+    "label": "GuardHouse",
+      "ip": "",
+    "type": Device.AccessSwitch,
+    "ports": [
+      {
+        "id": "p1",
+      "label": "Port 1",
+      "type": Connection.FiberOptic,
+      }
+    ]
+  },
+  //CAC Aruba
+  {
+    "id": "cac-aruba",
+    "label": "CAC-Aruba-1930-8G",
+      "ip": "",
+    "type": Device.AccessSwitch,
+    "ports": [
+      {
+        "id": "p1",
+      "label": "Port 1",
+      "type": Connection.Ethernet,
+      }
+    ]
+  },
+  //EAP-320
+  {
+    "id": "eap-320-1f",
+    "label": "EAP-320-1F",
+      "ip": "",
+    "type": Device.WirelessRouter,
+    "ports": [
+      {
+        "id": "p1",
+      "label": "Port 1",
+      "type": Connection.Ethernet,
+      }
+    ]
+  },
+  {
+    "id": "eap-320-2f",
+    "label": "EAP-320-2F",
+      "ip": "",
+    "type": Device.WirelessRouter,
+    "ports": [
+      {
+        "id": "p1",
+      "label": "Port 1",
+      "type": Connection.Ethernet,
+      }
+    ]
+  },
+  {
+    "id": "eap-320-3f",
+    "label": "EAP-320-3F",
+      "ip": "",
+    "type": Device.WirelessRouter,
+    "ports": [
+      {
+        "id": "p1",
+      "label": "Port 1",
+      "type": Connection.Ethernet,
+      }
+    ]
+  },
+  //TPL-AX72-WAN
+  {
+    "id": "tpl-ax72-wan",
+    "label": "TPL-AX72-WAN",
+      "ip": "",
+    "type": Device.WirelessRouter,
+    "ports": [
+      {
+        "id": "p1",
+      "label": "Port 1",
+      "type": Connection.Ethernet,
+      }
+    ]
+  },
+  //TPL-AX72-WAN
+  {
+    "id": "aruba-ap",
+    "label": "Aruba_AP",
+      "ip": "",
+    "type": Device.WirelessRouter,
+    "ports": [
+      {
+        "id": "p1",
+      "label": "Port 1",
+      "type": Connection.Ethernet,
+      }
+    ]
+  },
+  //BI
+  {
+    "id": "bi",
+    "label": "BI",
+      "ip": "",
+    "type": Device.AccessSwitch,
+    "ports": [
+      {
+        "id": "p1",
+      "label": "Port 1",
+      "type": Connection.Ethernet,
+      }
+    ]
+  },
+
+>>>>>>> 2827e789726fc2219847eede38ebe9983e0383fd
 ]};
 
 export default node_data;

@@ -82,7 +82,7 @@ interface SVGViewerProps {
 }, [svgString, onNodeClick]);
 
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center min-h-52 bg-[#FFFFFF]">
+    <div className="w-full h-full flex flex-col items-center justify-center bg-[#FFFFFF]">
       {error ? (
         <p className="text-red-500 font-bold">{error}</p>
       ) : (
@@ -123,7 +123,7 @@ interface SVGViewerProps {
                   <div
                     ref={containerRef}
                     dangerouslySetInnerHTML={{ __html: svgString }}
-                    className="h-80 flex justify-center items-center"
+                    className="w-full h-full flex justify-center items-center"
                   />
                 </TransformComponent>
               </>

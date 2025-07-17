@@ -45,7 +45,25 @@ export default function HomePage() {
         </div>
       </header>
 
-      <div ref={containerRef} className="w-full h-[100vh]">
+      <div ref={containerRef} className="w-full h-[100vh] relative">
+        <div className="absolute w-45 top-5 left-5 bg-[#2D2D2D] text-white p-3 rounded shadow-md text-sm  space-y-1">
+          <div className="flex items-center space-x-2 bottom-10">
+            <span>Connection Types</span>
+          </div>
+          <div className="flex items-center space-x-2 ">
+            <div className="w-10 h-0.5 bg-[#F58315] rounded-sm"></div>
+            <span>Ethernet</span>
+          </div>
+          <div className="flex items-center space-x-2">
+            <div className="w-10 h-0.5 bg-[#1594F5] rounded-sm"></div>
+            <span>Fiber Optic</span>
+          </div>
+          <div className="flex items-center space-x-2">
+            <div className="w-10 border-t-2 border-dashed border-[#1CE637]"></div>
+            <span>Wireless</span>
+          </div>
+        </div>
+
         <NetworkDiagram
           nodeData={node_data}
           edgeData={edge_data}

@@ -20,9 +20,9 @@ const NetworkDiagram = ({ nodeData, edgeData, width, height }) => {
 
     // You can adjust the placement and size of nodes and edges here
     const simulation = d3.forceSimulation(nodes)
-      .force("link", d3.forceLink(links).id(d => d.id).distance(10).strength(2))
-      .force("charge", d3.forceManyBody().strength(-500))
-      .force("collide", d3.forceCollide(200).radius(90).iterations(3))
+      .force("link", d3.forceLink(links).id(d => d.id).distance(10).strength(0.5))
+      .force("charge", d3.forceManyBody().strength(-1000))
+      .force("collide", d3.forceCollide(500).radius(80))
       .force("center", d3.forceCenter(width / 2, height / 2));
 
     simulation.stop();
@@ -109,7 +109,7 @@ const NetworkDiagram = ({ nodeData, edgeData, width, height }) => {
         .duration(200)
         .style("opacity", .9);
         
-      tooltip.html(`IP: ${d.ip}`)
+      tooltip.html(`IP: ${d.ip} <br /> ID: ${d.id}`)
         .style("left", (event.pageX + 10) + "px")   //for IP address appearance
         .style("top", (event.pageY - 15) + "px");
     });

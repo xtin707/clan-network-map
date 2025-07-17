@@ -9,6 +9,7 @@ import edge_data from '@/data/edgeData';
 import { generateDetailedGraph } from '@/graph/detailedGraph';
 import { Julius_Sans_One } from 'next/font/google';
 import { Raleway } from 'next/font/google';
+import ClusterTree from "@/components/D3Detailed";
 
 
 const juliusSansOne = Julius_Sans_One({ subsets: ['latin'], weight: '400' });
@@ -18,6 +19,28 @@ const raleway = Raleway({
   style: 'normal',
   variable: '--font-raleway',
 })
+
+const treeData = {
+  name: "Root",
+  children: [
+    {
+      name: "Parent 1",
+      children: [
+        { name: "Child A" },
+        { name: "Child B" },
+        { name: "Shared Child X" } // Instance 1
+      ]
+    },
+    {
+      name: "Parent 2",
+      children: [
+        { name: "Child C" },
+        { name: "Shared Child X" } // Instance 2
+      ]
+    },
+    { name: "Parent 3" }
+  ]
+};
 
 export default function DetailedGraphPage() {
   const router = useRouter();
@@ -90,9 +113,6 @@ export default function DetailedGraphPage() {
   }, [currentNodeId]);
 
   // Generate and render graph
-  useEffect(() => {
-    if (!currentNodeId) return;
-
     const main_node = node_data.data.find((node) => node.id === currentNodeId);
     if (!main_node) {
       setError(`Node "${currentNodeId}" not found.`);
@@ -115,17 +135,11 @@ export default function DetailedGraphPage() {
     for (const id of unique_ids) {
       const node = node_data.data.find((n) => n.id === id);
       if (node) filtered_node.push(node);
-    }
+    };
 
-    const dot = generateDetailedGraph(main_node, filtered_node, filtered_edge);
-    graphviz.loadWASM().then(() => {
-      const svg = graphviz.layout(dot, 'svg', 'dot');
-      setSvgString(svg);
-      setError(null);
-    }).catch((err) => {
-      console.error(err);
-      setError('Failed to generate SVG graph.');
-    });
+  useEffect(() => {
+    if (!currentNodeId) return;
+
   }, [currentNodeId]);
 
   const handleBack = () => {
@@ -199,11 +213,18 @@ export default function DetailedGraphPage() {
         <h2 className={juliusSansOne.className + " text-4xl mb-4 text-[#476A99]"}>
           {node_data.data.find(n => n.id === currentNodeId)?.label || currentNodeId}
         </h2>
+        {/* <div className="w-full h-full flex-grow flex items-center justify-center"> */}
+        {/*   <SVGViewer */}
+        {/*     svgString={svgString} */}
+        {/*     error={error} */}
+        {/*     onNodeClick={navigateToNode} */}
+        {/*   /> */}
+        {/* </div> */}
         <div className="w-full h-full flex-grow flex items-center justify-center">
-          <SVGViewer
-            svgString={svgString}
-            error={error}
-            onNodeClick={navigateToNode}
+          <ClusterTree
+            main_node={main_node}
+            filtered_node={filtered_node}
+            filtered_edge={filtered_edge}
           />
         </div>
       </div>

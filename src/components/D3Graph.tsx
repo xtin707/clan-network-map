@@ -20,9 +20,9 @@ const NetworkDiagram = ({ nodeData, edgeData, width, height }) => {
 
     // You can adjust the placement and size of nodes and edges here
     const simulation = d3.forceSimulation(nodes)
-      .force("link", d3.forceLink(links).id(d => d.id).distance(10).strength(0.5))
-      .force("charge", d3.forceManyBody().strength(-1000))
-      .force("collide", d3.forceCollide(500).radius(80))
+      .force("link", d3.forceLink(links).id(d => d.id).distance(10).strength(0.7))
+      .force("charge", d3.forceManyBody().strength(-3000))
+      .force("collide", d3.forceCollide(300).radius(80))
       .force("center", d3.forceCenter(width / 2, height / 2));
 
     simulation.stop();
@@ -57,12 +57,12 @@ const NetworkDiagram = ({ nodeData, edgeData, width, height }) => {
         if (d.type === Device.ISP) return "/cloud.svg";
         if (d.type === Device.MainRouter) return "/router.svg";
         if (d.type === Device.WirelessRouter) return "/wireless-router.svg";
-        if (d.type === Device.Hub) return "/hub.svg";
-        if (d.type === Device.Switch) return "/workgroup-switch-blue.svg";
         if (d.type === Device.Firewall) return "/firewall.svg";
         if (d.type === Device.CoreSwitch) return "/programmable-switch.svg";
         if (d.type === Device.DistributionSwitch) return "/workgroup-switch-blue.svg";
         if (d.type === Device.AccessSwitch) return "/workgroup-switch.svg";
+        if (d.type === Device.Server) return "/server.svg";
+      return 
       })
       .attr("x", -25)
       .attr("y", -25)

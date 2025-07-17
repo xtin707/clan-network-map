@@ -1193,7 +1193,7 @@ const node_data: NodeData = {
     "id": "cac",
     "label": "CAC",
     "ip": "10.200.0.108",
-    "type": Device.Switch,
+    "type": Device.DistributionSwitch,
     "ports": [
         {
             "id": "p1",
@@ -1380,7 +1380,7 @@ const node_data: NodeData = {
     "id": "css",
     "label": "CSS",
     "ip": "10.200.0.107",
-    "type": Device.Switch,
+    "type": Device.DistributionSwitch,
     "ports": [
       {
         "id": "p1",
@@ -1525,7 +1525,7 @@ const node_data: NodeData = {
     "id": "css3",
     "label": "CSS3",
     "ip": "10.200.107.2",
-    "type": Device.Switch,
+    "type": Device.DistributionSwitch,
     "ports": [
       {
         "id": "g1", //g# for gigabit ethernet
@@ -1675,7 +1675,7 @@ const node_data: NodeData = {
     "id": "css2",
     "label": "CSS2",
     "ip": "10.200.107.1",
-    "type": Device.Switch,
+    "type": Device.AccessSwitch,
     "ports": [
       {
         "id": "p1",
@@ -1725,7 +1725,7 @@ const node_data: NodeData = {
   "id": "ka",
   "label": "KA",
   "ip": "",
-  "type": Device.Switch,
+  "type": Device.DistributionSwitch,
   "ports": [
     {
       "id": "p1",
@@ -3260,7 +3260,7 @@ const node_data: NodeData = {
     "id": "breha-8-port",
     "label": "Breha",
     "ip": "10.200.100.244",
-    "type": Device.Switch,
+    "type": Device.DistributionSwitch,
     "ports": [
       {
         "id": "p1",
@@ -4041,7 +4041,7 @@ const node_data: NodeData = {
     "id": "src",
     "label": "SRC New Rack",
       "ip": "",
-    "type": Device.Switch,
+    "type": Device.DistributionSwitch,
     "ports": [
       {
         "id": "p1",
@@ -4055,7 +4055,7 @@ const node_data: NodeData = {
     "id": "guardhouse",
     "label": "GuardHouse",
       "ip": "",
-    "type": Device.Switch,
+    "type": Device.AccessSwitch,
     "ports": [
       {
         "id": "p1",

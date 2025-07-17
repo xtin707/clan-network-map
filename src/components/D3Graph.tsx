@@ -2,7 +2,7 @@
 import React, { useRef, useEffect } from 'react';
 import * as d3 from 'd3';
 import { IBM_Plex_Mono } from 'next/font/google';
-import { Device } from '@/data/structs';
+import { Device, Connection } from '@/data/structs';
 
 
 const NetworkDiagram = ({ nodeData, edgeData, width, height }) => {
@@ -32,7 +32,7 @@ const NetworkDiagram = ({ nodeData, edgeData, width, height }) => {
 
     chartGroup.append("defs");
 
-    const link = chartGroup.append("g")                   //fix appearance of connection type here
+    const link = chartGroup.append("g")
       .attr("stroke", "#999")
       .attr("stroke-opacity", 0.8)
       .selectAll("line")
@@ -77,7 +77,7 @@ const NetworkDiagram = ({ nodeData, edgeData, width, height }) => {
       .attr("font-size", 12)
       .text(d => d.label);
     
-    const tooltip = d3.select("body").append("div")     //for hovering on node
+    const tooltip = d3.select("body").append("div")     //differentiate connection type when hovering on node/s
       .attr("class", "tooltip")
       .style("position", "absolute")
       .style("opacity", 0)
@@ -93,16 +93,24 @@ const NetworkDiagram = ({ nodeData, edgeData, width, height }) => {
         .attr("stroke-width", 2.5);
 
       link.filter(l => l.source.id === d.id || l.target.id === d.id)
-        .attr("stroke", "#717171")
+        .attr("stroke", d => {
+          if (d.type === Connection.Ethernet) return '#F58315';       //orange
+          if (d.type === Connection.FiberOptic) return '#1594F5';     //blue
+          if (d.type === Connection.Wireless) return '#1CE637';       //green
+        })
+        .attr("stroke-dasharray", d => {
+          if (d.type === Connection.Wireless) return "3,5"; //dashed lines
+          return null;
+        })
         .attr("stroke-width", 3)
         .attr("stroke-opacity", 1); 
 
-      tooltip.transition()                          //for hovering on node
+      tooltip.transition()                          //for IP address appearance                      
         .duration(200)
         .style("opacity", .9);
         
       tooltip.html(`IP: ${d.ip}`)
-        .style("left", (event.pageX + 10) + "px")   //for hovering on node
+        .style("left", (event.pageX + 10) + "px")   //for IP address appearance
         .style("top", (event.pageY - 15) + "px");
     });
 
@@ -118,7 +126,7 @@ const NetworkDiagram = ({ nodeData, edgeData, width, height }) => {
       nodeGroup.attr("opacity", 1);
       link.attr("opacity", 1);
 
-      tooltip.transition()                            //for hovering on node
+      tooltip.transition()                           //for IP address appearance
         .duration(500)
         .style("opacity", 0);
     });

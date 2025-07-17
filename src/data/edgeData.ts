@@ -577,8 +577,29 @@ const edge_data: EdgeData = {
   }, 
     //Lib Trunk 8 port
  {
-    "node": ["lib-trunk-8-port", "wup"],
-    "port": ["p3", "p1"],
+    "node": ["lib-trunk-8-port", "l-filipiniana"],
+    "port": ["p3", "p3"],
+    "type": Connection.Ethernet
+  }, 
+ {
+    "node": ["lib-trunk-8-port", "l-tech24"],
+    "port": ["p4", "p26"],
+    "type": Connection.Ethernet
+  }, 
+ {
+    "node": ["lib-trunk-8-port", "lib-circulation"],
+    "port": ["p5", "p8"],
+    "type": Connection.Ethernet
+  }, 
+ {
+    "node": ["lib-trunk-8-port", "l-tech"],
+    "port": ["p7", "p8"],
+    "type": Connection.Ethernet
+  }, 
+    //Lib Filipiniana
+ {
+    "node": ["l-filipiniana", "l-archives"],
+    "port": ["p7", "p8"],
     "type": Connection.Ethernet
   }, 
 

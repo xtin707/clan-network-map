@@ -468,7 +468,7 @@ const node_data: NodeData = {
       },
       {
       "id": "p24",
-      "label": "Port 24",
+      "label": "PF 2",
         "type": Connection.Ethernet,
       },
     ]
@@ -493,14 +493,15 @@ const node_data: NodeData = {
       "id": "p3",
       "label": "Port 3",
       "type": Connection.Ethernet,
-      },{
+      },
+      {
       "id": "p4",
         "label": "MDF3-1F-30V",
         "type": Connection.Ethernet,
       },
       {
       "id": "p5",
-      "label": "Uplink Trunk to IDR-MDF-2F",
+      "label": "Uplink Trunk to NOC 9",
         "type": Connection.Ethernet,
       },
       {
@@ -1050,7 +1051,7 @@ const node_data: NodeData = {
   },
 
 {
-    "id": "cs26",
+    "id": "noc-cs",
     "label": "NOC CS",
       "ip": "192.168.1.248",
     "type": Device.DistributionSwitch,
@@ -1161,7 +1162,7 @@ const node_data: NodeData = {
         "type": Connection.Ethernet,
       },
       {
-      "id": "22",
+      "id": "p22",
       "label": "Port 22",
         "type": Connection.Ethernet,
       },
@@ -1182,7 +1183,7 @@ const node_data: NodeData = {
       },
       {
       "id": "g2",
-      "label": "Port 26",
+      "label": "Uplink to NOC 4",
         "type": Connection.Ethernet,
       },
     ]
@@ -1339,7 +1340,7 @@ const node_data: NodeData = {
   {
       "id": "cac-t",
       "label": "Teatro",
-      "ip": "",
+      "ip": "10.200.100.243",
       "type": Device.AccessSwitch,
       "ports": [
           {
@@ -1358,7 +1359,7 @@ const node_data: NodeData = {
   {
       "id": "cac-jl",
       "label": "JournLab",
-      "ip": "",
+      "ip": "10.200.108.2",
       "type": Device.AccessSwitch,
       "ports": [
           {
@@ -2017,7 +2018,7 @@ const node_data: NodeData = {
   "ports": [
   {
     "id": "g1",
-    "label": "VLAN1",
+    "label": "Aruba_AP",
     "type": Connection.Ethernet,
   },
   {
@@ -2758,23 +2759,9 @@ const node_data: NodeData = {
     ]
   },
 
-  // IM
-  {
-    "id": "alum",
-    "label": "Alumni",
-      "ip": "",
-    "type": Device.AccessSwitch,
-    "ports": [
-      {
-        "id": "",
-      "label": "Port 1",
-      "type": Connection.Ethernet,
-      }
-    ]
-  },
  {
     "id": "im",
-    "label": "IM",
+    "label": "IM Ramp",
     "ip": "10.200.0.104",
     "type": Device.DistributionSwitch,
     "ports": [
@@ -2840,7 +2827,7 @@ const node_data: NodeData = {
       },
       {
       "id": "p13",
-      "label": "Port 13",
+      "label": "Clinic",
       "type": Connection.Ethernet,
       },
       {
@@ -2936,12 +2923,17 @@ const node_data: NodeData = {
   {
     "id": "clinic",
     "label": "Clinic",
-      "ip": "",
+      "ip": "10.200.104.3",
     "type": Device.AccessSwitch,
     "ports": [
       {
-        "id": "",
-      "label": "Port 1",
+        "id": "p2",
+      "label": "CMO",
+      "type": Connection.Ethernet,
+      },
+      {
+        "id": "p8",
+      "label": "IM Ramp",
       "type": Connection.Ethernet,
       }
     ]
@@ -2950,11 +2942,25 @@ const node_data: NodeData = {
     "id": "cmo",
     "label": "CMO",
       "ip": "",
-    "type": Device.AccessSwitch,
+    "type": Device.WirelessRouter,
     "ports": [
       {
-        "id": "",
+        "id": "p1",
       "label": "Port 1",
+      "type": Connection.Ethernet,
+      }
+    ]
+  },
+
+  {
+    "id": "gco",
+    "label": "GCO",
+      "ip": "",
+    "type": Device.WirelessRouter,
+    "ports": [
+      {
+        "id": "p3",
+      "label": "clinic",
       "type": Connection.Ethernet,
       }
     ]
@@ -3481,8 +3487,8 @@ const node_data: NodeData = {
       "type": Device.AccessSwitch,
       "ports": [
         {
-          "id": "p1",
-          "label": "Port 1",
+          "id": "g4",
+          "label": "Uplink to NOC 4",
           "type": Connection.Ethernet,
         },
       ]
@@ -3496,23 +3502,8 @@ const node_data: NodeData = {
       "type": Device.AccessSwitch,
       "ports": [
         {
-          "id": "p1",
-          "label": "Port 1",
-          "type": Connection.Ethernet,
-        },
-      ]
-    },
-
-    //MDF2 SRW224P
-    {
-      "id": "mdf2-srw224p",
-      "label": "MDF2 SRW224P",
-      "ip": "",
-      "type": Device.AccessSwitch,
-      "ports": [
-        {
-          "id": "p1",
-          "label": "Port 1",
+          "id": "g4",
+          "label": "Uplink to NOC 4",
           "type": Connection.Ethernet,
         },
       ]
@@ -3580,7 +3571,7 @@ const node_data: NodeData = {
       "id": "04-fec-desk",
       "label": "UPB VM Server 04 - FEC Desktop",
       "ip": "",
-      "type": Device.AccessSwitch,
+      "type": Device.Server,
       "ports": [
         {
           "id": "p1",
@@ -3631,17 +3622,17 @@ const node_data: NodeData = {
         },
       ]
     },
-    //IDR-MDF-2F
+    //IDR
     {
-      "id": "idr-mdf-2f",
-      "label": "IDR-MDF-2F",
-      "ip": "",
+      "id": "idr",
+      "label": "IDR New Rack",
+      "ip": "10.200.0.135",
       "type": Device.AccessSwitch,
       "ports": [
         {
-          "id": "p1",
-          "label": "Port 1",
-          "type": Connection.Ethernet,
+          "id": "p49",
+          "label": "Uplink to NOC 9",
+          "type": Connection.FiberOptic,
         },
       ]
     },
@@ -3785,20 +3776,6 @@ const node_data: NodeData = {
           "id": "p1",
           "label": "Port 1",
           "type": Connection.Ethernet,
-        },
-      ]
-    },
-    //IDR-Ramp
-    {
-      "id": "idr-ramp",
-      "label": "IDR-Ramp",
-      "ip": "",
-      "type": Device.AccessSwitch,
-      "ports": [
-        {
-          "id": "p1",
-          "label": "Port 1",
-          "type": Connection.FiberOptic,
         },
       ]
     },
@@ -4048,7 +4025,7 @@ const node_data: NodeData = {
     //SAC
     {
       "id": "sac",
-      "label": "SAC",
+      "label": "SAC Alumni",
       "ip": "",
       "type": Device.AccessSwitch,
       "ports": [
@@ -4059,38 +4036,6 @@ const node_data: NodeData = {
         },
       ]
     },
-    {
-      "id": "sac-2f-hpe",
-      "label": "SAC 2/F HPE",
-      "ip": "",
-      "type": Device.AccessSwitch,
-      "ports": [
-        {
-          "id": "p1",
-          "label": "Port 1",
-          "type": Connection.FiberOptic,
-        },
-      ]
-    },
-    //IDR New Rack
-  {
-    "id": "idr",
-    "label": "IDR New Rack",
-      "ip": "",
-    "type": Device.Switch,
-    "ports": [
-      {
-        "id": "p1",
-      "label": "Port 1",
-      "type": Connection.FiberOptic,
-      },
-      {
-        "id": "p2",
-      "label": "Port 2",
-      "type": Connection.Ethernet,
-      }
-    ]
-  },
   //SRC
   {
     "id": "src",
@@ -4124,7 +4069,7 @@ const node_data: NodeData = {
     "id": "cac-aruba",
     "label": "CAC-Aruba-1930-8G",
       "ip": "",
-    "type": Device.Switch,
+    "type": Device.AccessSwitch,
     "ports": [
       {
         "id": "p1",
@@ -4177,6 +4122,20 @@ const node_data: NodeData = {
   {
     "id": "tpl-ax72-wan",
     "label": "TPL-AX72-WAN",
+      "ip": "",
+    "type": Device.WirelessRouter,
+    "ports": [
+      {
+        "id": "p1",
+      "label": "Port 1",
+      "type": Connection.Ethernet,
+      }
+    ]
+  },
+  //TPL-AX72-WAN
+  {
+    "id": "aruba-ap",
+    "label": "Aruba_AP",
       "ip": "",
     "type": Device.WirelessRouter,
     "ports": [

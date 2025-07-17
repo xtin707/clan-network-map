@@ -94,7 +94,7 @@ const edge_data: EdgeData = {
   }, 
   {
     "node": ["sw4", "mdf2-sg100-16"],
-    "port": ["p8", "p1"],
+    "port": ["p9", "p1"],
     "type": Connection.Ethernet
   }, 
   {

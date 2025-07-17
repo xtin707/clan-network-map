@@ -13,7 +13,6 @@ export function generateDetailedGraph(main_node: any, node_data: NodeData, edge_
   const G = new Digraph('G');
 
   G.graph({
-    splines:'ortho',
     bgcolor: 'none'
   });
 
@@ -21,7 +20,7 @@ export function generateDetailedGraph(main_node: any, node_data: NodeData, edge_
 
   for (const port of main_node.ports) {
     portStrings = `${portStrings}
-<td port="${port.id}">${port.label}</td>`
+<tr><td port="${port.id}">${port.label}</td></tr>`
   };
 
   // where to edit detailed main table/node
@@ -31,10 +30,8 @@ export function generateDetailedGraph(main_node: any, node_data: NodeData, edge_
     fillcolor:'#FFFFFF',
     margin: 0,
     label: createHtmlLabel(`
-        <tr><td colspan="${main_node.ports.length}">${main_node.label}</td></tr>
-        <tr>
-        ${portStrings}
-        </tr>`),
+        <tr><td rowspan="${main_node.ports.length + 1}">${main_node.label}</td> <td>Ports: </td></tr>
+        ${portStrings}`),
     URL: `./${main_node.id}`,
   });
 

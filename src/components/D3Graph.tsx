@@ -62,7 +62,7 @@ const NetworkDiagram = ({ nodeData, edgeData, width, height }) => {
         if (d.type === Device.DistributionSwitch) return "/workgroup-switch-blue.svg";
         if (d.type === Device.AccessSwitch) return "/workgroup-switch.svg";
         if (d.type === Device.Server) return "/server.svg";
-      return 
+      return "/no.svg"
       })
       .attr("x", -25)
       .attr("y", -25)

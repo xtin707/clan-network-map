@@ -6,6 +6,11 @@ export enum Connection {
   None,
 }
 
+export enum Node {
+  Device,
+  Port
+}
+
 export enum Device {
   Firewall,
   MainRouter,

@@ -5,6 +5,8 @@ import NetworkDiagram from '@/components/D3Graph';
 import { Julius_Sans_One } from 'next/font/google';
 import { IBM_Plex_Mono } from 'next/font/google';
 import {useEffect, useRef, useState} from 'react';
+import { Info } from 'lucide-react';
+
 
 const juliusSansOne = Julius_Sans_One({ subsets: ['latin'], weight: '400' });
 const ibmPlexMono = IBM_Plex_Mono({ subsets: ['latin'], weight: '400' });
@@ -32,12 +34,12 @@ export default function HomePage() {
     <main className="bg-[#1E1E1E] min-h-screen">
       <header className="bg-[#1E1E1E] text-white flex items-center justify-between px-10 py-6">
         <div className="flex items-center space-x-4">
-          <img src="/up-logo.png" alt="UPB Logo" className="h-10 w-auto"/>
+          <img src="/up-logo.png" alt="UPB Logo" className="h-12 w-auto"/>
           <h1 className={juliusSansOne.className + " text-[#DFDEDE] text-xl font-semibold tracking-widest"}>UPB Network Diagram</h1>
         </div>
         <div className="relative group">
-          <img src="/info.svg" alt="Info" className="w-6 h-6 cursor-pointer"/>
-          <div className={ibmPlexMono.className + " absolute right-0 mt-2 w-max bg-[#2D2D2D] text-white text-xs px-3 py-1 rounded shadow-lg opacity-0 group-hover:opacity-80 transition-opacity duration-300"}>
+          <Info className="h-7.5 w-auto text-white cursor-pointer" />
+          <div className={ibmPlexMono.className + " absolute right-0 mt-2 w-max bg-[#2D2D2D] text-[#DFDEDE] text-xs px-3 py-1 rounded shadow-lg opacity-0 group-hover:opacity-80 transition-opacity duration-300"}>
             Click the node to see the detailed view of ports.
           </div>
         </div>

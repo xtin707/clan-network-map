@@ -1,7 +1,9 @@
-'use client'
+"use client";
 import React, { useRef, useEffect } from 'react';
 import * as d3 from 'd3';
-import { Device } from '@/data/structs';
+import { IBM_Plex_Mono } from 'next/font/google';
+import { Device, Connection } from '@/data/structs';
+
 
 const NetworkDiagram = ({ nodeData, edgeData, width, height }) => {
   const svgRef = useRef();
@@ -13,14 +15,14 @@ const NetworkDiagram = ({ nodeData, edgeData, width, height }) => {
       .attr('width', width)
       .attr('height', height);
 
-    const nodes = nodeData.data.map(d => ({ id: d.id, label: d.label, type: d.type}));
-    const links = edgeData.data.map(d => ({ source:d.node[0], target: d.node[1], type: d.type}));
+    const nodes = nodeData.data.map(d => ({ id: d.id, label: d.label, type: d.type, ip: d.ip }));
+    const links = edgeData.data.map(d => ({ source:d.node[0], target: d.node[1], type: d.type }));
 
     // You can adjust the placement and size of nodes and edges here
     const simulation = d3.forceSimulation(nodes)
       .force("link", d3.forceLink(links).id(d => d.id).distance(10).strength(2))
       .force("charge", d3.forceManyBody().strength(-500))
-    .force("collide", d3.forceCollide(200).radius(90).iterations(3))
+      .force("collide", d3.forceCollide(200).radius(90).iterations(3))
       .force("center", d3.forceCenter(width / 2, height / 2));
 
     simulation.stop();
@@ -41,26 +43,26 @@ const NetworkDiagram = ({ nodeData, edgeData, width, height }) => {
       .attr("x2", d => d.target.x)
       .attr("y2", d => d.target.y);
 
-    const nodeGroup = chartGroup.append("g")
+    const nodeGroup = chartGroup.append("g")              
       .selectAll("g")
       .data(nodes)
       .join("g")
       .attr("transform", d => `translate(${d.x},${d.y})`);
 
-    const linkHandler = nodeGroup.append("a")
+    const linkHandler = nodeGroup.append("a")             
     .attr("xlink:href", d => `./${d.id}`); 
 
     linkHandler.append("image")
       .attr("xlink:href", d => {
-        if (d.type === Device.ISP) return "cloud.svg";
+        if (d.type === Device.ISP) return "/cloud.svg";
         if (d.type === Device.MainRouter) return "/router.svg";
         if (d.type === Device.WirelessRouter) return "/wireless-router.svg";
         if (d.type === Device.Hub) return "/hub.svg";
         if (d.type === Device.Switch) return "/workgroup-switch-blue.svg";
         if (d.type === Device.Firewall) return "/firewall.svg";
-      if (d.type === Device.CoreSwitch) return "/programmable-switch.svg";
-      if (d.type === Device.DistributionSwitch) return "/workgroup-switch-blue.svg";
-      if (d.type === Device.AccessSwitch) return "/workgroup-switch.svg";
+        if (d.type === Device.CoreSwitch) return "/programmable-switch.svg";
+        if (d.type === Device.DistributionSwitch) return "/workgroup-switch-blue.svg";
+        if (d.type === Device.AccessSwitch) return "/workgroup-switch.svg";
       })
       .attr("x", -25)
       .attr("y", -25)
@@ -74,6 +76,16 @@ const NetworkDiagram = ({ nodeData, edgeData, width, height }) => {
       .attr("font-family", "sans-serif")
       .attr("font-size", 12)
       .text(d => d.label);
+    
+    const tooltip = d3.select("body").append("div")     //differentiate connection type when hovering on node/s
+      .attr("class", "tooltip")
+      .style("position", "absolute")
+      .style("opacity", 0)
+      .style("background-color", "#2D2D2D")
+      .style("color", "white")
+      .style("padding", "5px")
+      .style("border-radius", "3px")
+      .style("pointer-events", "none");
 
     nodeGroup.on("mouseover", (event, d) => {
       d3.select(event.currentTarget).select("image")
@@ -81,9 +93,25 @@ const NetworkDiagram = ({ nodeData, edgeData, width, height }) => {
         .attr("stroke-width", 2.5);
 
       link.filter(l => l.source.id === d.id || l.target.id === d.id)
-        .attr("stroke", "#717171")
+        .attr("stroke", d => {
+          if (d.type === Connection.Ethernet) return '#F58315';       //orange
+          if (d.type === Connection.FiberOptic) return '#1594F5';     //blue
+          if (d.type === Connection.Wireless) return '#1CE637';       //green
+        })
+        .attr("stroke-dasharray", d => {
+          if (d.type === Connection.Wireless) return "3,5"; //dashed lines
+          return null;
+        })
         .attr("stroke-width", 3)
         .attr("stroke-opacity", 1); 
+
+      tooltip.transition()                          //for IP address appearance                      
+        .duration(200)
+        .style("opacity", .9);
+        
+      tooltip.html(`IP: ${d.ip}`)
+        .style("left", (event.pageX + 10) + "px")   //for IP address appearance
+        .style("top", (event.pageY - 15) + "px");
     });
 
     nodeGroup.on("mouseout", (event) => {
@@ -97,6 +125,10 @@ const NetworkDiagram = ({ nodeData, edgeData, width, height }) => {
 
       nodeGroup.attr("opacity", 1);
       link.attr("opacity", 1);
+
+      tooltip.transition()                           //for IP address appearance
+        .duration(500)
+        .style("opacity", 0);
     });
 
 

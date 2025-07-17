@@ -17,6 +17,7 @@ export enum Device {
   DistributionSwitch,
   Hub,
   ISP,
+  Server,
   None,
 }
 

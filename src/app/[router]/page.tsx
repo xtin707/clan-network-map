@@ -8,9 +8,16 @@ import node_data from '@/data/nodeData';
 import edge_data from '@/data/edgeData';
 import { generateDetailedGraph } from '@/graph/detailedGraph';
 import { Julius_Sans_One } from 'next/font/google';
-import { MoveLeft } from 'lucide-react';
+import { Raleway } from 'next/font/google';
+
 
 const juliusSansOne = Julius_Sans_One({ subsets: ['latin'], weight: '400' });
+const raleway = Raleway({
+  subsets: ['latin'],
+  weight: '700',
+  style: 'normal',
+  variable: '--font-raleway',
+})
 
 export default function DetailedGraphPage() {
   const router = useRouter();
@@ -166,57 +173,61 @@ export default function DetailedGraphPage() {
           <h1 className={juliusSansOne.className + " text-[#DFDEDE] text-xl font-semibold tracking-widest"}>UPB Network Diagram</h1>
         </div>
         <div className="relative group">
-          <Button variant="link"
+          <Button variant="ghost"
             onClick={handleHome}
-            className={juliusSansOne.className + " hover:bg-stone-400/30 text-[#DFDEDE] px-4 py-2 rounded text-sm"}
+            className={juliusSansOne.className + " hover:bg-stone-400/30 hover:text-[#DFDEDE] px-2 py-1 rounded-sm text-sm"}
           >
-            <MoveLeft />Go Back to Overview
+            Go Back to Overview
           </Button>
-          {/* extended detailed view should not be here */}
+        </div>
+      </header>
+      
+      <div className="flex-grow bg-white w-full flex flex-col items-start justify-start px-25 py-10">
+        <div className="flex items-center justify-start gap-0.2 w-full mb-4">
+          <h6 className={juliusSansOne.className + " text-xs font-bold rounded-md py-1 px-0.5 bg-[#D9D9D9] text-black"}>
+            Detailed Node View:
+          </h6>
           {previousNodeLabel && (
-            <Button
+            <Button variant="link"
               onClick={handleBack}
-              className="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded text-sm"
+              className={juliusSansOne.className + " hover:text-gray-400 text-gray-800 px-4 py-2 text-sm"}
             >
               ← Back to {previousNodeLabel}
             </Button>
           )}
         </div>
-      </header>
-      
-      <div className="flex-grow bg-white w-full flex flex-col items-center justify-start px-6 py-10">
-        <h2 className="text-3xl font-bold mb-4 text-gray-800">
-          Detailed Node View: {node_data.data.find(n => n.id === currentNodeId)?.label || currentNodeId}
+        <h2 className={juliusSansOne.className + " text-4xl mb-4 text-[#476A99]"}>
+          {node_data.data.find(n => n.id === currentNodeId)?.label || currentNodeId}
         </h2>
-        <span className="text-gray-400">({currentNodeId})</span>
-
-      <div className="w-full h-full flex-grow flex items-center justify-center">
-        <SVGViewer 
-          svgString={svgString} 
-          error={error} 
-          onNodeClick={navigateToNode}
-        />
+        <div className="w-full h-full flex-grow flex items-center justify-center">
+          <SVGViewer
+            svgString={svgString}
+            error={error}
+            onNodeClick={navigateToNode}
+          />
+        </div>
       </div>
-    </div>
 
     {/* Footer with history navigation */}
 
     {/* Array Stack tracker for checking */}
-    <div className="fixed bottom-2 right-2 text-xs bg-white p-2 rounded shadow max-w-xs text-left">
-      <div className="font-bold">History Stack (Length: {historyStack.length}):</div>
-      <div className="pl-2">
-        {historyStack.map((id, i) => {
-          const node = node_data.data.find((n) => n.id === id);
-          const label = node?.label || id;
-          return (
-            <div
-              key={i}
-              className={i === historyStack.length - 1 ? 'font-bold text-blue-600' : ''}
-            >
-              {i + 1}. {label} <span className="text-gray-400">({id})</span>
-            </div>
-          );
-        })}
+    <div className="fixed bottom-5 left-20 text-xs bg-white p-2 rounded shadow max-w-xs text-left max-h-32 flex flex-col overflow-hidden">
+      <div className={raleway.className + " font-bold p-2 bg-white border-b sticky top-0 z-10"}>History (Length: {historyStack.length}):</div>
+      <div className="pl-2 pr-2 pb-2 overflow-y-auto flex-1 flex flex-col-reverse">
+        <div className="flex flex-col">
+          {historyStack.map((id, i) => {
+            const node = node_data.data.find((n) => n.id === id);
+            const label = node?.label || id;
+            return (
+              <div
+                key={i}
+                className={juliusSansOne.className + (i === historyStack.length - 1 ? ' font-bold text-[#3C77C4]' : '')}
+              >
+                {i + 1}. {label} <span className="text-gray-400">({id})</span>
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
     </main>

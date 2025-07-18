@@ -30,7 +30,9 @@ const ClusterTree = ({ main_node, filtered_node, filtered_edge }) => {
       name: main_node.label,
       children: [],
       node: Node.Device,
-      type: main_node.type
+      type: main_node.type,
+      port: "",
+      connection: Connection.None,
     };
 
     for (const port of main_node.ports) {
@@ -40,11 +42,14 @@ const ClusterTree = ({ main_node, filtered_node, filtered_edge }) => {
         children: [],
         node: Node.Port,
         type: port.type,
+        port: "",
+        connection: Connection.None,
       };
 
       for (const edge of filtered_edge) {
         const node_index = edge.node.indexOf(main_node.id);
         const partner_node = filtered_node.filter(d => d.id === edge.node[1 - node_index]);
+        const partner_port = partner_node[0].ports.filter(d => d.id === edge.port[1 - node_index]);
 
         if (edge.port[node_index] === port.id) {
           node.children.push({
@@ -53,7 +58,8 @@ const ClusterTree = ({ main_node, filtered_node, filtered_edge }) => {
             name: `${partner_node[0].label}`,
             children:[],
             node: Node.Device,
-            type: partner_node[0].type
+            type: partner_node[0].type,
+            port: partner_port[0].label
           });
         };
       }
@@ -76,6 +82,8 @@ const ClusterTree = ({ main_node, filtered_node, filtered_edge }) => {
     treeLayout(root);
 
     // 4. Draw the links (paths)
+    console.log(root.links());
+
     g.selectAll(".link")
       .data(root.links())
       .enter().append("path")
@@ -95,6 +103,7 @@ const ClusterTree = ({ main_node, filtered_node, filtered_edge }) => {
       .attr("transform", d => `translate(${d.y},${d.x})`);
 
     // Add circles for nodes
+    console.log(root.descendants());
 
     const linkHandler = node.append("a")
     .attr("xlink:href", d => `./${d.data.id}`); 
@@ -125,7 +134,27 @@ const ClusterTree = ({ main_node, filtered_node, filtered_edge }) => {
       .attr("text-anchor", "middle")
       .attr("font-family", "sans-serif")
       .attr("font-size", 12)
-      .text(d => d.data.name);
+      .each(function(d) {
+        const textElement = d3.select(this);
+        textElement.selectAll("*").remove(); // Clear existing tspans on re-render
+
+        if (d.parent && d.data.node === Node.Device) {
+          textElement.append("tspan")
+            .attr("x", 0)
+            .attr("dy", "-0.7em") // Move up relative to the parent <text>'s 'y' (45)
+            .text(d.data.port);
+
+          textElement.append("tspan")
+            .attr("x", 0)
+            .attr("dy", "1.4em") // Move down from the previous tspan's position
+            .text(d.data.name);
+        } else {
+          textElement.append("tspan")
+            .attr("x", 0)
+            .attr("dy", "0.31em") // Standard baseline alignment relative to parent 'y'
+            .text(d.data.name);
+        }
+      });
 
     const zoomBehavior = d3.zoom()
       .scaleExtent([0.1, 8]) 

@@ -13,7 +13,7 @@ const node_data: NodeData = {
       {
         "id": "p1",
         "label": "Converge Port",
-        "type": Connection.Ethernet,
+        "type": Connection.FiberOptic,
       }
     ]
   },
@@ -44,7 +44,7 @@ const node_data: NodeData = {
       {
         "id": "p1",
         "label": "Port 1",
-        "type": Connection.Ethernet,
+        "type": Connection.FiberOptic,
       }
     ]
   },
@@ -57,7 +57,7 @@ const node_data: NodeData = {
       {
         "id": "p1",
         "label": "Port 1",
-        "type": Connection.Ethernet,
+        "type": Connection.FiberOptic,
       }
     ]
   },
@@ -70,12 +70,12 @@ const node_data: NodeData = {
       "type": Device.Firewall,
       "ports": [
         {
-          "id": "",
+          "id": "p1",
           "label": "Port 1",
           "type": Connection.Ethernet,
         },
         {
-          "id": "",
+          "id": "p2",
           "label": "Port 2",
           "type": Connection.Ethernet,
         },
@@ -88,12 +88,12 @@ const node_data: NodeData = {
       "type": Device.Firewall,
       "ports": [
         {
-          "id": "",
+          "id": "p1",
           "label": "Port 1",
           "type": Connection.Ethernet,
         },
         {
-          "id": "",
+          "id": "p2",
           "label": "Port 2",
           "type": Connection.Ethernet,
         },
@@ -206,12 +206,12 @@ const node_data: NodeData = {
     "ports": [
       {
         "id": "p1",
-      "label": "Port 1",
+      "label": "ADSL1",
       "type": Connection.Ethernet,
       },
       {
       "id": "p2",
-      "label": "Port 2",
+      "label": "ADSL2",
       "type": Connection.Ethernet,
       },
       {
@@ -286,47 +286,47 @@ const node_data: NodeData = {
       {
       "id": "p17",
       "label": "Port 17",
-        "type": Connection.Ethernet,
+      "type": Connection.Ethernet,
       },
       {
       "id": "p18",
       "label": "Port 18",
-        "type": Connection.Ethernet,
+      "type": Connection.Ethernet,
       },
       {
       "id": "p19",
       "label": "Port 19",
-        "type": Connection.Ethernet,
+      "type": Connection.Ethernet,
       },
       {
       "id": "p20",
       "label": "Port 20",
-        "type": Connection.Ethernet,
+      "type": Connection.Ethernet,
       },
       {
       "id": "p21",
       "label": "Port 21",
-        "type": Connection.Ethernet,
+      "type": Connection.Ethernet,
       },
       {
       "id": "p22",
       "label": "Port 22",
-        "type": Connection.Ethernet,
+      "type": Connection.Ethernet,
       },
       {
       "id": "p23",
       "label": "Port 23",
-        "type": Connection.Ethernet,
+      "type": Connection.Ethernet,
       },
       {
       "id": "p24",
       "label": "Port 24",
-        "type": Connection.Ethernet,
+      "type": Connection.Ethernet,
       },
       {
       "id": "p25",
       "label": "Trunk TRK1 to NOC4",
-        "type": Connection.Ethernet,
+      "type": Connection.Ethernet,
       },
       {
       "id": "p26",
@@ -336,12 +336,12 @@ const node_data: NodeData = {
       {
       "id": "p27",
       "label": "Port 27",
-        "type": Connection.Ethernet,
+      "type": Connection.Ethernet,
       },
       {
       "id": "p28",
       "label": "Port 28",
-        "type": Connection.Ethernet,
+      "type": Connection.Ethernet,
       },
     ]
 },
@@ -349,11 +349,11 @@ const node_data: NodeData = {
 {
     "id": "sw2",
     "label": "NOC 2",
-      "ip": "10.200.0.2",
+    "ip": "10.200.0.2",
     "type": Device.DistributionSwitch,
     "ports": [
       {
-        "id": "p1",
+      "id": "p1",
       "label": "Trunk link TRK1 to NOC4",
       "type": Connection.Ethernet,
       },

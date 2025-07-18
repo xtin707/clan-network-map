@@ -6,7 +6,7 @@ export enum Connection {
   None,
 }
 
-export enum Node {
+export enum Entity {
   Device,
   Port
 }

@@ -2,7 +2,7 @@
 // components/ClusterTree.js
 import React, { useRef, useEffect, useState } from 'react';
 import * as d3 from 'd3';
-import { Connection, Device, Node } from "@/data/structs";
+import { Connection, Device, Entity } from "@/data/structs";
 
 const ClusterTree = ({ main_node, filtered_node, filtered_edge }) => {
   const svgRef = useRef();
@@ -29,7 +29,7 @@ const ClusterTree = ({ main_node, filtered_node, filtered_edge }) => {
       ip: main_node.ip,
       name: main_node.label,
       children: [],
-      node: Node.Device,
+      node: Entity.Device,
       type: main_node.type,
       port: "",
       connection: Connection.None,
@@ -40,7 +40,7 @@ const ClusterTree = ({ main_node, filtered_node, filtered_edge }) => {
         id: port.id,
         name: port.label,
         children: [],
-        node: Node.Port,
+        node: Entity.Port,
         type: port.type,
         port: "",
         connection: Connection.None,
@@ -57,9 +57,9 @@ const ClusterTree = ({ main_node, filtered_node, filtered_edge }) => {
             ip: partner_node[0].ip,
             name: `${partner_node[0].label}`,
             children:[],
-            node: Node.Device,
+            node: Entity.Device,
             type: partner_node[0].type,
-            port: partner_port[0].label
+            port: partner_port[0]?.label ?? 'undefined'
           });
         };
       }
@@ -110,16 +110,16 @@ const ClusterTree = ({ main_node, filtered_node, filtered_edge }) => {
 
     linkHandler.append("image")
       .attr("xlink:href", d => {
-        if (d.data.node === Node.Device && d.data.type === Device.ISP) return "/cloud.svg";
-        if (d.data.node === Node.Device && d.data.type === Device.MainRouter) return "/router.svg";
-        if (d.data.node === Node.Device && d.data.type === Device.WirelessRouter) return "/wireless-router.svg";
-        if (d.data.node === Node.Device && d.data.type === Device.Firewall) return "/firewall.svg";
-        if (d.data.node === Node.Device && d.data.type === Device.CoreSwitch) return "/programmable-switch.svg";
-        if (d.data.node === Node.Device && d.data.type === Device.DistributionSwitch) return "/workgroup-switch-blue.svg";
-        if (d.data.node === Node.Device && d.data.type === Device.AccessSwitch) return "/workgroup-switch.svg";
-        if (d.data.node === Node.Device && d.data.type === Device.Server) return "/server.svg";
-        if (d.data.node === Node.Port && d.data.type === Connection.Ethernet) return "/ethernet.svg";
-        if (d.data.node === Node.Port && d.data.type === Connection.FiberOptic) return "/fiber.svg";
+        if (d.data.node === Entity.Device && d.data.type === Device.ISP) return "/cloud.svg";
+        if (d.data.node === Entity.Device && d.data.type === Device.MainRouter) return "/router.svg";
+        if (d.data.node === Entity.Device && d.data.type === Device.WirelessRouter) return "/wireless-router.svg";
+        if (d.data.node === Entity.Device && d.data.type === Device.Firewall) return "/firewall.svg";
+        if (d.data.node === Entity.Device && d.data.type === Device.CoreSwitch) return "/programmable-switch.svg";
+        if (d.data.node === Entity.Device && d.data.type === Device.DistributionSwitch) return "/workgroup-switch-blue.svg";
+        if (d.data.node === Entity.Device && d.data.type === Device.AccessSwitch) return "/workgroup-switch.svg";
+        if (d.data.node === Entity.Device && d.data.type === Device.Server) return "/server.svg";
+        if (d.data.node === Entity.Port && d.data.type === Connection.Ethernet) return "/ethernet.svg";
+        if (d.data.node === Entity.Port && d.data.type === Connection.FiberOptic) return "/fiber.svg";
       return "/no.svg"
       })
       .attr("x", -25)

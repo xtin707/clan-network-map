@@ -42,7 +42,7 @@ const ClusterTree = ({ main_node, filtered_node, filtered_edge }) => {
         children: [],
         node: Entity.Port,
         type: port.type,
-        port: "",
+        port: port.port_num,
         connection: Connection.None,
       };
 
@@ -59,7 +59,8 @@ const ClusterTree = ({ main_node, filtered_node, filtered_edge }) => {
             children:[],
             node: Entity.Device,
             type: partner_node[0].type,
-            port: partner_port[0]?.label ?? 'undefined'
+            port: partner_port[0]?.port_num ?? 'undefined',
+            label: partner_port[0]?.label ?? 'undefined',
           });
         };
       }
@@ -82,7 +83,6 @@ const ClusterTree = ({ main_node, filtered_node, filtered_edge }) => {
     treeLayout(root);
 
     // 4. Draw the links (paths)
-    console.log(root.links());
 
     g.selectAll(".link")
       .data(root.links())
@@ -103,7 +103,6 @@ const ClusterTree = ({ main_node, filtered_node, filtered_edge }) => {
       .attr("transform", d => `translate(${d.y},${d.x})`);
 
     // Add circles for nodes
-    console.log(root.descendants());
 
     const linkHandler = node.append("a")
     .attr("xlink:href", d => `./${d.data.id}`); 
@@ -139,11 +138,11 @@ const ClusterTree = ({ main_node, filtered_node, filtered_edge }) => {
         const textElement = d3.select(this);
         textElement.selectAll("*").remove(); // Clear existing tspans on re-render
 
-        if (d.parent && d.data.node === Node.Device) {
+        if (d.parent && d.data.node === Entity.Device) {
           textElement.append("tspan")
             .attr("x", 0)
             .attr("dy", "-0.7em") // Move up relative to the parent <text>'s 'y' (45)
-            .text(d.data.port);
+            .text(`${d.data.port} | ${d.data.label}`);
 
           textElement.append("tspan")
             .attr("x", 0)
@@ -153,7 +152,7 @@ const ClusterTree = ({ main_node, filtered_node, filtered_edge }) => {
           textElement.append("tspan")
             .attr("x", 0)
             .attr("dy", "0.31em") // Standard baseline alignment relative to parent 'y'
-            .text(d.data.name);
+            .text(`${d.data.port} | ${d.data.name}`);
         }
       });
 

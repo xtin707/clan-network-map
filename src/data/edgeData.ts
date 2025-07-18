@@ -561,7 +561,7 @@ const edge_data: EdgeData = {
   }, 
  {
     "node": ["lib", "breha-8-port"],
-    "port": ["wlan", "wireless"],
+    "port": ["wlan", "wlan"],
     "type": Connection.Ethernet
   }, 
  {

@@ -12,6 +12,7 @@ const node_data: NodeData = {
     "ports": [
       {
         "id": "p1",
+          "port_num": "Port 1",
         "label": "Converge Port",
         "type": Connection.FiberOptic,
       }
@@ -25,12 +26,14 @@ const node_data: NodeData = {
     "ports": [
       {
         "id": "p1",
+          "port_num": "Port 1",
         "label": "Port 1",
         "type": Connection.FiberOptic
       },
       {
         "id": "p2",
-        "label": "Port 2",
+          "port_num": "Port 2",
+        "label": "",
         "type": Connection.FiberOptic,
       },
     ]
@@ -43,7 +46,8 @@ const node_data: NodeData = {
     "ports": [
       {
         "id": "p1",
-        "label": "Port 1",
+          "port_num": "Port 1",
+        "label": "",
         "type": Connection.FiberOptic,
       }
     ]
@@ -56,7 +60,8 @@ const node_data: NodeData = {
     "ports": [
       {
         "id": "p1",
-        "label": "Port 1",
+          "port_num": "Port 1",
+        "label": "",
         "type": Connection.FiberOptic,
       }
     ]
@@ -71,12 +76,14 @@ const node_data: NodeData = {
       "ports": [
         {
           "id": "p1",
-          "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "",
           "type": Connection.Ethernet,
         },
         {
           "id": "p2",
-          "label": "Port 2",
+          "port_num": "Port 2",
+          "label": "",
           "type": Connection.Ethernet,
         },
       ]
@@ -89,12 +96,14 @@ const node_data: NodeData = {
       "ports": [
         {
           "id": "p1",
+          "port_num": "Port 1",
           "label": "Port 1",
           "type": Connection.Ethernet,
         },
         {
           "id": "p2",
-          "label": "Port 2",
+          "port_num": "Port 2",
+          "label": "",
           "type": Connection.Ethernet,
         },
       ]
@@ -107,31 +116,37 @@ const node_data: NodeData = {
       "ports": [
         {
           "id": "p1",
-          "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "",
           "type": Connection.Ethernet,
         },
         {
           "id": "p2",
-          "label": "Port 2",
+          "port_num": "Port 2",
+          "label": "",
           "type": Connection.Ethernet,
         },
         {
           "id": "p3",
-          "label": "Port 3",
+          "port_num": "Port 3",
+          "label": "",
           "type": Connection.Ethernet,
         },{
           "id": "p4",
-          "label": "Port 4",
+          "port_num": "Port 4",
+          "label": "",
           "type": Connection.Ethernet,
         },
         {
           "id": "p5",
-          "label": "Port 5",
+          "port_num": "Port 5",
+          "label": "",
           "type": Connection.Ethernet,
         },
         {
           "id": "p6",
-          "label": "Port 6",
+          "port_num": "Port 6",
+          "label": "",
           "type": Connection.Ethernet,
         },
       ]
@@ -144,31 +159,37 @@ const node_data: NodeData = {
       "ports": [
         {
           "id": "p1",
-          "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "",
           "type": Connection.Ethernet,
         },
         {
           "id": "p2",
-          "label": "Port 2",
+          "port_num": "Port 2",
+          "label": "",
           "type": Connection.Ethernet,
         },
         {
           "id": "p3",
-          "label": "Port 3",
+          "port_num": "Port 3",
+          "label": "",
           "type": Connection.Ethernet,
         },{
           "id": "p4",
-          "label": "Port 4",
+          "port_num": "Port 4",
+          "label": "",
           "type": Connection.Ethernet,
         },
         {
           "id": "p5",
-          "label": "Port 5",
+          "port_num": "Port 5",
+          "label": "",
           "type": Connection.Ethernet,
         },
         {
           "id": "p6",
-          "label": "Port 6",
+          "port_num": "Port 6",
+          "label": "",
           "type": Connection.Ethernet,
         },
       ]
@@ -183,15 +204,18 @@ const node_data: NodeData = {
     "ports": [
       {
         "id": "p1",
-        "label": "Port 1",
+          "port_num": "Port 1",
+        "label": "",
         "type": Connection.FiberOptic,
       },{
         "id": "p2",
-        "label": "Port 2",
+          "port_num": "Port 2",
+        "label": "",
         "type": Connection.FiberOptic,
       },{
         "id": "p3",
-        "label": "Port 3",
+          "port_num": "Port 3",
+        "label": "",
         "type": Connection.FiberOptic,
       }
     ]
@@ -206,141 +230,169 @@ const node_data: NodeData = {
     "ports": [
       {
         "id": "p1",
+          "port_num": "Port 1",
       "label": "ADSL1",
       "type": Connection.Ethernet,
       },
       {
       "id": "p2",
+          "port_num": "Port 2",
       "label": "ADSL2",
       "type": Connection.Ethernet,
       },
       {
       "id": "p3",
-      "label": "Port 3",
+          "port_num": "Port 3",
+      "label": "",
       "type": Connection.Ethernet,
       },{
       "id": "p4",
-        "label": "Port 4",
+          "port_num": "Port 4",
+        "label": "",
         "type": Connection.Ethernet,
       },
       {
       "id": "p5",
-      "label": "Port 5",
+          "port_num": "Port 5",
+      "label": "",
         "type": Connection.Ethernet,
       },
       {
       "id": "p6",
-      "label": "Port 6",
+          "port_num": "Port 6",
+      "label": "",
         "type": Connection.Ethernet,
       },
       {
       "id": "p7",
+          "port_num": "Port 7",
       "label": "CS Dean's iMAC LAN",
         "type": Connection.Ethernet,
       },
       {
       "id": "p8",
-      "label": "Port 8",
+          "port_num": "Port 8",
+      "label": "",
         "type": Connection.Ethernet,
       },
       {
       "id": "p9",
-      "label": "Port 9",
+          "port_num": "Port 9",
+      "label": "",
         "type": Connection.Ethernet,
       },
       {
       "id": "p10",
-      "label": "Port 10",
+          "port_num": "Port 10",
+      "label": "",
         "type": Connection.Ethernet,
       },
       {
       "id": "p11",
+          "port_num": "Port 11",
       "label": "Test Trunk Port",
         "type": Connection.Ethernet,
       },
       {
       "id": "12",
+          "port_num": "Port 12",
       "label": "Test Trunk Port",
         "type": Connection.Ethernet,
       },
       {
       "id": "p13",
-      "label": "Port 13",
+          "port_num": "Port 13",
+      "label": "",
         "type": Connection.Ethernet,
       },
       {
       "id": "p14",
-      "label": "Port 14",
+          "port_num": "Port 14",
+      "label": "",
         "type": Connection.Ethernet,
       },
       {
       "id": "p15",
-      "label": "Port 15",
+          "port_num": "Port 15",
+      "label": "",
         "type": Connection.Ethernet,
       },
       {
       "id": "p16",
-      "label": "Port 16",
+          "port_num": "Port 16",
+      "label": "",
         "type": Connection.Ethernet,
       },
       {
       "id": "p17",
-      "label": "Port 17",
+          "port_num": "Port 17",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p18",
-      "label": "Port 18",
+          "port_num": "Port 18",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p19",
-      "label": "Port 19",
+          "port_num": "Port 19",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p20",
-      "label": "Port 20",
+          "port_num": "Port 20",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p21",
-      "label": "Port 21",
+          "port_num": "Port 21",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p22",
-      "label": "Port 22",
+          "port_num": "Port 22",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p23",
-      "label": "Port 23",
+          "port_num": "Port 23",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p24",
-      "label": "Port 24",
+          "port_num": "Port 24",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p25",
+          "port_num": "Port 25",
       "label": "Trunk TRK1 to NOC4",
       "type": Connection.Ethernet,
       },
       {
       "id": "p26",
+          "port_num": "Port 26",
       "label": "Trunk TRK1 to NOC4",
         "type": Connection.Ethernet,
       },
       {
       "id": "p27",
-      "label": "Port 27",
+          "port_num": "Port 27",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p28",
-      "label": "Port 28",
+          "port_num": "Port 28",
+      "label": "",
       "type": Connection.Ethernet,
       },
     ]
@@ -354,120 +406,144 @@ const node_data: NodeData = {
     "ports": [
       {
       "id": "p1",
+          "port_num": "Port 1",
       "label": "Trunk link TRK1 to NOC4",
       "type": Connection.Ethernet,
       },
       {
       "id": "p2",
+          "port_num": "Port 2",
       "label": "Trunk link TRK1 to NOC4",
       "type": Connection.Ethernet,
       },
       {
       "id": "p3",
+          "port_num": "Port 3",
       "label": "ValidIP Port for VMs",
       "type": Connection.Ethernet,
       },{
       "id": "p4",
+          "port_num": "Port 4",
         "label": "VLAN1000 Port for VMs",
         "type": Connection.Ethernet,
       },
       {
       "id": "p5",
+          "port_num": "Port 5",
       "label": "Trunk port link to NOC4",
         "type": Connection.Ethernet,
       },
       {
       "id": "p6",
+          "port_num": "Port 6",
       "label": "HRDO Biometrics MDF3-1F-17D",
         "type": Connection.Ethernet,
       },
       {
       "id": "p7",
+          "port_num": "Port 7",
       "label": "Ruckus Eduroam AP",
         "type": Connection.Ethernet,
       },
       {
       "id": "p8",
+          "port_num": "Port 8",
       "label": "Port 8",
         "type": Connection.Ethernet,
       },
       {
       "id": "p9",
+          "port_num": "Port 9",
       "label": "Port 9",
         "type": Connection.Ethernet,
       },
       {
       "id": "p10",
+          "port_num": "Port 10",
       "label": "Uplink to pfSense1 WAN",
         "type": Connection.Ethernet,
       },
       {
       "id": "p11",
+          "port_num": "Port 11",
       "label": "Test Trunk Port",
         "type": Connection.Ethernet,
       },
       {
       "id": "12",
+          "port_num": "Port 12",
       "label": "Test Trunk Port",
         "type": Connection.Ethernet,
       },
       {
       "id": "p13",
+          "port_num": "Port 13",
       "label": "Uplink to DIC 30D NAS Switch",
         "type": Connection.Ethernet,
       },
       {
       "id": "p14",
+          "port_num": "Port 14",
       "label": "Uplinkt to OPA 24D 8-port GbE switch",
         "type": Connection.Ethernet,
       },
       {
       "id": "p15",
+          "port_num": "Port 15",
       "label": "Uplink Port to MDF03-DES-1026G",
         "type": Connection.Ethernet,
       },
       {
       "id": "p16",
-      "label": "Port 16",
+          "port_num": "Port 16",
+      "label": "",
         "type": Connection.Ethernet,
       },
       {
       "id": "p17",
+          "port_num": "Port 17",
       "label": "Trunk Port",
         "type": Connection.Ethernet,
       },
       {
       "id": "p18",
+          "port_num": "Port 18",
       "label": "UPB VM Server 04 - FEC Desktop",
         "type": Connection.Ethernet,
       },
       {
       "id": "p19",
+          "port_num": "Port 19",
       "label": "Trunk Port9",
         "type": Connection.Ethernet,
       },
       {
       "id": "p20",
+          "port_num": "Port 20",
       "label": "Trunk Port",
         "type": Connection.Ethernet,
       },
       {
       "id": "p21",
+          "port_num": "Port 21",
       "label": "Trunk Port",
         "type": Connection.Ethernet,
       },
       {
       "id": "p22",
+          "port_num": "Port 22",
       "label": "Trunk Port",
         "type": Connection.Ethernet,
       },
       {
       "id": "p23",
+          "port_num": "Port 23",
       "label": "DNS-DHCP-Server-Trunk",
         "type": Connection.Ethernet,
       },
       {
       "id": "p24",
+          "port_num": "Port 24",
       "label": "PF 2",
         "type": Connection.Ethernet,
       },
@@ -481,121 +557,145 @@ const node_data: NodeData = {
     "ports": [
       {
         "id": "p1",
+          "port_num": "Port 1",
       "label": "DIC Cacti Server Trunk",
       "type": Connection.Ethernet,
       },
       {
       "id": "p2",
+          "port_num": "Port 2",
       "label": "JKSA Management Port",
       "type": Connection.Ethernet,
       },
       {
       "id": "p3",
-      "label": "Port 3",
+          "port_num": "Port 3",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p4",
+          "port_num": "Port 4",
         "label": "MDF3-1F-30V",
         "type": Connection.Ethernet,
       },
       {
       "id": "p5",
+          "port_num": "Port 5",
       "label": "Uplink Trunk to NOC 9",
         "type": Connection.Ethernet,
       },
       {
       "id": "p6",
-      "label": "Port 6",
+          "port_num": "Port 6",
+      "label": "",
         "type": Connection.Ethernet,
       },
       {
       "id": "p7",
-      "label": "Port 7",
+          "port_num": "Port 7",
+      "label": "",
         "type": Connection.Ethernet,
       },
       {
       "id": "p8",
-      "label": "Port 8",
+          "port_num": "Port 8",
+      "label": "",
         "type": Connection.Ethernet,
       },
       {
       "id": "p9",
+          "port_num": "Port 9",
       "label": "MDF02-1F-27D",
         "type": Connection.Ethernet,
       },
       {
       "id": "p10",
-      "label": "Port 10",
+          "port_num": "Port 10",
+      "label": "",
         "type": Connection.Ethernet,
       },
       {
       "id": "p11",
+          "port_num": "Port 11",
       "label": "JKSA-Victus-03",
         "type": Connection.Ethernet,
       },
       {
       "id": "12",
+          "port_num": "Port 12",
       "label": "Aruba-1920S-250-Uplink",
         "type": Connection.Ethernet,
       },
       {
       "id": "p13",
+          "port_num": "Port 13",
       "label": "PA-820 Management Port",
         "type": Connection.Ethernet,
       },
       {
       "id": "p14",
+          "port_num": "Port 14",
       "label": "PA-820 Management Port",
         "type": Connection.Ethernet,
       },
       {
       "id": "p15",
+          "port_num": "Port 15",
       "label": "MDF03-2F-39D",
         "type": Connection.Ethernet,
       },
       {
       "id": "p16",
+          "port_num": "Port 16",
       "label": "Uplink VLAN192 to Linksys SRW224P",
         "type": Connection.Ethernet,
       },
       {
       "id": "p17",
+          "port_num": "Port 17",
       "label": "Aruba-7205-PRI-Uplink-1",
         "type": Connection.Ethernet,
       },
       {
       "id": "p18",
+          "port_num": "Port 18",
       "label": "Aruba-7205-SEC-Uplink-2",
         "type": Connection.Ethernet,
       },
       {
       "id": "p19",
+          "port_num": "Port 19",
       "label": "Trunk link TRK1 to NOC4",
         "type": Connection.Ethernet,
       },
       {
       "id": "p20",
+          "port_num": "Port 20",
       "label": "Trunk link TRK1 to NOC4",
         "type": Connection.Ethernet,
       },
       {
       "id": "p21",
+          "port_num": "Port 21",
       "label": "IDR-Ramp FO Trunk",
         "type": Connection.FiberOptic,
       },
       {
       "id": "p22",
+          "port_num": "Port 22",
       "label": "Aruba-7205-PRI-T1A",
         "type": Connection.Ethernet,
       },
       {
       "id": "p23",
+          "port_num": "Port 23",
       "label": "BJL FO Trunk",
         "type": Connection.FiberOptic,
       },
       {
       "id": "p24",
+          "port_num": "Port 24",
       "label": "Aruba-7205-SEC-T2A4",
         "type": Connection.Ethernet,
       },
@@ -609,121 +709,145 @@ const node_data: NodeData = {
     "ports": [
       {
         "id": "p1",
+          "port_num": "Port 1",
       "label": "Uplink to PA820-PRI",
       "type": Connection.Ethernet,
       },
       {
       "id": "p2",
+          "port_num": "Port 2",
       "label": "Uplink to PA820-PRI",
       "type": Connection.Ethernet,
       },
       {
       "id": "p3",
+          "port_num": "Port 3",
       "label": "Uplink to PA820-SEC",
       "type": Connection.Ethernet,
       },
       {
       "id": "p4",
+          "port_num": "Port 4",
         "label": "Uplink to PA820-SEC",
         "type": Connection.Ethernet,
       },
       {
       "id": "p5",
+          "port_num": "Port 5",
       "label": "Port 5",
         "type": Connection.Ethernet,
       },
       {
       "id": "p6",
+          "port_num": "Port 6",
       "label": "Uplink to VLE2 Server",
         "type": Connection.Ethernet,
       },
       {
       "id": "p7",
+          "port_num": "Port 7",
       "label": "SNO Trunk Port to DGS-1100-26MPP",
         "type": Connection.Ethernet,
       },
       {
       "id": "p8",
+          "port_num": "Port 8",
       "label": "Management",
         "type": Connection.Ethernet,
       },
       {
       "id": "p9",
+          "port_num": "Port 9",
       "label": "Uplink to MDF2 Cisco SG100-16",
         "type": Connection.Ethernet,
       },
       {
       "id": "p10",
+          "port_num": "Port 10",
       "label": "Port 10",
         "type": Connection.Ethernet,
       },
       {
       "id": "p11",
+          "port_num": "Port 11",
       "label": "Trunk Port to KA-301",
         "type": Connection.Ethernet,
       },
       {
       "id": "12",
+          "port_num": "Port 12",
       "label": "Trunk port to MDF2-SF-300-24P",
         "type": Connection.Ethernet,
       },
       {
       "id": "p13",
+          "port_num": "Port 13",
       "label": "Trunk link TRK3 to NOC2",
         "type": Connection.Ethernet,
       },
       {
       "id": "p14",
+          "port_num": "Port 14",
       "label": "Trunk port to SNO-SF-300-Domz-Desk",
         "type": Connection.Ethernet,
       },
       {
       "id": "p15",
+          "port_num": "Port 15",
       "label": "Trunk link TRK3 to NOC2",
         "type": Connection.Ethernet,
       },
       {
       "id": "p16",
+          "port_num": "Port 16",
       "label": "Uplink to MDF2 SRW224P",
         "type": Connection.Ethernet,
       },
       {
       "id": "p17",
+          "port_num": "Port 17",
       "label": "Trunk link TRK2 to NOC1",
         "type": Connection.Ethernet,
       },
       {
       "id": "p18",
+          "port_num": "Port 18",
       "label": "Trunk link TRK1 to NOC3",
         "type": Connection.Ethernet,
       },
       {
       "id": "p19",
+          "port_num": "Port 19",
       "label": "Trunk link TRK2 to NOC1",
         "type": Connection.Ethernet,
       },
       {
       "id": "p20",
+          "port_num": "Port 20",
       "label": "Trunk link TRK1 to NOC3",
         "type": Connection.Ethernet,
       },
       {
       "id": "p21",
+          "port_num": "Port 21",
       "label": "LIB FO Trunk Port",
         "type": Connection.FiberOptic,
       },
       {
       "id": "p22",
+          "port_num": "Port 22",
       "label": "CAC FO Trunk Port",
         "type": Connection.FiberOptic,
       },
       {
       "id": "p23",
+          "port_num": "Port 23",
       "label": "KA-Math FO Trunk Port",
         "type": Connection.FiberOptic,
       },
       {
       "id": "p24",
+          "port_num": "Port 24",
       "label": "CSS FO Trunk Port",
         "type": Connection.FiberOptic,
       },
@@ -737,31 +861,37 @@ const node_data: NodeData = {
     "ports": [
       {
         "id": "p1",
-      "label": "Port 1",
+          "port_num": "Port 1",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p2",
-      "label": "Port 2",
+          "port_num": "Port 2",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p3",
-      "label": "Port 3",
+          "port_num": "Port 3",
+      "label": "",
       "type": Connection.Ethernet,
       },{
       "id": "p4",
-        "label": "Port 4",
+          "port_num": "Port 4",
+      "label": "",
         "type": Connection.Ethernet,
       },
       {
       "id": "p5",
-      "label": "Port 5",
+          "port_num": "Port 5",
+      "label": "",
         "type": Connection.Ethernet,
       },
       {
       "id": "p6",
-      "label": "Port 6",
+          "port_num": "Port 6",
+      "label": "",
         "type": Connection.Ethernet,
       },
     ]
@@ -775,7 +905,8 @@ const node_data: NodeData = {
     "ports": [
       {
         "id": "p1",
-      "label": "Port 1",
+          "port_num": "Port 1",
+      "label": "",
       "type": Connection.Ethernet,
       }
     ]
@@ -789,261 +920,313 @@ const node_data: NodeData = {
     "ports": [
       {
       "id": "p1",
+          "port_num": "Port 1",
       "label": "Management Port V1000",
       "type": Connection.Ethernet,
       },
       {
       "id": "p2",
+          "port_num": "Port 2",
       "label": "Management Port V1000",
       "type": Connection.Ethernet,
       },
       {
       "id": "p3",
+          "port_num": "Port 3",
       "label": "Public IP VLAN30 - IB104 Port 17V",
       "type": Connection.Ethernet,
       },
       {
       "id": "p4",
+          "port_num": "Port 4",
       "label": "Public IP VLAN30",
       "type": Connection.Ethernet,
       },
       {
       "id": "p5",
-      "label": "Port 5",
+          "port_num": "Port 5",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p6",
-      "label": "Port 6",
+          "port_num": "Port 6",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p7",
-      "label": "Port 7",
+          "port_num": "Port 7",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p8",
-      "label": "Port 8",
+          "port_num": "Port 8",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p9",
-      "label": "Port 9",
+          "port_num": "Port 9",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p10",
-      "label": "Port 10",
+          "port_num": "Port 10",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p11",
-      "label": "Port 11",
+          "port_num": "Port 11",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p12",
-      "label": "Port 12",
+          "port_num": "Port 12",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p13",
+          "port_num": "Port 13",
       "label": "Uplink from CS-Research-AVR AX72",
       "type": Connection.Ethernet,
       },
       {
       "id": "p14",
+          "port_num": "Port 14",
       "label": "Uplink from CS-Research-Lab AX72",
       "type": Connection.Ethernet,
       },
       {
       "id": "p15",
-      "label": "Port 15",
+          "port_num": "Port 15",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p16",
-      "label": "Port 16",
+          "port_num": "Port 16",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p17",
+          "port_num": "Port 17",
       "label": "Uplink from OVCA AX72",
       "type": Connection.Ethernet,
       },
       {
       "id": "p18",
+          "port_num": "Port 18",
       "label": "Port 18",
       "type": Connection.Ethernet,
       },
       {
       "id": "p19",
+          "port_num": "Port 19",
       "label": "Uplink from HRDO AX72",
       "type": Connection.Ethernet,
       },
       {
       "id": "p20",
+          "port_num": "Port 20",
       "label": "UPB-Boardroom MDF03-2F-029D",
       "type": Connection.Ethernet,
       },
       {
       "id": "p21",
-      "label": "Port 21",
+          "port_num": "Port 21",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p22",
-      "label": "Port 22",
+          "port_num": "Port 22",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p23",
-      "label": "Port 23",
+          "port_num": "Port 23",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p24",
-      "label": "Port 24",
+          "port_num": "Port 24",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p25",
-      "label": "Port 25",
+          "port_num": "Port 25",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p26",
-      "label": "Port 26",
+          "port_num": "Port 26",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p27",
-      "label": "Port 27",
+          "port_num": "Port 27",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p28",
-      "label": "Port 28",
+          "port_num": "Port 28",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p29",
-      "label": "Port 29",
+          "port_num": "Port 29",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p30",
-      "label": "Port 30",
+          "port_num": "Port 30",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p31",
-      "label": "Port 31",
+          "port_num": "Port 31",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p32",
-      "label": "Port 32",
+          "port_num": "Port 32",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p33",
+          "port_num": "Port 33",
       "label": "Uplink from HRDO E2500",
       "type": Connection.Ethernet,
       },
       {
       "id": "p34",
+          "port_num": "Port 34",
       "label": "Uplink from OVCAA AX72 MDF03-2F-14D",
       "type": Connection.Ethernet,
       },
       {
       "id": "p35",
-      "label": "Port 35",
+          "port_num": "Port 35",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p36",
+          "port_num": "Port 36",
       "label": "Trunk port to VM-SRV-03-ProxMox NIC#2",
       "type": Connection.Ethernet,
       },
       {
       "id": "p37",
+          "port_num": "Port 37",
       "label": "PubilcIP port of CS-BIO-SVR NIC #1",
       "type": Connection.Ethernet,
       },
       {
       "id": "p38",
+          "port_num": "Port 38",
       "label": "Port 38",
       "type": Connection.Ethernet,
       },
       {
       "id": "p39",
+          "port_num": "Port 39",
       "label": "VLAN Trunk Port for UPB-VM-SRV-02",
       "type": Connection.Ethernet,
       },
       {
       "id": "p40",
+          "port_num": "Port 40",
       "label": "Management Port for UPB-VM-SRV-03",
       "type": Connection.Ethernet,
       },
       {
       "id": "p41",
+          "port_num": "Port 41",
       "label": "UPB-VM-SRV-00 Public Interface",
       "type": Connection.Ethernet,
       },
       {
       "id": "p42",
+          "port_num": "Port 42",
       "label": "UPB-VM-SRV-00 Management Interface",
       "type": Connection.Ethernet,
       },
       {
       "id": "p43",
+          "port_num": "Port 43",
       "label": "UPB-VM-SRV-02 Public Interface",
       "type": Connection.Ethernet,
       },
       {
       "id": "p44",
+          "port_num": "Port 44",
       "label": "UPB-VM-SRV-04 Public Interface",
       "type": Connection.Ethernet,
       },
       {
       "id": "p45",
+          "port_num": "Port 45",
       "label": "Trunk",
       "type": Connection.Ethernet,
       },
       {
       "id": "p46",
+          "port_num": "Port 46",
       "label": "Trunk",
       "type": Connection.Ethernet,
       },
       {
       "id": "p47",
+          "port_num": "Port 47",
       "label": "Main Uplink to NOC3 GE5",
       "type": Connection.Ethernet,
       },
       {
       "id": "p48",
+          "port_num": "Port 48",
       "label": "Trunk Port to MFPalaruan PC NIC",
       "type": Connection.Ethernet,
       },
       {
       "id": "p49",
+          "port_num": "Port 49",
       "label": "SFP FO uplink from SAC 2/F HPE",
       "type": Connection.FiberOptic,
       },
       {
       "id": "p50",
+          "port_num": "Port 50",
       "label": "SFP FO Uplink from IDR New Rack",
       "type": Connection.FiberOptic,
       },
       {
       "id": "p51",
+          "port_num": "Port 51",
       "label": "SFP FO Uplink from GuardHouse",
       "type": Connection.FiberOptic,
       },
       {
       "id": "p52",
+          "port_num": "Port 52",
       "label": "SFP FO Uplink from SRC New Rack",
       "type": Connection.FiberOptic,
       },
@@ -1058,131 +1241,157 @@ const node_data: NodeData = {
     "ports": [
       {
       "id": "p1",
-      "label": "Port 1",
+          "port_num": "Port 1",
+      "label": "",
         "type": Connection.Ethernet,
       },
       {
       "id": "p2",
-      "label": "Port 2",
+          "port_num": "Port 2",
+      "label": "",
         "type": Connection.Ethernet,
       },
       {
       "id": "p3",
-      "label": "Port 3",
+          "port_num": "Port 3",
+      "label": "",
         "type": Connection.Ethernet,
       },
       {
       "id": "p4",
-      "label": "Port 4",
+          "port_num": "Port 4",
+      "label": "",
         "type": Connection.Ethernet,
       },
       {
       "id": "p5",
-      "label": "Port 5",
+          "port_num": "Port 5",
+      "label": "",
         "type": Connection.Ethernet,
       },
       {
       "id": "p6",
-      "label": "Port 6",
+          "port_num": "Port 6",
+      "label": "",
         "type": Connection.Ethernet,
       },
       {
       "id": "p7",
-      "label": "Port 7",
+          "port_num": "Port 7",
+      "label": "",
         "type": Connection.Ethernet,
       },
       {
       "id": "p8",
-      "label": "Port 8",
+          "port_num": "Port 8",
+      "label": "",
         "type": Connection.Ethernet,
       },
       {
       "id": "p9",
-      "label": "Port 9",
+          "port_num": "Port 9",
+      "label": "",
         "type": Connection.Ethernet,
       },
       {
       "id": "p10",
-      "label": "Port 10",
+          "port_num": "Port 10",
+      "label": "",
         "type": Connection.Ethernet,
       },
       {
       "id": "p11",
-      "label": "Port 11",
+          "port_num": "Port 11",
+      "label": "",
         "type": Connection.Ethernet,
       },
       {
       "id": "p12",
-      "label": "Port 12",
+          "port_num": "Port 12",
+      "label": "",
         "type": Connection.Ethernet,
       },
       {
       "id": "p13",
-      "label": "Port 13",
+          "port_num": "Port 13",
+      "label": "",
         "type": Connection.Ethernet,
       },
       {
       "id": "p14",
-      "label": "Port 14",
+          "port_num": "Port 14",
+      "label": "",
         "type": Connection.Ethernet,
       },
       {
       "id": "p15",
-      "label": "Port 15",
+          "port_num": "Port 15",
+      "label": "",
         "type": Connection.Ethernet,
       },
       {
       "id": "p16",
-      "label": "Port 16",
+          "port_num": "Port 16",
+      "label": "",
         "type": Connection.Ethernet,
       },
       {
       "id": "p17",
-      "label": "Port 17",
+          "port_num": "Port 17",
+      "label": "",
         "type": Connection.Ethernet,
       },
       {
       "id": "p18",
-      "label": "Port 18",
+          "port_num": "Port 18",
+      "label": "",
         "type": Connection.Ethernet,
       },
       {
       "id": "p19",
-      "label": "Port 19",
+          "port_num": "Port 19",
+      "label": "",
         "type": Connection.Ethernet,
       },
       {
       "id": "p20",
-      "label": "Port 20",
+          "port_num": "Port 20",
+      "label": "",
         "type": Connection.Ethernet,
       },
       {
       "id": "p21",
+          "port_num": "Port 21",
       "label": "Broken Port",
         "type": Connection.Ethernet,
       },
       {
       "id": "p22",
-      "label": "Port 22",
+          "port_num": "Port 22",
+      "label": "",
         "type": Connection.Ethernet,
       },
       {
       "id": "p23",
-      "label": "Port 23",
+          "port_num": "Port 23",
+      "label": "",
         "type": Connection.Ethernet,
       },
       {
       "id": "p24",
-      "label": "Port 24",
+          "port_num": "Port 24",
+      "label": "",
         "type": Connection.Ethernet,
       },
       {
       "id": "g1",
-      "label": "Port 25",
+          "port_num": "GE 1",
+      "label": "",
         "type": Connection.Ethernet,
       },
       {
       "id": "g2",
+          "port_num": "GE 2",
       "label": "Uplink to NOC 4",
         "type": Connection.Ethernet,
       },
@@ -1197,141 +1406,169 @@ const node_data: NodeData = {
     "ports": [
         {
             "id": "p1",
-            "label": "Port 1",
+          "port_num": "Port 1",
+      "label": "",
             "type": Connection.Ethernet,
         },
         {
             "id": "p2",
-            "label": "Port 2",
+          "port_num": "Port 2",
+      "label": "",
             "type": Connection.Ethernet,
         },
         {
             "id": "p3",
-            "label": "Port 3",
+          "port_num": "Port 3",
+      "label": "",
             "type": Connection.Ethernet,
         },
         {
             "id": "p4",
-            "label": "Port 4",
+          "port_num": "Port 4",
+      "label": "",
             "type": Connection.Ethernet,
         },
         {
             "id": "p5",
-            "label": "Port 5",
+          "port_num": "Port 5",
+      "label": "",
             "type": Connection.Ethernet,
         },
         {
             "id": "p6",
-            "label": "Port 6",
+          "port_num": "Port 6",
+      "label": "",
             "type": Connection.Ethernet,
         },
         {
             "id": "p7",
-            "label": "Port 7",
+          "port_num": "Port 7",
+      "label": "",
             "type": Connection.Ethernet,
         },
         {
             "id": "p8",
-            "label": "Port 8",
+          "port_num": "Port 8",
+      "label": "",
             "type": Connection.Ethernet,
         },
         {
             "id": "p9",
-            "label": "Port 9",
+          "port_num": "Port 9",
+      "label": "",
             "type": Connection.Ethernet,
         },
         {
             "id": "p10",
-            "label": "Port 10",
+          "port_num": "Port 10",
+      "label": "",
             "type": Connection.Ethernet,
         },
         {
             "id": "p11",
-            "label": "Port 11",
+          "port_num": "Port 11",
+      "label": "",
             "type": Connection.Ethernet,
         },
         {
             "id": "p12",
-            "label": "Port 12",
+          "port_num": "Port 12",
+      "label": "",
             "type": Connection.Ethernet,
         },
         {
             "id": "p13",
-            "label": "Port 13",
+          "port_num": "Port 13",
+      "label": "",
             "type": Connection.Ethernet,
         },
         {
             "id": "p14",
-            "label": "Port 14",
+          "port_num": "Port 14",
+      "label": "",
             "type": Connection.Ethernet,
         },
         {
             "id": "p15",
-            "label": "Port 15",
+          "port_num": "Port 15",
+      "label": "",
             "type": Connection.Ethernet,
         },
         {
             "id": "p16",
-            "label": "Port 16",
+          "port_num": "Port 16",
+      "label": "",
             "type": Connection.Ethernet,
         },
         {
             "id": "p17",
-            "label": "Port 17",
+          "port_num": "Port 17",
+      "label": "",
             "type": Connection.Ethernet,
         },
         {
             "id": "p18",
-            "label": "Port 18",
+          "port_num": "Port 18",
+      "label": "",
             "type": Connection.Ethernet,
         },
         {
             "id": "p19",
-            "label": "Port 19",
+          "port_num": "Port 19",
+      "label": "",
             "type": Connection.Ethernet,
         },
         {
             "id": "p20",
-            "label": "Port 20",
+          "port_num": "Port 20",
+      "label": "",
             "type": Connection.Ethernet,
         },
         {
             "id": "p21",
+          "port_num": "Port 21",
             "label": "Uplink to JournLab",
             "type": Connection.Ethernet,
         },
         {
             "id": "p22",
-            "label": "Port 22",
+          "port_num": "Port 22",
+            "label": "",
             "type": Connection.Ethernet,
         },
         {
             "id": "p23",
-            "label": "Port 23",
+          "port_num": "Port 23",
+            "label": "",
             "type": Connection.Ethernet,
         },
         {
             "id": "p24",
-            "label": "Port 24",
+          "port_num": "Port 24",
+            "label": "",
             "type": Connection.Ethernet,
         },
         {
             "id": "p25",
+          "port_num": "Port 25",
             "label": "Uplink to CAC-Aruba-1930-8G",
             "type": Connection.Ethernet,
         },
         {
             "id": "p26",
+          "port_num": "Port 26",
             "label": "Uplink to Teatro-Aruba-8G",
             "type": Connection.Ethernet,
         },
         {
             "id": "p27",
-            "label": "Port 27",
+          "port_num": "Port 27",
+            "label": "",
             "type": Connection.Ethernet,
         },
         {
             "id": "p28",
+          "port_num": "Port 28",
             "label": "FO-Trunk-to-IB-NOC",
             "type": Connection.FiberOptic,
         }
@@ -1345,12 +1582,14 @@ const node_data: NodeData = {
       "ports": [
           {
               "id": "p1",
-              "label": "Port 1",
+          "port_num": "Port 1",
+              "label": "",
               "type": Connection.Ethernet,
           },
           {
               "id": "p2",
-              "label": "Port 2",
+          "port_num": "Port 2",
+              "label": "",
               "type": Connection.Ethernet,
           },
       ],
@@ -1364,12 +1603,14 @@ const node_data: NodeData = {
       "ports": [
           {
               "id": "p1",
-              "label": "Port 1",
+          "port_num": "Port 1",
+              "label": "",
               "type": Connection.Ethernet,
           },
           {
               "id": "p2",
-              "label": "Port 2",
+          "port_num": "Port 2",
+              "label": "",
               "type": Connection.Ethernet,
           },
       ],
@@ -1384,137 +1625,164 @@ const node_data: NodeData = {
     "ports": [
       {
         "id": "p1",
-        "label": "Port 1",
+          "port_num": "Port 1",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p2",
-        "label": "Port 2",
+          "port_num": "Port 2",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p3",
-        "label": "Port 3",
+          "port_num": "Port 3",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p4",
-        "label": "Port 4",
+          "port_num": "Port 4",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p5",
-        "label": "Port 5",
+          "port_num": "Port 5",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p6",
-        "label": "Port 6",
+          "port_num": "Port 6",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p7",
-        "label": "Port 7",
+          "port_num": "Port 7",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p8",
-        "label": "Port 8",
+          "port_num": "Port 8",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p9",
-        "label": "Port 9",
+          "port_num": "Port 9",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p10",
-        "label": "Port 10",
+          "port_num": "Port 10",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p11",
-        "label": "Port 11",
+          "port_num": "Port 11",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p12",
-        "label": "Port 12",
+          "port_num": "Port 12",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p13",
-        "label": "Port 13",
+          "port_num": "Port 13",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p14",
-        "label": "Port 14",
+          "port_num": "Port 14",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p15",
-        "label": "Port 15",
+          "port_num": "Port 15",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p16",
-        "label": "Port 16",
+          "port_num": "Port 16",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p17",
-        "label": "Port 17",
+          "port_num": "Port 17",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p18",
-        "label": "Port 18",
+          "port_num": "Port 18",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p19",
-        "label": "Port 19",
+          "port_num": "Port 19",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p20",
-        "label": "Port 20",
+          "port_num": "Port 20",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p21",
-        "label": "Port 21",
+          "port_num": "Port 21",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p22",
-        "label": "Port 22",
+          "port_num": "Port 22",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p23",
-        "label": "Port 23",
+          "port_num": "Port 23",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p24",
-        "label": "Port 24",
+          "port_num": "Port 24",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p25",
-        "label": "Port 25",
+          "port_num": "Port 25",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p26",
-        "label": "Port 26",
+          "port_num": "Port 26",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p27",
-        "label": "Port 27",
+          "port_num": "Port 27",
+              "label": "",
         "type": Connection.FiberOptic,
       },
     ],
@@ -1529,142 +1797,170 @@ const node_data: NodeData = {
     "ports": [
       {
         "id": "g1", //g# for gigabit ethernet
-        "label": "Port 1",
+          "port_num": "GE 1",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "g2",
-        "label": "Port 2",
+          "port_num": "GE 2",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "g3",
-        "label": "Port 3",
+          "port_num": "GE 3",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "g4",
-        "label": "Port 4",
+          "port_num": "GE 4",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "g5",
-        "label": "Port 5",
+          "port_num": "GE 5",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "g6",
-        "label": "Port 6",
+          "port_num": "GE 6",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "g7",
-        "label": "Port 7",
+          "port_num": "GE 7",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "g8",
-        "label": "Port 8",
+          "port_num": "GE 8",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "g9",
-        "label": "Port 9",
+          "port_num": "GE 9",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "g10",
-        "label": "Port 10",
+          "port_num": "GE 10",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "g11",
-        "label": "Port 11",
+          "port_num": "GE 11",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "g12",
-        "label": "Port 12",
+          "port_num": "GE 12",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "g13",
-        "label": "Port 13",
+          "port_num": "GE 13",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "g14",
-        "label": "Port 14",
+          "port_num": "GE 14",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "g15",
-        "label": "Port 15",
+          "port_num": "GE 15",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "g16",
-        "label": "Port 16",
+          "port_num": "GE 16",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "g17",
-        "label": "Port 17",
+          "port_num": "GE 17",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "g18",
-        "label": "Port 18",
+          "port_num": "GE 18",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "g19",
-        "label": "Port 19",
+          "port_num": "GE 19",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "g20",
-        "label": "Port 20",
+          "port_num": "GE 20",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "g21",
-        "label": "Port 21",
+          "port_num": "GE 21",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "g22",
-        "label": "Port 22",
+          "port_num": "GE 22",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "g23",
-        "label": "Port 23",
+          "port_num": "GE 23",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "g24",
-        "label": "Port 24",
+          "port_num": "GE 24",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "g25",
-        "label": "Port 25",
+          "port_num": "GE 25",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "g26",
-        "label": "Port 26",
+          "port_num": "GE 26",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "g27",
-        "label": "Port 27",
+          "port_num": "GE 27",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
-        "id": "g208",
-        "label": "Port 28",
+        "id": "g28",
+          "port_num": "GE 28",
+              "label": "",
         "type": Connection.Ethernet,
       },
     ],
@@ -1679,41 +1975,49 @@ const node_data: NodeData = {
     "ports": [
       {
         "id": "p1",
-        "label": "Port 1",
+          "port_num": "Port 1",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p2",
-        "label": "Port 2",
+          "port_num": "Port 2",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p3",
-        "label": "Port 3",
+          "port_num": "Port 3",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p4",
-        "label": "Port 4",
+          "port_num": "Port 4",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p5",
-        "label": "Port 5",
+          "port_num": "Port 5",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p6",
-        "label": "Port 6",
+          "port_num": "Port 6",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p7",
-        "label": "Port 7",
+          "port_num": "Port 7",
+              "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p8",
+          "port_num": "Port 8",
         "label": "CSS-HP-ProCurve-2610-24",
         "type": Connection.Ethernet,
       }, 
@@ -1729,132 +2033,158 @@ const node_data: NodeData = {
   "ports": [
     {
       "id": "p1",
-      "label": "Port 1",
+          "port_num": "Port 1",
+              "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p2",
-      "label": "Port 2",
+          "port_num": "Port 2",
+              "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p3",
-      "label": "Port 3",
+          "port_num": "Port 3",
+              "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p4",
-      "label": "Port 4",
+          "port_num": "Port 4",
+              "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p5",
-      "label": "Port 5",
+          "port_num": "Port 5",
+              "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p6",
-      "label": "Port 6",
+          "port_num": "Port 6",
+              "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p7",
-      "label": "Port 7",
+          "port_num": "Port 7",
+              "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p8",
-      "label": "Port 8",
+          "port_num": "Port 8",
+              "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p9",
-      "label": "Port 9",
+          "port_num": "Port 9",
+              "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p10",
-      "label": "Port 10",
+          "port_num": "Port 10",
+              "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p11",
-      "label": "Port 11",
+          "port_num": "Port 11",
+              "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p12",
-      "label": "Port 12",
+          "port_num": "Port 12",
+              "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p13",
-      "label": "Port 13",
+          "port_num": "Port 13",
+              "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p14",
-      "label": "Port 14",
+          "port_num": "Port 14",
+              "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p15",
-      "label": "Port 15",
+          "port_num": "Port 15",
+              "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p16",
-      "label": "Port 16",
+          "port_num": "Port 16",
+              "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p17",
-      "label": "Port 17",
+          "port_num": "Port 17",
+              "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p18",
-      "label": "Port 18",
+          "port_num": "Port 18",
+              "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p19",
-      "label": "Port 19",
+          "port_num": "Port 19",
+              "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p20",
-      "label": "Port 20",
+          "port_num": "Port 20",
+              "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p21",
-      "label": "Port 21",
+          "port_num": "Port 21",
+              "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p22",
-      "label": "Port 22",
+          "port_num": "Port 22",
+              "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p23",
-      "label": "Port 23",
+          "port_num": "Port 23",
+              "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p24",
-      "label": "Port 24",
+          "port_num": "Port 24",
+              "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p25",
-      "label": "FO Port to IB-NOC",
+          "port_num": "Port 25",
+              "label": "",
       "type": Connection.FiberOptic,
       },
       {
       "id": "p26",
-      "label": "FO Port to HKP-NOC",
+          "port_num": "Port 26",
+              "label": "",
       "type": Connection.FiberOptic,
       }
     ]
@@ -1867,131 +2197,157 @@ const node_data: NodeData = {
       "ports": [
       {
         "id": "p1",
+          "port_num": "Port 1",
         "label": "Aruba AP port",
         "type": Connection.Ethernet,
       },
       {
         "id": "p2",
+          "port_num": "Port 2",
         "label": "Aruba AP port",
         "type": Connection.Ethernet,
       },
       {
         "id": "p3",
-        "label": "Port 3",
+          "port_num": "Port 3",
+        "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p4",
-        "label": "Port 4",
+          "port_num": "Port 4",
+        "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p5",
-        "label": "Port 5",
+          "port_num": "Port 5",
+        "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p6",
+          "port_num": "Port 6",
         "label": "ATA port",
         "type": Connection.Ethernet,
       },
       {
         "id": "p7",
-        "label": "Port 7",
+          "port_num": "Port 7",
+        "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p8",
-        "label": "Port 8",
+          "port_num": "Port 8",
+        "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p9",
-        "label": "Port 9",
+          "port_num": "Port 9",
+        "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p10",
-        "label": "Port 10",
+          "port_num": "Port 10",
+        "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p11",
-        "label": "Port 11",
+          "port_num": "Port 11",
+        "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p12",
-        "label": "Port 12",
+          "port_num": "Port 12",
+        "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p13",
-        "label": "Port 13",
+          "port_num": "Port 13",
+        "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p14",
-        "label": "Port 14",
+          "port_num": "Port 14",
+        "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p15",
-        "label": "Port 15",
+          "port_num": "Port 15",
+        "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p16",
-        "label": "Port 16",
+          "port_num": "Port 16",
+        "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p17",
-        "label": "Port 17",
+          "port_num": "Port 17",
+        "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p18",
-        "label": "Port 18",
+          "port_num": "Port 18",
+        "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p19",
+          "port_num": "Port 19",
         "label": "HKP_AP AX55 Router Uplink",
         "type": Connection.Ethernet,
       },
       {
         "id": "p20",
-        "label": "Port 20",
+          "port_num": "Port 20",
+        "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p21",
-        "label": "Port 21",
+          "port_num": "Port 21",
+        "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p22",
-        "label": "Port 22",
+          "port_num": "Port 22",
+        "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p23",
-        "label": "Port 23",
+          "port_num": "Port 23",
+        "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p24",
+          "port_num": "Port 24",
         "label": "Trunk Link to Himnasyo-NOC",
         "type": Connection.Ethernet,
       },
       {
         "id": "p25",
+          "port_num": "Port 25",
         "label": "FO Uplink Port to KA-4F-CAB",
         "type": Connection.FiberOptic,
       },
       {
         "id": "p26",
+          "port_num": "Port 26",
         "label": "FO Port",
         "type": Connection.FiberOptic,
       },
@@ -2005,7 +2361,8 @@ const node_data: NodeData = {
       "ports": [
       {
         "id": "p1",
-        "label": "Port 1",
+          "port_num": "Port 1",
+        "label": "",
         "type": Connection.Ethernet,
       }
     ]
@@ -2018,141 +2375,169 @@ const node_data: NodeData = {
   "ports": [
   {
     "id": "g1",
+          "port_num": "GE 1",
     "label": "Aruba_AP",
     "type": Connection.Ethernet,
   },
   {
     "id": "g2",
+          "port_num": "GE 2",
     "label": "VLAN1",
     "type": Connection.Ethernet,
   },
   {
     "id": "g3",
+          "port_num": "GE 3",
     "label": "VLAN1",
     "type": Connection.Ethernet,
   },
   {
     "id": "g4",
+          "port_num": "GE 4",
     "label": "VLAN1",
     "type": Connection.Ethernet,
   },
   {
     "id": "g5",
+          "port_num": "GE 5",
     "label": "TPL-AX72-LAN",
     "type": Connection.Ethernet,
   },
   {
    "id": "g6",
+          "port_num": "GE 6",
     "label": "EAP-320-1F",
     "type": Connection.Ethernet,
   },
   {
     "id": "g7",
+          "port_num": "GE 7",
     "label": "EAP-320-2F",
     "type": Connection.Ethernet,
   },
   {
     "id": "g8",
+          "port_num": "GE 8",
     "label": "EAP-320-3F",
     "type": Connection.Ethernet,
   },
   {
     "id": "g9",
+          "port_num": "GE 9",
     "label": "TPL-AX72-WAN",
     "type": Connection.Ethernet,
   },
   {
     "id": "g10",
+          "port_num": "GE 10",
     "label": "VLAN107",
     "type": Connection.Ethernet,
   },
   {
     "id": "g11",
+          "port_num": "GE 11",
     "label": "VLAN107",
     "type": Connection.Ethernet,
   },
   {
     "id": "g12",
+          "port_num": "GE 12",
     "label": "VLAN107",
     "type": Connection.Ethernet,
   },
   {
     "id": "g13",
+          "port_num": "GE 13",
     "label": "TPL-AX72-LAN",
     "type": Connection.Ethernet,
   },
   {
     "id": "g14",
+          "port_num": "GE 14",
     "label": "TPL-AX72-LAN",
     "type": Connection.Ethernet,
   },
   {
     "id": "g15",
+          "port_num": "GE 15",
     "label": "TPL-AX72-LAN",
     "type": Connection.Ethernet,
   },
   {
     "id": "g16",
+          "port_num": "GE 16",
     "label": "TPL-AX72-LAN",
     "type": Connection.Ethernet,
   },
   {
     "id": "g17",
+          "port_num": "GE 17",
     "label": "VLAN1",
     "type": Connection.Ethernet,
   },
   {
     "id": "g18",
+          "port_num": "GE 18",
     "label": "VLAN1",
     "type": Connection.Ethernet,
   },
   {
     "id": "g19",
+          "port_num": "GE 19",
     "label": "VLAN30",
     "type": Connection.Ethernet,
   },
   {
     "id": "g20",
+          "port_num": "GE 20",
     "label": "VLAN30",
     "type": Connection.Ethernet,
   },
   {
     "id": "g21",
+          "port_num": "GE 21",
     "label": "MGMT",
     "type": Connection.Ethernet,
   },
   {
     "id": "g22",
+          "port_num": "GE 22",
     "label": "MGMT",
     "type": Connection.Ethernet,
   },
   {
     "id": "g23",
+          "port_num": "GE 23",
     "label": "Trunk-port",
     "type": Connection.Ethernet,
   },
   {
     "id": "g24",
+          "port_num": "GE 24",
     "label": "Trunk-to-HKP",
     "type": Connection.Ethernet,
   },
   {
     "id": "g25",
+          "port_num": "GE 25",
     "label": "SFP",
     "type": Connection.Ethernet,
   },
   {
     "id": "g26",
+          "port_num": "GE 26",
     "label": "SFP",
     "type": Connection.Ethernet,
   },
   {
     "id": "g27",
+          "port_num": "GE 27",
     "label": "SFP",
     "type": Connection.Ethernet,
   },
   {
     "id": "g28",
+          "port_num": "GE 28",
     "label": "SFP",
     "type": Connection.Ethernet,
   },
@@ -2168,127 +2553,152 @@ const node_data: NodeData = {
     "ports": [
       {
       "id": "p1",
-      "label": "Port 1",
+          "port_num": "Port 1",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p2",
-      "label": "Port 2",
+          "port_num": "Port 2",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p3",
-      "label": "Port 3",
+          "port_num": "Port 3",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p4",
-      "label": "Port 4",
+          "port_num": "Port 4",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p5",
-      "label": "Port 5",
+          "port_num": "Port 5",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p6",
-      "label": "Port 6",
+          "port_num": "Port 6",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p7",
-      "label": "Port 7",
+          "port_num": "Port 7",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p8",
-      "label": "Port 8",
+          "port_num": "Port 8",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p9",
-      "label": "Port 9",
+          "port_num": "Port 9",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p10",
+          "port_num": "Port 10",
       "label": "UPB-ROTC Uplink",
       "type": Connection.Ethernet,
       },
       {
       "id": "p11",
+          "port_num": "Port 11",
       "label": "Port 11",
       "type": Connection.Ethernet,
       },
       {
       "id": "p12",
-      "label": "Port 12",
+          "port_num": "Port 12",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p13",
-      "label": "Port 13",
+          "port_num": "Port 13",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p14",
-      "label": "Port 14",
+          "port_num": "Port 14",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p15",
-      "label": "Port 15",
+          "port_num": "Port 15",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p16",
-      "label": "Port 16",
+          "port_num": "Port 16",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p17",
-      "label": "Port 17",
+          "port_num": "Port 17",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p18",
+          "port_num": "Port 18",
       "label": "Mikrotik LIB to BI",
       "type": Connection.Ethernet,
       },
       {
       "id": "p19",
+          "port_num": "Port 19",
       "label": "HP-2610-LIB-TECH-Uplink",
       "type": Connection.Ethernet,
       },
       {
       "id": "p20",
+          "port_num": "Port 20",
       "label": "HPE-1920S-Uplink",
       "type": Connection.Ethernet,
       },
       {
       "id": "p21",
+          "port_num": "Port 21",
       "label": "FO-Uplink-to-IB",
       "type": Connection.FiberOptic,
       },
       {
       "id": "p22",
+          "port_num": "Port 22",
       "label": "UPB-Balay-Intl-FO-Uplink",
       "type": Connection.FiberOptic,
       },
       {
       "id": "p23",
+          "port_num": "Port 23",
       "label": "UP-Breha-FO-Uplink",
       "type": Connection.FiberOptic,
       },
       {
       "id": "p24",
+          "port_num": "Port 24",
       "label": "Test SFP",
       "type": Connection.Ethernet,
       },
       {
       "id": "wlan",
-      "label": "Wireless",
+          "port_num": "WLAN",
+      "label": "Wireless Breha",
       "type": Connection.Wireless,
       },
     ]
@@ -2303,41 +2713,49 @@ const node_data: NodeData = {
     "ports": [
       {
       "id": "p1",
-      "label": "Port 1",
+          "port_num": "Port 1",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p2",
-      "label": "Port 2",
+          "port_num": "Port 2",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p3",
-      "label": "Port 3",
+          "port_num": "Port 3",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p4",
-      "label": "Port 4",
+          "port_num": "Port 4",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p5",
-      "label": "Port 5",
+          "port_num": "Port 5",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p6",
-      "label": "Port 6",
+          "port_num": "Port 6",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
         "id": "p7",
+          "port_num": "Port 7",
       "label": "J9802A-LIB-2F-TechRoom	Bridge	Bridge",
       "type": Connection.Ethernet,
       },
       {
         "id": "p8",
+          "port_num": "Port 8",
       "label": "A0-1D-48-5C-50-D0",
       "type": Connection.Ethernet,
       }
@@ -2352,142 +2770,170 @@ const node_data: NodeData = {
         "ports": [
             {
             "id": "p1",
+          "port_num": "Port 1",
             "label": "LIB VLAN 106 Port",
             "type": Connection.Ethernet,
             },
             {
             "id": "p2",
+          "port_num": "Port 2",
             "label": "LIB VLAN 106 Port",
             "type": Connection.Ethernet,
             },
             {
             "id": "p3",
+          "port_num": "Port 3",
             "label": "LIB VLAN 106 Port",
             "type": Connection.Ethernet,
             },
             {
             "id": "p4",
+          "port_num": "Port 4",
             "label": "LIB VLAN 106 Port",
             "type": Connection.Ethernet,
             },
             {
             "id": "p5",
+          "port_num": "Port 5",
             "label": "LIB VLAN 106 Port",
             "type": Connection.Ethernet,
             },
             {
             "id": "p6",
+          "port_num": "Port 6",
             "label": "LIB VLAN 106 Port",
             "type": Connection.Ethernet,
             },
             {
             "id": "p7",
+          "port_num": "Port 7",
             "label": "LIB VLAN 106 Port",
             "type": Connection.Ethernet,
             },
             {
             "id": "p8",
+          "port_num": "Port 8",
             "label": "LIB VLAN 106 Port",
             "type": Connection.Ethernet,
             },
             {
             "id": "p9",
+          "port_num": "Port 9",
             "label": "LIB VLAN 106 Port",
             "type": Connection.Ethernet,
             },
             {
             "id": "p10",
+          "port_num": "Port 10",
             "label": "LIB VLAN 106 Port",
             "type": Connection.Ethernet,
             },
             {
             "id": "p11",
+          "port_num": "Port 11",
             "label": "LIB VLAN 106 Port",
             "type": Connection.Ethernet,
             },
             {
             "id": "p12",
+          "port_num": "Port 12",
             "label": "LIB VLAN 106 Port",
             "type": Connection.Ethernet,
             },
             {
             "id": "p13",
+          "port_num": "Port 13",
             "label": "LIB VLAN 106 Port",
             "type": Connection.Ethernet,
             },
             {
             "id": "p14",
+          "port_num": "Port 14",
             "label": "LIB VLAN 106 Port",
             "type": Connection.Ethernet,
             },
             {
             "id": "p15",
+          "port_num": "Port 15",
             "label": "LIB VLAN 106 Port",
             "type": Connection.Ethernet,
             },
             {
             "id": "p16",
+          "port_num": "Port 16",
             "label": "LIB VLAN 106 Port",
             "type": Connection.Ethernet,
             },
             {
             "id": "p17",
+          "port_num": "Port 17",
             "label": "LIB VLAN 106 Port",
             "type": Connection.Ethernet,
             },
             {
             "id": "p18",
+          "port_num": "Port 18",
             "label": "LIB VLAN 106 Port",
             "type": Connection.Ethernet,
             },
             {
             "id": "p19",
+          "port_num": "Port 19",
             "label": "Voice VLAN 60 Ports",
             "type": Connection.Ethernet,
             },
             {
             "id": "p20",
+          "port_num": "Port 20",
             "label": "Voice VLAN 60 Ports",
             "type": Connection.Ethernet,
             },
             {
             "id": "p21",
+          "port_num": "Port 21",
             "label": "Voice VLAN 60 Ports",
             "type": Connection.Ethernet,
             },
             {
             "id": "p22",
+          "port_num": "Port 22",
             "label": "Voice VLAN 60 Ports",
             "type": Connection.Ethernet,
             },
             {
             "id": "p23",
+          "port_num": "Port 23",
             "label": "PublicIP Port",
             "type": Connection.Ethernet,
             },
             {
             "id": "p24",
+          "port_num": "Port 24",
             "label": "Management Port",
             "type": Connection.Ethernet,
             },
             {
             "id": "p25",
+          "port_num": "Port 25",
             "label": "LIB VLAN 106 Port",
             "type": Connection.Ethernet,
             },
             {
             "id": "p26",
+          "port_num": "Port 26",
             "label": "Uplink Trunk to HPE-1810-8G",
             "type": Connection.Ethernet,
             },
             {
             "id": "p27",
-            "label": "Port 27",
+          "port_num": "Port 27",
+            "label": "",
             "type": Connection.Ethernet,
             },
             {
             "id": "p28",
-            "label": "Port 28",
+          "port_num": "Port 28",
+            "label": "",
             "type": Connection.Ethernet,
             },
         ]
@@ -2501,41 +2947,49 @@ const node_data: NodeData = {
         "ports": [
             {
             "id": "p1",
-            "label": "Port 1",
+          "port_num": "Port 1",
+            "label": "",
             "type": Connection.Ethernet,
             },
             {
             "id": "p2",
-            "label": "Port 2",
+          "port_num": "Port 2",
+            "label": "",
             "type": Connection.Ethernet,
             },
             {
             "id": "p3",
+          "port_num": "Port 3",
             "label": "J9802A-LIB-2F-TechRoom Bridge",
             "type": Connection.Ethernet,
             },
             {
             "id": "p4",
-            "label": "Port 4",
+          "port_num": "Port 4",
+            "label": "",
             "type": Connection.Ethernet,
             },
             {
             "id": "p5",
-            "label": "Port 5",
+          "port_num": "Port 5",
+            "label": "",
             "type": Connection.Ethernet,
             },
             {
             "id": "p6",
+          "port_num": "Port 6",
             "label": "UPB-LibraryArchive-AP46 Bridge",
             "type": Connection.Ethernet,
             },
             {
             "id": "p7",
-            "label": "Port 7",
+          "port_num": "Port 7",
+            "label": "",
             "type": Connection.Ethernet,
             },
             {
             "id": "p8",
+          "port_num": "Port 8",
             "label": "J9802A Bridge	Bridge",
             "type": Connection.Ethernet,
             },
@@ -2550,42 +3004,50 @@ const node_data: NodeData = {
         "ports": [
             {
             "id": "p1",
-            "label": "Port 1",
+          "port_num": "Port 1",
+            "label": "",
             "type": Connection.Ethernet,
             },
             {
             "id": "p2",
+          "port_num": "Port 2",
             "label": "DESKTOP-5406D6L 9C-6B-00-00-69-59",
             "type": Connection.Ethernet,
             },
             {
             "id": "p3",
-            "label": "Port 3",
+          "port_num": "Port 3",
+            "label": "",
             "type": Connection.Ethernet,
             },
             {
             "id": "p4",
-            "label": "Port 4",
+          "port_num": "Port 4",
+            "label": "",
             "type": Connection.Ethernet,
             },
             {
             "id": "p5",
-            "label": "Port 5",
+          "port_num": "Port 5",
+            "label": "",
             "type": Connection.Ethernet,
             },
             {
             "id": "p6",
-            "label": "Port 6",
+          "port_num": "Port 6",
+            "label": "",
             "type": Connection.Ethernet,
             },
             {
             "id": "p7",
+          "port_num": "Port 7",
             "label": "J9802A Bridge	Bridge",
             "type": Connection.Ethernet,
             },
             {
             "id": "p8",
-            "label": "Port 8",
+          "port_num": "Port 8",
+            "label": "",
             "type": Connection.Ethernet,
             },
         ]
@@ -2599,7 +3061,8 @@ const node_data: NodeData = {
     "ports": [
       {
         "id": "p1",
-      "label": "Port 1",
+          "port_num": "Port 1",
+            "label": "",
       "type": Connection.Ethernet,
       }
     ]
@@ -2613,7 +3076,8 @@ const node_data: NodeData = {
     "ports": [
       {
         "id": "p1",
-      "label": "Port 1",
+          "port_num": "Port 1",
+            "label": "",
       "type": Connection.Ethernet,
       }
     ]
@@ -2628,132 +3092,158 @@ const node_data: NodeData = {
     "ports": [
       {
       "id": "p1",
-      "label": "Port 1",
+          "port_num": "Port 1",
+            "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p2",
-      "label": "Port 2",
+          "port_num": "Port 2",
+            "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p3",
-      "label": "Port 3",
+          "port_num": "Port 3",
+            "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p4",
-      "label": "Port 4",
+          "port_num": "Port 4",
+            "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p5",
-      "label": "Port 5",
+          "port_num": "Port 5",
+            "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p6",
-      "label": "Port 6",
+          "port_num": "Port 6",
+            "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p7",
-      "label": "Port 7",
+          "port_num": "Port 7",
+            "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p8",
-      "label": "Port 8",
+          "port_num": "Port 8",
+            "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p9",
-      "label": "Port 9",
+          "port_num": "Port 9",
+            "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p10",
-      "label": "Port 10",
+          "port_num": "Port 10",
+            "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p11",
-      "label": "Port 11",
+          "port_num": "Port 11",
+            "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p12",
-      "label": "Port 12",
+          "port_num": "Port 12",
+            "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p13",
-      "label": "Port 13",
+          "port_num": "Port 13",
+            "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p14",
-      "label": "Port 14",
+          "port_num": "Port 14",
+            "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p15",
-      "label": "Port 15",
+          "port_num": "Port 15",
+            "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p16",
+          "port_num": "Port 16",
       "label": "CAT6 Uplink to 6F",
       "type": Connection.Ethernet,
       },
       {
       "id": "p17",
-      "label": "Port 17",
+          "port_num": "Port 17",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p18",
-      "label": "Port 18",
+          "port_num": "Port 18",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p19",
-      "label": "Port 19",
+          "port_num": "Port 19",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p20",
-      "label": "Port 20",
+          "port_num": "Port 20",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p21",
-      "label": "Port 21",
+          "port_num": "Port 21",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p22",
-      "label": "Port 22",
+          "port_num": "Port 22",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "23",
-      "label": "Port 23",
+          "port_num": "Port 23",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p24",
-      "label": "Port 24",
+          "port_num": "Port 24",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p25",
+          "port_num": "Port 25",
       "label": "FO Trunk to LIB-NOC",
       "type": Connection.Ethernet,
       },
       {
       "id": "p26",
-      "label": "Port 26",
+          "port_num": "Port 26",
+      "label": "",
       "type": Connection.Ethernet,
       },
     ]
@@ -2767,141 +3257,169 @@ const node_data: NodeData = {
     "ports": [
       {
       "id": "p1",
-      "label": "Port 1",
+          "port_num": "Port 1",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p2",
-      "label": "Port 2",
+          "port_num": "Port 2",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p3",
-      "label": "Port 3",
+          "port_num": "Port 3",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p4",
-      "label": "Port 4",
+          "port_num": "Port 4",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p5",
-      "label": "Port 5",
+          "port_num": "Port 5",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p6",
-      "label": "Port 6",
+          "port_num": "Port 6",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p7",
-      "label": "Port 7",
+          "port_num": "Port 7",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p8",
-      "label": "Port 8",
+          "port_num": "Port 8",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p9",
-      "label": "Port 9",
+          "port_num": "Port 9",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p10",
-      "label": "Port 10",
+          "port_num": "Port 10",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p11",
-      "label": "Port 11",
+          "port_num": "Port 11",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p12",
-      "label": "Port 12",
+          "port_num": "Port 12",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p13",
-      "label": "Clinic",
+          "port_num": "Port 13",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p14",
-      "label": "Port 14",
+          "port_num": "Port 14",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p15",
-      "label": "Port 15",
+          "port_num": "Port 15",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p16",
-      "label": "Port 16",
+          "port_num": "Port 16",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p17",
-      "label": "Port 17",
+          "port_num": "Port 17",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p18",
-      "label": "Port 18",
+          "port_num": "Port 18",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p19",
-      "label": "Port 19",
+          "port_num": "Port 19",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p20",
-      "label": "Port 20",
+          "port_num": "Port 20",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p21",
-      "label": "Port 21",
+          "port_num": "Port 21",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p22",
-      "label": "Port 22",
+          "port_num": "Port 22",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p23",
-      "label": "Port 23",
+          "port_num": "Port 23",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p24",
-      "label": "Port 24",
+          "port_num": "Port 24",
+      "label": "",
       "type": Connection.Ethernet,
       },
       {
       "id": "p25",
+          "port_num": "Port 25",
       "label": "Uplink port to ArubaIO-8G-IM-Ramp",
       "type": Connection.Ethernet,
       },
       {
       "id": "p26",
+          "port_num": "Port 26",
       "label": "Uplink port to IDR-MDF-SW135-P43",
       "type": Connection.Ethernet,
       },
       {
       "id": "p27",
+          "port_num": "Port 27",
       "label": "FO-Trunk-to-SAC",
       "type": Connection.FiberOptic,
       },
       {
       "id": "p28",
+          "port_num": "Port 28",
       "label": "FO-Trunk-to-IB-NOC",
       "type": Connection.FiberOptic,
       },
@@ -2914,8 +3432,9 @@ const node_data: NodeData = {
     "type": Device.AccessSwitch,
     "ports": [
       {
-        "id": "1",
-      "label": "Port 1",
+        "id": "p1",
+          "port_num": "Port 1",
+      "label": "",
       "type": Connection.Ethernet,
       }
     ]
@@ -2928,11 +3447,13 @@ const node_data: NodeData = {
     "ports": [
       {
         "id": "p2",
+          "port_num": "Port 2",
       "label": "CMO",
       "type": Connection.Ethernet,
       },
       {
         "id": "p8",
+          "port_num": "Port 8",
       "label": "IM Ramp",
       "type": Connection.Ethernet,
       }
@@ -2946,7 +3467,8 @@ const node_data: NodeData = {
     "ports": [
       {
         "id": "p1",
-      "label": "Port 1",
+          "port_num": "Port 1",
+      "label": "",
       "type": Connection.Ethernet,
       }
     ]
@@ -2960,6 +3482,7 @@ const node_data: NodeData = {
     "ports": [
       {
         "id": "p3",
+          "port_num": "Port 3",
       "label": "clinic",
       "type": Connection.Ethernet,
       }
@@ -2974,141 +3497,169 @@ const node_data: NodeData = {
     "ports": [
     {
         "id": "p1",
-        "label": "Port 1",
+          "port_num": "Port 1",
+        "label": "",
         "type": Connection.Ethernet,
         },
         {
             "id": "p2",
-            "label": "Port 2",
+          "port_num": "Port 2",
+            "label": "",
             "type": Connection.Ethernet,
         },
         {
             "id": "p3",
-            "label": "Port 3",
+          "port_num": "Port 3",
+            "label": "",
             "type": Connection.Ethernet,
         },
         {
             "id": "p4",
-            "label": "Port 4",
+          "port_num": "Port 4",
+            "label": "",
             "type": Connection.Ethernet,
         },
         {
             "id": "p5",
-            "label": "Port 5",
+          "port_num": "Port 5",
+            "label": "",
             "type": Connection.Ethernet,
         },
         {
             "id": "p6",
-            "label": "Port 6",
+          "port_num": "Port 6",
+            "label": "",
             "type": Connection.Ethernet,
         },
         {
             "id": "p7",
-            "label": "Port 7",
+          "port_num": "Port 7",
+            "label": "",
             "type": Connection.Ethernet,
         },
         {
             "id": "p8",
+          "port_num": "Port 8",
             "label": "Uplink to CS-Research AX55",
             "type": Connection.Ethernet,
         },
         {
             "id": "p9",
-            "label": "Port 9",
+          "port_num": "Port 9",
+            "label": "",
             "type": Connection.Ethernet,
         },
         {
             "id": "p10",
-            "label": "Port 10",
+          "port_num": "Port 10",
+            "label": "",
             "type": Connection.Ethernet,
         },
         {
             "id": "p11",
-            "label": "Port 11",
+          "port_num": "Port 11",
+            "label": "",
             "type": Connection.Ethernet,
         },
         {
             "id": "p12",
-            "label": "Port 12",
+          "port_num": "Port 12",
+            "label": "",
             "type": Connection.Ethernet,
         },
         {
             "id": "p13",
-            "label": "Port 13",
+          "port_num": "Port 13",
+            "label": "",
             "type": Connection.Ethernet,
         },
         {
             "id": "p14",
-            "label": "Port 14",
+          "port_num": "Port 14",
+            "label": "",
             "type": Connection.Ethernet,
         },
         {
             "id": "p15",
-            "label": "Port 15",
+          "port_num": "Port 15",
+            "label": "",
             "type": Connection.Ethernet,
         },
         {
             "id": "p16",
-            "label": "Port 16",
+          "port_num": "Port 16",
+            "label": "",
             "type": Connection.Ethernet,
         },
         {
             "id": "p17",
-            "label": "Port 17",
+          "port_num": "Port 17",
+            "label": "",
             "type": Connection.Ethernet,
         },
         {
             "id": "p18",
-            "label": "Port 18",
+          "port_num": "Port 18",
+            "label": "",
             "type": Connection.Ethernet,
         },
         {
             "id": "p19",
-            "label": "Port 19",
+          "port_num": "Port 19",
+            "label": "",
             "type": Connection.Ethernet,
         },
         {
             "id": "p20",
-            "label": "Port 20",
+          "port_num": "Port 20",
+            "label": "",
             "type": Connection.Ethernet,
         },
         {
             "id": "p21",
-            "label": "Port 21",
+          "port_num": "Port 21",
+            "label": "",
             "type": Connection.Ethernet,
         },
         {
             "id": "p22",
-            "label": "Port 22",
+          "port_num": "Port 22",
+            "label": "",
             "type": Connection.Ethernet,
         },
         {
             "id": "p23",
-            "label": "Port 23",
+          "port_num": "Port 23",
+            "label": "",
             "type": Connection.Ethernet,
         },
         {
             "id": "p24",
-            "label": "Port 24",
+          "port_num": "Port 24",
+            "label": "",
             "type": Connection.Ethernet,
         },
         {
             "id": "g1",
+          "port_num": "GE 1",
             "label": "BIO-FR-AX72-MDF02-2F-02D",
             "type": Connection.Ethernet,
         },
         {
             "id": "g2",
+          "port_num": "GE 2",
             "label": "Trunk Uplink to NOC4",
             "type": Connection.Ethernet,
         },
         {
             "id": "g3",
-            "label": "Port 27",
+          "port_num": "GE 3",
+            "label": "",
             "type": Connection.Ethernet,
         },
         {
             "id": "g4",
+          "port_num": "GE 4",
             "label": "Trunk to Glasswares ArubaIO",
             "type": Connection.FiberOptic,
         }
@@ -3124,132 +3675,158 @@ const node_data: NodeData = {
     "ports": [
       {
         "id": "p1",
-        "label": "Port 1",
+          "port_num": "Port 1",
+            "label": "",
         "type": Connection.FiberOptic,
       },
       {
         "id": "p2",
-        "label": "Port 2",
+          "port_num": "Port 2",
+            "label": "",
         "type": Connection.None,
       },
       {
         "id": "p3",
-        "label": "Port 3",
+          "port_num": "Port 3",
+            "label": "",
         "type": Connection.None,
       },
       {
         "id": "p4",
-        "label": "Port 4",
+          "port_num": "Port 4",
+            "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p5",
-        "label": "Port 5",
+          "port_num": "Port 5",
+            "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p6",
-        "label": "Port 6",
+          "port_num": "Port 6",
+            "label": "",
         "type": Connection.None,
       },
       {
         "id": "p7",
-        "label": "Port 7",
+          "port_num": "Port 7",
+            "label": "",
         "type": Connection.None,
       },
       {
         "id": "p8",
-        "label": "Port 8",
+          "port_num": "Port 8",
+            "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p9",
-        "label": "Port 9",
+          "port_num": "Port 9",
+            "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p10",
-        "label": "Port 10",
+          "port_num": "Port 10",
+            "label": "",
         "type": Connection.None,
       },
       {
         "id": "p11",
-        "label": "Port 11",
+          "port_num": "Port 11",
+            "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p12",
-        "label": "Port 12 (FC)",
+          "port_num": "Port 12",
+        "label": "(FC)",
         "type": Connection.Ethernet,
       },
       {
         "id": "p13",
-        "label": "Port 13 (100M, FC)",
+          "port_num": "Port 13",
+        "label": "(100M, FC)",
         "type": Connection.Ethernet,
       },
       {
         "id": "p14",
-        "label": "Port 14",
+          "port_num": "Port 14",
+        "label": "",
         "type": Connection.None,
       },
       {
         "id": "p15",
-        "label": "Port 15",
+          "port_num": "Port 15",
+        "label": "",
         "type": Connection.None,
       },
       {
         "id": "p16",
-        "label": "Port 16",
+          "port_num": "Port 16",
+        "label": "",
         "type": Connection.None,
       },
       {
         "id": "p17",
-        "label": "Port 17",
+          "port_num": "Port 17",
+        "label": "",
         "type": Connection.None,
       },
       {
         "id": "p18",
-        "label": "Port 18",
+          "port_num": "Port 18",
+        "label": "",
         "type": Connection.None,
       },
       {
         "id": "p19",
-        "label": "Port 19",
+          "port_num": "Port 19",
+        "label": "",
         "type": Connection.None,
       },
       {
         "id": "p20",
-        "label": "Port 20",
+          "port_num": "Port 20",
+        "label": "",
         "type": Connection.None,
       },
       {
         "id": "p21",
-        "label": "Port 21",
+          "port_num": "Port 21",
+        "label": "",
         "type": Connection.None,
       },
       {
         "id": "p22",
-        "label": "Port 22",
+          "port_num": "Port 22",
+        "label": "",
         "type": Connection.None,
       },
       {
         "id": "p23",
-        "label": "Port 23",
+          "port_num": "Port 23",
+        "label": "",
         "type": Connection.None,
       },
       {
         "id": "p24",
-        "label": "Port 24",
+          "port_num": "Port 24",
+        "label": "",
         "type": Connection.None,
       },
       {
         "id": "p25",
-        "label": "Port 25",
+          "port_num": "Port 25",
+        "label": "",
         "type": Connection.None,
       },
       {
         "id": "p26",
-        "label": "Port 26 (1000M/Full Duplex)",
+          "port_num": "Port 26",
+        "label": "(1000M/Full Duplex)",
         "type": Connection.Ethernet,
       },
     ],
@@ -3264,56 +3841,67 @@ const node_data: NodeData = {
     "ports": [
       {
         "id": "p1",
-        "label": "Port 1",
+          "port_num": "Port 1",
+        "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p2",
-        "label": "Port 2",
+          "port_num": "Port 2",
+        "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p3",
-        "label": "Port 3",
+          "port_num": "Port 3",
+        "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p4",
-        "label": "Port 4",
+          "port_num": "Port 4",
+        "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p5",
-        "label": "Port 5",
+          "port_num": "Port 5",
+        "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p6",
-        "label": "Port 6",
+          "port_num": "Port 6",
+        "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p7",
-        "label": "Port 7",
+          "port_num": "Port 7",
+        "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p8",
-        "label": "Port 8",
+          "port_num": "Port 8",
+        "label": "",
         "type": Connection.Ethernet,
       },
       {
         "id": "p9",
+          "port_num": "Port 9",
         "label": "FO Uplink to WalkUP", 
         "type": Connection.FiberOptic,
       },
       {
         "id": "p10",
+          "port_num": "Port 10",
         "label": "FO Uplink to LIB-NOC",
           "type": Connection.FiberOptic,
         },
       {
         "id": "wlan",
+          "port_num": "WLAN",
         "label": "Wireless",
           "type": Connection.FiberOptic,
         },
@@ -3329,26 +3917,31 @@ const node_data: NodeData = {
       "ports": [
         {
           "id": "p2",
+          "port_num": "Port 2",
           "label": "ARUBA-2920-MAINLIB-NOC",
           "type": Connection.Ethernet,
         },
         {
           "id": "p3",
+          "port_num": "Port 3",
           "label": "Lib Filipiniana",
           "type": Connection.Ethernet,
         },
         {
           "id": "p4",
+          "port_num": "Port 4",
           "label": "Lib Tech 24 P",
           "type": Connection.Ethernet,
         },
         {
           "id": "p5",
+          "port_num": "Port 5",
           "label": "Lib Circulation",
           "type": Connection.None,
         },
         {
           "id": "p7",
+          "port_num": "Port 7",
           "label": "Lib Tech 8 Port",
           "type": Connection.Ethernet,
         }
@@ -3363,12 +3956,14 @@ const node_data: NodeData = {
       "type": Device.AccessSwitch,
       "ports": [
         { "id": "p5", 
-          "label": "Port 5", 
+          "port_num": "Port 5",
+          "label": "", 
           "type": Connection.Ethernet 
         },
         { 
           "id": "p8", 
-          "label": "Port 8", 
+          "port_num": "Port 8",
+          "label": "", 
           "type": Connection.Ethernet 
         }
       ]
@@ -3383,7 +3978,8 @@ const node_data: NodeData = {
       "ports": [
         {
           "id": "p1",
-          "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "", 
           "type": Connection.Ethernet,
         },
       ]
@@ -3398,7 +3994,8 @@ const node_data: NodeData = {
       "ports": [
         {
           "id": "p1",
-          "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "", 
           "type": Connection.Ethernet,
         },
       ]
@@ -3413,7 +4010,8 @@ const node_data: NodeData = {
       "ports": [
         {
           "id": "p1",
-          "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "", 
           "type": Connection.Ethernet,
         },
       ]
@@ -3428,7 +4026,8 @@ const node_data: NodeData = {
       "ports": [
         {
           "id": "p1",
-          "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "", 
           "type": Connection.Ethernet,
         },
       ]
@@ -3443,7 +4042,8 @@ const node_data: NodeData = {
       "ports": [
         {
           "id": "p1",
-          "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "", 
           "type": Connection.Ethernet,
         },
       ]
@@ -3458,7 +4058,8 @@ const node_data: NodeData = {
       "ports": [
         {
           "id": "p1",
-          "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "", 
           "type": Connection.Ethernet,
         },
       ]
@@ -3473,7 +4074,8 @@ const node_data: NodeData = {
       "ports": [
         {
           "id": "p1",
-          "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "", 
           "type": Connection.Ethernet,
         },
       ]
@@ -3488,6 +4090,7 @@ const node_data: NodeData = {
       "ports": [
         {
           "id": "g4",
+          "port_num": "GE 4",
           "label": "Uplink to NOC 4",
           "type": Connection.Ethernet,
         },
@@ -3503,6 +4106,7 @@ const node_data: NodeData = {
       "ports": [
         {
           "id": "g4",
+          "port_num": "GE 4",
           "label": "Uplink to NOC 4",
           "type": Connection.Ethernet,
         },
@@ -3518,7 +4122,8 @@ const node_data: NodeData = {
       "ports": [
         {
           "id": "p1",
-          "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "",
           "type": Connection.Ethernet,
         },
       ]
@@ -3532,7 +4137,8 @@ const node_data: NodeData = {
       "ports": [
         {
           "id": "p1",
-          "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "",
           "type": Connection.Ethernet,
         },
       ]
@@ -3547,7 +4153,8 @@ const node_data: NodeData = {
       "ports": [
         {
           "id": "p1",
-          "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "",
           "type": Connection.Ethernet,
         },
       ]
@@ -3561,7 +4168,8 @@ const node_data: NodeData = {
       "ports": [
         {
           "id": "p1",
-          "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "",
           "type": Connection.Ethernet,
         },
       ]
@@ -3575,7 +4183,8 @@ const node_data: NodeData = {
       "ports": [
         {
           "id": "p1",
-          "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "",
           "type": Connection.Ethernet,
         },
       ]
@@ -3589,7 +4198,8 @@ const node_data: NodeData = {
       "ports": [
         {
           "id": "p1",
-          "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "",
           "type": Connection.Ethernet,
         },
       ]
@@ -3603,7 +4213,8 @@ const node_data: NodeData = {
       "ports": [
         {
           "id": "p1",
-          "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "",
           "type": Connection.Ethernet,
         },
       ]
@@ -3617,7 +4228,8 @@ const node_data: NodeData = {
       "ports": [
         {
           "id": "p1",
-          "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "",
           "type": Connection.Ethernet,
         },
       ]
@@ -3631,6 +4243,7 @@ const node_data: NodeData = {
       "ports": [
         {
           "id": "p49",
+          "port_num": "Port 49",
           "label": "Uplink to NOC 9",
           "type": Connection.FiberOptic,
         },
@@ -3645,7 +4258,8 @@ const node_data: NodeData = {
       "ports": [
         {
           "id": "p1",
-          "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "",
           "type": Connection.Ethernet,
         },
       ]
@@ -3659,7 +4273,8 @@ const node_data: NodeData = {
       "ports": [
         {
           "id": "p1",
-          "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "",
           "type": Connection.Ethernet,
         },
       ]
@@ -3673,7 +4288,8 @@ const node_data: NodeData = {
       "ports": [
         {
           "id": "p1",
-          "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "",
           "type": Connection.Ethernet,
         },
       ]
@@ -3687,12 +4303,14 @@ const node_data: NodeData = {
       "ports": [
         {
           "id": "p1",
-          "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "",
           "type": Connection.Ethernet,
         },
         {
           "id": "p2",
-          "label": "Port 2",
+          "port_num": "Port 2",
+          "label": "",
           "type": Connection.Ethernet,
         },
       ]
@@ -3706,7 +4324,8 @@ const node_data: NodeData = {
       "ports": [
         {
           "id": "p1",
-          "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "",
           "type": Connection.Ethernet,
         },
       ]
@@ -3720,7 +4339,8 @@ const node_data: NodeData = {
       "ports": [
         {
           "id": "p1",
-          "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "",
           "type": Connection.Ethernet,
         },
       ]
@@ -3735,7 +4355,8 @@ const node_data: NodeData = {
       "ports": [
         {
           "id": "p1",
-          "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "",
           "type": Connection.Ethernet,
         },
       ]
@@ -3748,7 +4369,8 @@ const node_data: NodeData = {
       "ports": [
         {
           "id": "p1",
-          "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "",
           "type": Connection.Ethernet,
         },
       ]
@@ -3761,7 +4383,8 @@ const node_data: NodeData = {
       "ports": [
         {
           "id": "p1",
-          "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "",
           "type": Connection.Ethernet,
         },
       ]
@@ -3774,7 +4397,8 @@ const node_data: NodeData = {
       "ports": [
         {
           "id": "p1",
-          "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "",
           "type": Connection.Ethernet,
         },
       ]
@@ -3788,7 +4412,8 @@ const node_data: NodeData = {
       "ports": [
         {
           "id": "p1",
-          "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "",
           "type": Connection.FiberOptic,
         },
       ]
@@ -3802,7 +4427,8 @@ const node_data: NodeData = {
       "ports": [
         {
           "id": "p1",
-          "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "",
           "type": Connection.Ethernet,
         },
       ]
@@ -3816,7 +4442,8 @@ const node_data: NodeData = {
       "ports": [
         {
           "id": "p1",
-          "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "",
           "type": Connection.Ethernet,
         },
       ]
@@ -3830,7 +4457,8 @@ const node_data: NodeData = {
       "ports": [
         {
           "id": "p1",
-          "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "",
           "type": Connection.Ethernet,
         },
       ]
@@ -3843,7 +4471,8 @@ const node_data: NodeData = {
       "ports": [
         {
           "id": "p1",
-          "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "",
           "type": Connection.Ethernet,
         },
       ]
@@ -3857,7 +4486,8 @@ const node_data: NodeData = {
       "ports": [
         {
           "id": "p1",
-          "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "",
           "type": Connection.Ethernet,
         },
       ]
@@ -3871,7 +4501,8 @@ const node_data: NodeData = {
       "ports": [
         {
           "id": "p1",
-          "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "",
           "type": Connection.Ethernet,
         },
       ]
@@ -3884,7 +4515,8 @@ const node_data: NodeData = {
       "ports": [
         {
           "id": "p1",
-          "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "",
           "type": Connection.Ethernet,
         },
       ]
@@ -3898,7 +4530,8 @@ const node_data: NodeData = {
       "ports": [
         {
           "id": "p1",
-          "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "",
           "type": Connection.Ethernet,
         },
       ]
@@ -3912,7 +4545,8 @@ const node_data: NodeData = {
       "ports": [
         {
           "id": "p1",
-          "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "",
           "type": Connection.Ethernet,
         },
       ]
@@ -3922,11 +4556,12 @@ const node_data: NodeData = {
       "id": "vm-srv-03",
       "label": "VM-SRV-03-ProxMox NIC#2",
       "ip": "",
-      "type": Device.AccessSwitch,
+      "type": Device.Server,
       "ports": [
         {
           "id": "p1",
-          "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "",
           "type": Connection.Ethernet,
         },
       ]
@@ -3936,11 +4571,12 @@ const node_data: NodeData = {
       "id": "cs-bio-svr",
       "label": "CS-BIO-SVR NIC#1",
       "ip": "",
-      "type": Device.AccessSwitch,
+      "type": Device.Server,
       "ports": [
         {
           "id": "p1",
-          "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "",
           "type": Connection.Ethernet,
         },
       ]
@@ -3950,16 +4586,18 @@ const node_data: NodeData = {
       "id": "upb-vm-srv-00",
       "label": "UPB-VM-SRV-00",
       "ip": "",
-      "type": Device.AccessSwitch,
+      "type": Device.Server,
       "ports": [
         {
           "id": "p1",
-          "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "",
           "type": Connection.Ethernet,
         },
         {
           "id": "p2",
-          "label": "Port 2",
+          "port_num": "Port 2",
+          "label": "",
           "type": Connection.Ethernet,
         },
       ]
@@ -3968,16 +4606,18 @@ const node_data: NodeData = {
       "id": "upb-vm-srv-02",
       "label": "UPB-VM-SRV-02",
       "ip": "",
-      "type": Device.AccessSwitch,
+      "type": Device.Server,
       "ports": [
         {
           "id": "p1",
-          "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "",
           "type": Connection.Ethernet,
         },
         {
           "id": "p2",
-          "label": "Port 2",
+          "port_num": "Port 2",
+          "label": "",
           "type": Connection.Ethernet,
         },
       ]
@@ -3986,11 +4626,12 @@ const node_data: NodeData = {
       "id": "upb-vm-srv-03",
       "label": "UPB-VM-SRV-03",
       "ip": "",
-      "type": Device.AccessSwitch,
+      "type": Device.Server,
       "ports": [
         {
           "id": "p1",
-          "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "",
           "type": Connection.Ethernet,
         },
       ]
@@ -3999,11 +4640,12 @@ const node_data: NodeData = {
       "id": "upb-vm-srv-04",
       "label": "UPB-VM-SRV-04",
       "ip": "",
-      "type": Device.AccessSwitch,
+      "type": Device.Server,
       "ports": [
         {
           "id": "p1",
-          "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "",
           "type": Connection.Ethernet,
         },
       ]
@@ -4017,7 +4659,8 @@ const node_data: NodeData = {
       "ports": [
         {
           "id": "p1",
-          "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "",
           "type": Connection.Ethernet,
         },
       ]
@@ -4031,7 +4674,8 @@ const node_data: NodeData = {
       "ports": [
         {
           "id": "p1",
-          "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "",
           "type": Connection.FiberOptic,
         },
       ]
@@ -4045,7 +4689,8 @@ const node_data: NodeData = {
     "ports": [
       {
         "id": "p1",
-      "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "",
       "type": Connection.FiberOptic,
       }
     ]
@@ -4059,7 +4704,8 @@ const node_data: NodeData = {
     "ports": [
       {
         "id": "p1",
-      "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "",
       "type": Connection.FiberOptic,
       }
     ]
@@ -4073,7 +4719,8 @@ const node_data: NodeData = {
     "ports": [
       {
         "id": "p1",
-      "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "",
       "type": Connection.Ethernet,
       }
     ]
@@ -4087,7 +4734,8 @@ const node_data: NodeData = {
     "ports": [
       {
         "id": "p1",
-      "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "",
       "type": Connection.Ethernet,
       }
     ]
@@ -4100,7 +4748,8 @@ const node_data: NodeData = {
     "ports": [
       {
         "id": "p1",
-      "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "",
       "type": Connection.Ethernet,
       }
     ]
@@ -4113,7 +4762,8 @@ const node_data: NodeData = {
     "ports": [
       {
         "id": "p1",
-      "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "",
       "type": Connection.Ethernet,
       }
     ]
@@ -4127,7 +4777,8 @@ const node_data: NodeData = {
     "ports": [
       {
         "id": "p1",
-      "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "",
       "type": Connection.Ethernet,
       }
     ]
@@ -4141,7 +4792,8 @@ const node_data: NodeData = {
     "ports": [
       {
         "id": "p1",
-      "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "",
       "type": Connection.Ethernet,
       }
     ]
@@ -4155,7 +4807,8 @@ const node_data: NodeData = {
     "ports": [
       {
         "id": "p1",
-      "label": "Port 1",
+          "port_num": "Port 1",
+          "label": "",
       "type": Connection.Ethernet,
       }
     ]

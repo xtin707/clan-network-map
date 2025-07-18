@@ -36,6 +36,7 @@ export interface Node {
 
 export interface Port {
   id: string,
+  port_num: string,
   label: string,
   type: Connection,
 }

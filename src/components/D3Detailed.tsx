@@ -120,6 +120,7 @@ const ClusterTree = ({ main_node, filtered_node, filtered_edge }) => {
         if (d.data.node === Entity.Device && d.data.type === Device.Server) return "/server.svg";
         if (d.data.node === Entity.Port && d.data.type === Connection.Ethernet) return "/ethernet.svg";
         if (d.data.node === Entity.Port && d.data.type === Connection.FiberOptic) return "/fiber.svg";
+        if (d.data.node === Entity.Port && d.data.type === Connection.Wireless) return "/wireless.svg";
       return "/no.svg"
       })
       .attr("x", -25)

@@ -6,6 +6,11 @@ import { Julius_Sans_One } from 'next/font/google';
 import { IBM_Plex_Mono } from 'next/font/google';
 import {useEffect, useRef, useState} from 'react';
 import { Info } from 'lucide-react';
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card"
 
 
 const juliusSansOne = Julius_Sans_One({ subsets: ['latin'], weight: '400' });
@@ -31,22 +36,30 @@ export default function HomePage() {
   }, []);
 
   return (
-    <main className="bg-[#1E1E1E] min-h-screen">
-      <header className="bg-[#1E1E1E] text-white flex items-center justify-between px-10 py-6">
-        <div className="flex items-center space-x-4">
-          <img src="/up-logo.png" alt="UPB Logo" className="h-12 w-auto"/>
+    <main className="h-screen w-screen overflow-hidden bg-[#1E1E1E] flex flex-col">
+      <header className="bg-[#1E1E1E] text-white flex items-center justify-between px-4 sm:px-6 lg:px-10 py-4 lg:py-6 flex-shrink-0">
+        <div className="flex items-center space-x-2 sm:space-x-4">
+          <img src="/up-logo.png" alt="UPB Logo" className="h-8 lg:h-10 w-auto"/>
           <h1 className={juliusSansOne.className + " text-[#DFDEDE] text-xl font-semibold tracking-widest"}>UPB Network Diagram</h1>
         </div>
-        <div className="relative group">
-          <Info className="h-7.5 w-auto text-white cursor-pointer" />
-          <div className={ibmPlexMono.className + " absolute right-0 mt-2 w-max bg-[#2D2D2D] text-[#DFDEDE] text-xs px-3 py-1 rounded shadow-lg opacity-0 group-hover:opacity-80 transition-opacity duration-300"}>
+        <HoverCard openDelay={200} closeDelay={100}>
+          <HoverCardTrigger asChild>
+            <Info className="h-7.5 w-auto text-white cursor-pointer hover:text-gray-300 transition-colors" />
+          </HoverCardTrigger>
+          <HoverCardContent 
+            className={`${ibmPlexMono.className} w-max bg-[#2D2D2D]/60 text-[#DFDEDE] text-xs px-3 py-1 rounded shadow-lg border-none`}
+            side="bottom"
+            align="end"
+            sideOffset={8}
+          >
             Click the node to see the detailed view of ports.
-          </div>
-        </div>
+          </HoverCardContent>
+        </HoverCard>
+
       </header>
 
       <div ref={containerRef} className="w-full h-[100vh] relative">
-        <div className="absolute w-45 top-5 left-5 bg-[#2D2D2D] text-white p-3 rounded shadow-md text-sm  space-y-1">
+        <div className="absolute w-45 top-5 left-5 bg-[#2D2D2D]/90 text-white p-3 rounded shadow-md text-sm  space-y-1">
           <div className="flex items-center space-x-2 bottom-10">
             <span>Connection Types</span>
           </div>

@@ -85,8 +85,9 @@ const ClusterTree = ({ main_node, filtered_node, filtered_edge, onNodeClick }) =
         node: Entity.Port,
         type: port.type,
         port: port.port_num,
-        connection: Connection.None,
       };
+
+      console.log(port.type);
 
       for (const edge of filtered_edge) {
         const node_index = edge.node.indexOf(main_node.id);
@@ -103,6 +104,7 @@ const ClusterTree = ({ main_node, filtered_node, filtered_edge, onNodeClick }) =
             type: partner_node[0].type,
             port: partner_port[0]?.port_num ?? 'undefined',
             label: partner_port[0]?.label ?? 'undefined',
+            connection: Connection.None,
           });
         };
       }
@@ -134,8 +136,17 @@ const ClusterTree = ({ main_node, filtered_node, filtered_edge, onNodeClick }) =
         .x(d => d.y)
         .y(d => d.x))
       .attr("fill", "none")
-      .attr("stroke", "#ccc")
-      .attr("stroke-width", 1.5);
+      .attr("stroke", d => {
+        if (d.source.data.node === Entity.Port && d.source.data.type === Connection.Ethernet) return '#F58315';
+        if (d.source.data.node === Entity.Port && d.source.data.type === Connection.FiberOptic) return '#1594F5';
+        if (d.source.data.node === Entity.Port && d.source.data.type === Connection.Wireless) return '#1CE637';
+      return "#ccc";
+      })
+      .attr("stroke-width", 3)
+        .attr("stroke-dasharray", d => {
+        if (d.source.data.node === Entity.Port && d.source.data.type === Connection.Wireless) return '3, 5';
+          return null;
+        });
 
     // Draw the nodes
     const node = g.selectAll(".node")
@@ -177,16 +188,38 @@ const ClusterTree = ({ main_node, filtered_node, filtered_edge, onNodeClick }) =
       .attr("width", 50) 
       .attr("height", 50); 
 
+    const tooltip = d3.select("body").append("div")     //differentiate connection type when hovering on node/s
+      .attr("class", "tooltip")
+      .style("position", "absolute")
+      .style("opacity", 0)
+      .style("background-color", "#2D2D2D")
+      .style("color", "white")
+      .style("padding", "5px")
+      .style("border-radius", "3px")
+      .style("pointer-events", "none");
+
     // Add hover effects for Device nodes
     nodeGroup
       .filter(d => d.data.node === Entity.Device)
-      .on("mouseenter", function(event, d) {
+      .on("mouseover", function(event, d) {
         d3.select(this).select("image")
           .attr("opacity", 0.7);
+
+      tooltip.transition()                          //for IP address appearance                      
+        .duration(200)
+        .style("opacity", .9);
+        
+      tooltip.html(`IP: ${d.data.ip} <br /> ID: ${d.data.id}`)
+        .style("left", (event.pageX + 10) + "px")   //for IP address appearance
+        .style("top", (event.pageY - 15) + "px");
       })
-      .on("mouseleave", function(event, d) {
+      .on("mouseout", function(event, d) {
         d3.select(this).select("image")
           .attr("opacity", 1);
+
+      tooltip.transition()                           //for IP address appearance
+        .duration(500)
+        .style("opacity", 0);
       });
 
     // Add text labels for nodes
@@ -244,6 +277,11 @@ const ClusterTree = ({ main_node, filtered_node, filtered_edge, onNodeClick }) =
       zoomBehavior.transform,
       d3.zoomIdentity.translate(translateX, translateY).scale(scale)
     );
+
+  return () => {
+      tooltip.transition().duration(0).style("opacity", 0); // Immediately hide
+      tooltip.remove(); // Remove the tooltip div from the body
+    };
 
   }, [main_node, filtered_node, filtered_edge, onNodeClick, dimensions]); // Added dimensions back since it's now state
 

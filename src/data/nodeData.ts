@@ -4673,8 +4673,8 @@ const node_data: NodeData = {
       "type": Device.AccessSwitch,
       "ports": [
         {
-          "id": "p1",
-          "port_num": "Port 1",
+          "id": "p26",
+          "port_num": "Port 26",
           "label": "",
           "type": Connection.FiberOptic,
         },

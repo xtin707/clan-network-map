@@ -21,8 +21,8 @@ const NetworkDiagram = ({ nodeData, edgeData, width, height }) => {
     // You can adjust the placement and size of nodes and edges here
     const simulation = d3.forceSimulation(nodes)
       .force("link", d3.forceLink(links).id(d => d.id).distance(10).strength(0.7))
-      .force("charge", d3.forceManyBody().strength(-3000))
-      .force("collide", d3.forceCollide(300).radius(80))
+      .force("charge", d3.forceManyBody().strength(-3500))
+      .force("collide", d3.forceCollide(500).radius(90))
       .force("center", d3.forceCenter(width / 2, height / 2));
 
     simulation.stop();

@@ -1,15 +1,57 @@
 'use client'
 // components/ClusterTree.js
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useRef, useEffect, useState, useMemo } from 'react';
 import * as d3 from 'd3';
 import { Connection, Device, Entity } from "@/data/structs";
 
-const ClusterTree = ({ main_node, filtered_node, filtered_edge }) => {
+const ClusterTree = ({ main_node, filtered_node, filtered_edge, onNodeClick }) => {
   const svgRef = useRef();
-  const dimensions = { width: 1000, height: 600, margin: { top: 50, right: 100, bottom: 50, left: 100 } };
+  const containerRef = useRef();
+  
+  // Dynamic dimensions based on container size
+  const [dimensions, setDimensions] = useState({
+    width: 1000, 
+    height: 600, 
+    margin: { top: 50, right: 100, bottom: 50, left: 100 }
+  });
+
+  // Update dimensions when container size changes
+  useEffect(() => {
+    const updateDimensions = () => {
+      if (containerRef.current) {
+        const rect = containerRef.current.getBoundingClientRect();
+        const newWidth = Math.max(400, rect.width - 40); // Min width with padding
+        const newHeight = Math.max(300, rect.height - 40); // Min height with padding
+        
+        setDimensions({
+          width: newWidth,
+          height: newHeight,
+          margin: { 
+            top: Math.min(50, newHeight * 0.1), 
+            right: Math.min(100, newWidth * 0.1), 
+            bottom: Math.min(50, newHeight * 0.1), 
+            left: Math.min(100, newWidth * 0.1) 
+          }
+        });
+      }
+    };
+
+    // Initial size
+    updateDimensions();
+
+    // Update on resize
+    const resizeObserver = new ResizeObserver(updateDimensions);
+    if (containerRef.current) {
+      resizeObserver.observe(containerRef.current);
+    }
+
+    return () => {
+      resizeObserver.disconnect();
+    };
+  }, []);
 
   useEffect(() => {
-    if (!data) return;
+    if (!main_node) return;
 
     const svg = d3.select(svgRef.current);
     svg.selectAll("*").remove(); // Clear previous rendering
@@ -21,7 +63,7 @@ const ClusterTree = ({ main_node, filtered_node, filtered_edge }) => {
     const g = svg.append("g")
       .attr("transform", `translate(${margin.left},${margin.top})`);
 
-    // 1. Create the hierarchical data structure
+    // Create the hierarchical data structure
     const data = [];
 
     const root_node = {
@@ -42,14 +84,15 @@ const ClusterTree = ({ main_node, filtered_node, filtered_edge }) => {
         children: [],
         node: Entity.Port,
         type: port.type,
-        port: "",
-        connection: Connection.None,
+        port: port.port_num,
       };
+
+      console.log(port.type);
 
       for (const edge of filtered_edge) {
         const node_index = edge.node.indexOf(main_node.id);
         const partner_node = filtered_node.filter(d => d.id === edge.node[1 - node_index]);
-        const partner_port = partner_node[0].ports.filter(d => d.id === edge.port[1 - node_index]);
+        const partner_port = partner_node[0]?.ports.filter(d => d.id === edge.port[1 - node_index]);
 
         if (edge.port[node_index] === port.id) {
           node.children.push({
@@ -59,7 +102,9 @@ const ClusterTree = ({ main_node, filtered_node, filtered_edge }) => {
             children:[],
             node: Entity.Device,
             type: partner_node[0].type,
-            port: partner_port[0]?.label ?? 'undefined'
+            port: partner_port[0]?.port_num ?? 'undefined',
+            label: partner_port[0]?.label ?? 'undefined',
+            connection: Connection.None,
           });
         };
       }
@@ -71,19 +116,18 @@ const ClusterTree = ({ main_node, filtered_node, filtered_edge }) => {
 
     const root = d3.hierarchy(root_node);
 
-    // 2. Create the cluster layout
+    // Create the cluster layout
     const treeLayout = d3.tree()
       .size([innerHeight, innerWidth - 160])
-    .nodeSize([50, 300])
-    .separation((a, b) => {
-    return a.parent === b.parent ? 2 : 3;
-  });
-    // 3. Compute the layout
+      .nodeSize([50, 300])
+      .separation((a, b) => {
+        return a.parent === b.parent ? 2 : 3;
+      });
+    
+    // Compute the layout
     treeLayout(root);
 
-    // 4. Draw the links (paths)
-    console.log(root.links());
-
+    // Draw the links (paths)
     g.selectAll(".link")
       .data(root.links())
       .enter().append("path")
@@ -92,23 +136,39 @@ const ClusterTree = ({ main_node, filtered_node, filtered_edge }) => {
         .x(d => d.y)
         .y(d => d.x))
       .attr("fill", "none")
-      .attr("stroke", "#ccc")
-      .attr("stroke-width", 1.5);
+      .attr("stroke", d => {
+        if (d.source.data.node === Entity.Port && d.source.data.type === Connection.Ethernet) return '#F58315';
+        if (d.source.data.node === Entity.Port && d.source.data.type === Connection.FiberOptic) return '#1594F5';
+        if (d.source.data.node === Entity.Port && d.source.data.type === Connection.Wireless) return '#1CE637';
+      return "#ccc";
+      })
+      .attr("stroke-width", 3)
+        .attr("stroke-dasharray", d => {
+        if (d.source.data.node === Entity.Port && d.source.data.type === Connection.Wireless) return '3, 5';
+          return null;
+        });
 
-    // 5. Draw the nodes
+    // Draw the nodes
     const node = g.selectAll(".node")
       .data(root.descendants())
       .enter().append("g")
       .attr("class", d => "node" + (d.children ? " node--internal" : " node--leaf"))
       .attr("transform", d => `translate(${d.y},${d.x})`);
 
-    // Add circles for nodes
-    console.log(root.descendants());
+    // Use click handler instead of <a> tags for navigation
+    const nodeGroup = node.append("g")
+      .style("cursor", d => d.data.node === Entity.Device ? "pointer" : "default")
+      .on("click", function(event, d) {
+        // Only navigate for Device nodes, not Port nodes
+        if (d.data.node === Entity.Device && onNodeClick) {
+          event.preventDefault();
+          event.stopPropagation();
+          console.log(`[ClusterTree] Node clicked: ${d.data.id}`);
+          onNodeClick(d.data.id);
+        }
+      });
 
-    const linkHandler = node.append("a")
-    .attr("xlink:href", d => `./${d.data.id}`); 
-
-    linkHandler.append("image")
+    nodeGroup.append("image")
       .attr("xlink:href", d => {
         if (d.data.node === Entity.Device && d.data.type === Device.ISP) return "/cloud.svg";
         if (d.data.node === Entity.Device && d.data.type === Device.MainRouter) return "/router.svg";
@@ -120,15 +180,50 @@ const ClusterTree = ({ main_node, filtered_node, filtered_edge }) => {
         if (d.data.node === Entity.Device && d.data.type === Device.Server) return "/server.svg";
         if (d.data.node === Entity.Port && d.data.type === Connection.Ethernet) return "/ethernet.svg";
         if (d.data.node === Entity.Port && d.data.type === Connection.FiberOptic) return "/fiber.svg";
-      return "/no.svg"
+        if (d.data.node === Entity.Port && d.data.type === Connection.Wireless) return "/wireless.svg";
+        return "/no.svg"
       })
       .attr("x", -25)
       .attr("y", -25)
       .attr("width", 50) 
       .attr("height", 50); 
 
+    const tooltip = d3.select("body").append("div")     //differentiate connection type when hovering on node/s
+      .attr("class", "tooltip")
+      .style("position", "absolute")
+      .style("opacity", 0)
+      .style("background-color", "#2D2D2D")
+      .style("color", "white")
+      .style("padding", "5px")
+      .style("border-radius", "3px")
+      .style("pointer-events", "none");
+
+    // Add hover effects for Device nodes
+    nodeGroup
+      .filter(d => d.data.node === Entity.Device)
+      .on("mouseover", function(event, d) {
+        d3.select(this).select("image")
+          .attr("opacity", 0.7);
+
+      tooltip.transition()                          //for IP address appearance                      
+        .duration(200)
+        .style("opacity", .9);
+        
+      tooltip.html(`IP: ${d.data.ip} <br /> ID: ${d.data.id}`)
+        .style("left", (event.pageX + 10) + "px")   //for IP address appearance
+        .style("top", (event.pageY - 15) + "px");
+      })
+      .on("mouseout", function(event, d) {
+        d3.select(this).select("image")
+          .attr("opacity", 1);
+
+      tooltip.transition()                           //for IP address appearance
+        .duration(500)
+        .style("opacity", 0);
+      });
+
     // Add text labels for nodes
-    linkHandler.append("text")
+    nodeGroup.append("text")
       .attr("x", 0)
       .attr("y", 45)
       .attr("text-anchor", "middle")
@@ -138,11 +233,11 @@ const ClusterTree = ({ main_node, filtered_node, filtered_edge }) => {
         const textElement = d3.select(this);
         textElement.selectAll("*").remove(); // Clear existing tspans on re-render
 
-        if (d.parent && d.data.node === Node.Device) {
+        if (d.parent && d.data.node === Entity.Device) {
           textElement.append("tspan")
             .attr("x", 0)
             .attr("dy", "-0.7em") // Move up relative to the parent <text>'s 'y' (45)
-            .text(d.data.port);
+            .text(`${d.data.port} | ${d.data.label}`);
 
           textElement.append("tspan")
             .attr("x", 0)
@@ -152,7 +247,7 @@ const ClusterTree = ({ main_node, filtered_node, filtered_edge }) => {
           textElement.append("tspan")
             .attr("x", 0)
             .attr("dy", "0.31em") // Standard baseline alignment relative to parent 'y'
-            .text(d.data.name);
+            .text(`${d.data.port} | ${d.data.name}`);
         }
       });
 
@@ -183,11 +278,19 @@ const ClusterTree = ({ main_node, filtered_node, filtered_edge }) => {
       d3.zoomIdentity.translate(translateX, translateY).scale(scale)
     );
 
-  }, [dimensions]); // Redraw when data or dimensions change
+  return () => {
+      tooltip.transition().duration(0).style("opacity", 0); // Immediately hide
+      tooltip.remove(); // Remove the tooltip div from the body
+    };
+
+  }, [main_node, filtered_node, filtered_edge, onNodeClick, dimensions]); // Added dimensions back since it's now state
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
-      <svg ref={svgRef} width={dimensions.width} height={dimensions.height} style={{ border: "1px solid #eee" }}></svg>
+    <div 
+      ref={containerRef}
+      className="w-full h-full flex items-center justify-center"
+    >
+      <svg ref={svgRef} width={dimensions.width} height={dimensions.height}></svg>
     </div>
   );
 };

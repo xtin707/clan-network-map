@@ -345,11 +345,6 @@ const edge_data: EdgeData = {
     "type": Connection.Ethernet
   }, 
   {
-    "node": ["sw9", "hrdo-e2500"],
-    "port": ["p33", "p1"],
-    "type": Connection.Ethernet
-  }, 
-  {
     "node": ["sw9", "ovcaa"],
     "port": ["p34", "p1"],
     "type": Connection.Ethernet
@@ -561,7 +556,7 @@ const edge_data: EdgeData = {
   }, 
  {
     "node": ["lib", "breha-8-port"],
-    "port": ["wlan", "wireless"],
+    "port": ["wlan", "wlan"],
     "type": Connection.Ethernet
   }, 
  {
